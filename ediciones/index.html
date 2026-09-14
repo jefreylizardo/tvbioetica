@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivo · Tertulia Virtual de Bioética</title>
+<meta name="description" content="Todas las ediciones publicadas de TvBioética, el periódico semanal de bioética, equidad y dignidad.">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<meta name="theme-color" content="#10AF58">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<!--
+  ARCHIVO — al publicar una edición nueva, añada un <li> al inicio de la lista.
+  Copie el bloque de la edición anterior y cambie número, fecha, enlace y titular.
+-->
+
+<style>
+:root{--papel:#F4F6F2;--tinta:#0E2019;--suave:#4A5B52;--verde:#10AF58;--hondo:#08633A;--regla:#D2DACE}
+@media (prefers-color-scheme:dark){
+  :root{--papel:#0C1512;--tinta:#E8EFE8;--suave:#9AAEA2;--verde:#2BD177;--hondo:#7BE0AC;--regla:#25362D}
+  .logo .muro,.logo .hoja{stroke:#7BE0AC}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.68}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 0,"WONK" 1;
+  line-height:1.1;margin:0}
+.env{max-width:760px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--verde);outline-offset:3px}
+header{padding:34px 0 26px;border-bottom:1px solid var(--regla)}
+.marca{display:flex;gap:15px;align-items:center;text-decoration:none}
+.logo{width:52px;height:52px;flex:none}
+.logo .techo,.logo .latido{fill:none;stroke:var(--verde);stroke-linecap:round;stroke-linejoin:round}
+.logo .techo{stroke-width:8.5}.logo .latido{stroke-width:7}
+.logo .muro,.logo .hoja{fill:none;stroke:var(--hondo);stroke-linecap:round;stroke-linejoin:round}
+.logo .muro{stroke-width:7}.logo .hoja{stroke-width:5}
+.nombre{font-family:"Fraunces",Georgia,serif;font-size:32px;font-weight:700;letter-spacing:-.022em}
+.nombre em{font-style:normal;color:var(--hondo)}
+.sub{font-size:14px;color:var(--suave);font-style:italic;margin-top:2px}
+h1{font-size:clamp(28px,6vw,42px);font-weight:600;letter-spacing:-.022em;margin:48px 0 14px}
+.intro{color:var(--suave);font-size:18.5px;max-width:58ch;margin:0 0 40px}
+ul{list-style:none;margin:0;padding:0}
+li{padding:24px 0;border-top:1px solid var(--regla)}
+.num{font-size:14px;font-style:italic;color:var(--hondo);margin-bottom:7px}
+li h2{font-size:22px;font-weight:600;letter-spacing:-.015em;margin-bottom:9px}
+li h2 a{text-decoration:none}
+li h2 a:hover{color:var(--hondo)}
+li p{margin:0;color:var(--suave);font-size:16.5px}
+footer{margin-top:56px;padding:26px 0 44px;border-top:1px solid var(--regla);
+  font-size:15px;color:var(--suave);display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+footer a{color:var(--hondo)}
+</style>
+</head>
+<body>
+<header>
+  <div class="env">
+    <a class="marca" href="/">
+      <svg class="logo" viewBox="1 7 98 88" aria-hidden="true">
+        <path class="techo" d="M11 48 L46.5 15 Q50 12 53.5 15 L89 48"/>
+        <path class="muro" d="M22 52 L22 79"/>
+        <path class="muro" d="M78 52 L78 79"/>
+        <path class="hoja" d="M33 76 C29 62 36 51 51 49 C51 63 45 74 33 76 Z"/>
+        <path class="hoja" d="M36 72 L47 57"/>
+        <path class="latido" d="M5 79 H51 L55 79 L59 69 L64 89 L69 73 L72 79 H95"/>
+      </svg>
+      <span>
+        <span class="nombre">Tv<em>Bioética</em></span>
+        <span class="sub">Tertulia Virtual de Bioética</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main class="env">
+  <h1>Archivo de ediciones</h1>
+  <p class="intro">Cada edición conserva su enlace permanente. Las noticias envejecen; las preguntas que abren, no siempre.</p>
+
+  <ul>
+    <li>
+      <p class="num">Edición 1 · 13 de septiembre de 2026</p>
+      <h2><a href="/ediciones/2026-09-13-edicion-01.html">Los que construyen la IA piden que alguien los frene. Nadie ha dicho quién</a></h2>
+      <p>Con el desfinanciamiento global de la salud, la edición de base en embriones humanos y los debates de final de vida en Ecuador, Argentina y México.</p>
+    </li>
+  </ul>
+</main>
+
+<footer class="env">
+  <span>Volver a la <a href="/">edición actual</a></span>
+  <span><a href="https://x.com/TVbioetica">X</a> · <a href="https://instagram.com/TVbioetica">Instagram</a> · @TVbioetica</span>
+</footer>
+</body>
+</html>
