@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1000" height="1000" role="img" aria-label="TvBioética">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 48 L46.5 15 Q50 12 53.5 15 L89 48" stroke="#10AF58" stroke-width="8.5"/>
+    <path d="M22 52 L22 79" stroke="#08633A" stroke-width="7"/>
+    <path d="M78 52 L78 79" stroke="#08633A" stroke-width="7"/>
+    <path d="M33 76 C29 62 36 51 51 49 C51 63 45 74 33 76 Z" stroke="#08633A" stroke-width="5"/>
+    <path d="M36 72 L47 57" stroke="#08633A" stroke-width="5"/>
+    <path d="M5 79 H51 L55 79 L59 69 L64 89 L69 73 L72 79 H95" stroke="#10AF58" stroke-width="7"/>
+  </g>
+</svg>
