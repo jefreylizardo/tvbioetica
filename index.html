@@ -3,94 +3,827 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Archivo · Tertulia Virtual de Bioética</title>
-<meta name="description" content="Todas las ediciones publicadas de TvBioética, el periódico semanal de bioética, equidad y dignidad.">
+<title>Tertulia Virtual de Bioética — Edición semanal</title>
+<meta name="description" content="Periódico semanal de bioética, ética en salud, equidad, derechos humanos y ética de la inteligencia artificial. Publicación dominical.">
+<link rel="canonical" href="https://tvbioetica.com/">
+<meta property="og:title" content="Tertulia Virtual de Bioética">
+<meta property="og:description" content="La conversación semanal sobre bioética, dignidad, equidad y tecnología.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tvbioetica.com/">
+<meta property="og:image" content="https://tvbioetica.com/og.png">
+<meta property="og:locale" content="es_DO">
+<meta property="og:site_name" content="TvBioética">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TVbioetica">
+<meta name="twitter:image" content="https://tvbioetica.com/og.png">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-512.png" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <meta name="theme-color" content="#10AF58">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
 <!--
-  ARCHIVO — al publicar una edición nueva, añada un <li> al inicio de la lista.
-  Copie el bloque de la edición anterior y cambie número, fecha, enlace y titular.
+═══════════════════════════════════════════════════════════════════════
+  CÓMO ACTUALIZAR ESTE PERIÓDICO CADA DOMINGO
+  ─────────────────────────────────────────────────────────────────────
+  Todo el contenido vive en el objeto EDICION, más abajo (busque
+  "const EDICION"). No hay que tocar el diseño ni el código: basta con
+  reemplazar ese objeto por el de la semana nueva y guardar el archivo.
+  La guía completa está en GUIA-ACTUALIZACION.md.
+═══════════════════════════════════════════════════════════════════════
 -->
 
 <style>
-:root{--papel:#F4F6F2;--tinta:#0E2019;--suave:#4A5B52;--verde:#10AF58;--hondo:#08633A;--regla:#D2DACE}
-@media (prefers-color-scheme:dark){
-  :root{--papel:#0C1512;--tinta:#E8EFE8;--suave:#9AAEA2;--verde:#2BD177;--hondo:#7BE0AC;--regla:#25362D}
-  .logo .muro,.logo .hoja{stroke:#7BE0AC}
+:root{
+  --papel:#F4F6F2;
+  --papel-alt:#EAEEE7;
+  --tinta:#0E2019;
+  --tinta-suave:#4A5B52;
+  --verde:#10AF58;
+  --verde-hondo:#08633A;
+  --ciruela:#7B3B5D;
+  --regla:#D2DACE;
+  --realce:#FFFFFF;
+  --sombra:rgba(14,32,25,.07);
+  --max:1180px;
+}
+[data-tema="noche"]{
+  --papel:#0C1512;
+  --papel-alt:#12201A;
+  --tinta:#E8EFE8;
+  --tinta-suave:#9AAEA2;
+  --verde:#2BD177;
+  --verde-hondo:#7BE0AC;
+  --ciruela:#D99BC0;
+  --regla:#25362D;
+  --realce:#14231C;
+  --sombra:rgba(0,0,0,.4);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--papel);color:var(--tinta);
-  font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.68}
-h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 0,"WONK" 1;
-  line-height:1.1;margin:0}
-.env{max-width:760px;margin:0 auto;padding:0 22px}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--papel);color:var(--tinta);
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-weight:400;font-size:18px;line-height:1.68;
+  font-variant-numeric:oldstyle-num;
+}
+h1,h2,h3,h4,.display{font-family:"Fraunces","Fraunces Fallback",Georgia,serif;font-variation-settings:"SOFT" 0,"WONK" 1;line-height:1.08;margin:0}
 a{color:inherit}
-:focus-visible{outline:2.5px solid var(--verde);outline-offset:3px}
-header{padding:34px 0 26px;border-bottom:1px solid var(--regla)}
-.marca{display:flex;gap:15px;align-items:center;text-decoration:none}
-.logo{width:52px;height:52px;flex:none}
-.logo .techo,.logo .latido{fill:none;stroke:var(--verde);stroke-linecap:round;stroke-linejoin:round}
-.logo .techo{stroke-width:8.5}.logo .latido{stroke-width:7}
-.logo .muro,.logo .hoja{fill:none;stroke:var(--hondo);stroke-linecap:round;stroke-linejoin:round}
-.logo .muro{stroke-width:7}.logo .hoja{stroke-width:5}
-.nombre{font-family:"Fraunces",Georgia,serif;font-size:32px;font-weight:700;letter-spacing:-.022em}
-.nombre em{font-style:normal;color:var(--hondo)}
-.sub{font-size:14px;color:var(--suave);font-style:italic;margin-top:2px}
-h1{font-size:clamp(28px,6vw,42px);font-weight:600;letter-spacing:-.022em;margin:48px 0 14px}
-.intro{color:var(--suave);font-size:18.5px;max-width:58ch;margin:0 0 40px}
-ul{list-style:none;margin:0;padding:0}
-li{padding:24px 0;border-top:1px solid var(--regla)}
-.num{font-size:14px;font-style:italic;color:var(--hondo);margin-bottom:7px}
-li h2{font-size:22px;font-weight:600;letter-spacing:-.015em;margin-bottom:9px}
-li h2 a{text-decoration:none}
-li h2 a:hover{color:var(--hondo)}
-li p{margin:0;color:var(--suave);font-size:16.5px}
-footer{margin-top:56px;padding:26px 0 44px;border-top:1px solid var(--regla);
-  font-size:15px;color:var(--suave);display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
-footer a{color:var(--hondo)}
+img,svg{max-width:100%}
+.env{max-width:var(--max);margin:0 auto;padding:0 22px}
+:focus-visible{outline:2.5px solid var(--verde);outline-offset:3px;border-radius:2px}
+
+/* ── Cabecera ─────────────────────────────────────────── */
+.cinta{background:var(--tinta);color:var(--papel);font-size:13.5px;letter-spacing:.01em}
+[data-tema="noche"] .cinta{background:#08110D}
+.cinta .env{display:flex;gap:14px;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.cinta a{text-decoration:none;opacity:.85}
+.cinta a:hover{opacity:1;text-decoration:underline}
+.cinta-soc{display:flex;gap:16px;align-items:center}
+
+.masthead{padding:30px 0 16px;border-bottom:1px solid var(--regla)}
+.masthead .env{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.marca{display:flex;gap:16px;align-items:center;flex:1 1 320px;text-decoration:none}
+.logo{width:62px;height:62px;flex:none;--logo-oscuro:var(--verde-hondo)}
+.logo .techo{fill:none;stroke:var(--verde);stroke-width:8.5;stroke-linecap:round;stroke-linejoin:round}
+.logo .muro{fill:none;stroke:var(--logo-oscuro);stroke-width:7;stroke-linecap:round}
+.logo .latido{fill:none;stroke:var(--verde);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.logo .hoja{fill:none;stroke:var(--logo-oscuro);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+footer .logo{--logo-oscuro:#BFE0CC}
+.nombre{font-size:clamp(30px,6.4vw,46px);font-weight:700;letter-spacing:-.022em}
+.nombre em{font-style:normal;color:var(--verde-hondo)}
+.subnombre{font-size:14.5px;color:var(--tinta-suave);font-style:italic;margin-top:3px;letter-spacing:.02em}
+.datos-ed{text-align:right;font-size:14px;color:var(--tinta-suave);line-height:1.5;flex:0 1 auto}
+.datos-ed b{display:block;color:var(--tinta);font-weight:600;font-size:15px}
+.btn-tema{background:none;border:1px solid var(--regla);color:var(--tinta-suave);border-radius:999px;
+  padding:6px 13px;font-family:inherit;font-size:13.5px;cursor:pointer;margin-top:8px}
+.btn-tema:hover{border-color:var(--verde);color:var(--verde-hondo)}
+
+/* ── Navegación por secciones ─────────────────────────── */
+.filtros{border-bottom:1px solid var(--regla);position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(8px)}
+.filtros .env{display:flex;gap:7px;overflow-x:auto;padding-top:9px;padding-bottom:9px;scrollbar-width:thin}
+.chip{flex:none;background:none;border:1px solid var(--regla);border-radius:999px;padding:5px 14px;
+  font-family:inherit;font-size:14.5px;color:var(--tinta-suave);cursor:pointer;white-space:nowrap}
+.chip:hover{color:var(--tinta);border-color:var(--tinta-suave)}
+.chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+
+/* ── La pregunta (hero) ───────────────────────────────── */
+.pregunta{padding:62px 0 54px;position:relative;overflow:hidden}
+.arco-fondo{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:min(760px,112%);
+  height:520px;opacity:.085;pointer-events:none}
+.arco-fondo path{fill:none;stroke:var(--verde-hondo);stroke-width:2.5}
+.pregunta .env{position:relative;max-width:900px;text-align:center}
+.rotulo-pregunta{font-style:italic;font-size:16px;color:var(--tinta-suave);margin-bottom:22px}
+.pregunta h1{font-size:clamp(30px,5.6vw,60px);font-weight:400;letter-spacing:-.02em;
+  font-variation-settings:"SOFT" 20,"WONK" 1}
+.pregunta .bajada{margin:26px auto 0;max-width:62ch;font-size:19px;color:var(--tinta-suave)}
+.firma-preg{margin-top:26px;font-size:14px;font-style:italic;color:var(--tinta-suave)}
+@media (prefers-reduced-motion:no-preference){
+  .pregunta h1,.pregunta .bajada,.rotulo-pregunta{animation:sube .9s cubic-bezier(.2,.7,.2,1) both}
+  .pregunta h1{animation-delay:.08s}.pregunta .bajada{animation-delay:.2s}
+  @keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+
+/* ── Marcador de sección con arco ─────────────────────── */
+.marcador{display:flex;align-items:center;gap:12px;margin:0 0 22px;padding-top:6px;
+  border-top:2px solid var(--tinta)}
+.marcador svg{width:19px;height:19px;flex:none;margin-top:10px}
+.marcador svg path{fill:none;stroke:var(--verde);stroke-width:9;stroke-linecap:round}
+.marcador h2{font-size:21px;font-weight:600;letter-spacing:-.012em;margin-top:6px}
+.marcador .cuenta{margin-left:auto;margin-top:8px;font-size:13.5px;color:var(--tinta-suave);font-style:italic}
+
+/* ── Lo esencial ──────────────────────────────────────── */
+.esencial{padding:8px 0 50px}
+.esencial ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;
+  grid-template-columns:repeat(auto-fit,minmax(238px,1fr));background:var(--regla);border:1px solid var(--regla)}
+.esencial li{background:var(--papel);padding:20px 20px 22px}
+.esencial b{display:block;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:17px;
+  line-height:1.22;margin-bottom:8px}
+.esencial p{margin:0;font-size:15.5px;color:var(--tinta-suave);line-height:1.55}
+
+/* ── Portada ──────────────────────────────────────────── */
+.portada{padding:0 0 56px}
+.portada-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:46px}
+@media (max-width:860px){.portada-grid{grid-template-columns:1fr;gap:36px}}
+.etiqueta{display:inline-block;font-size:13.5px;font-style:italic;color:var(--verde-hondo);
+  border-bottom:1.5px solid var(--verde);padding-bottom:2px;margin-bottom:14px;text-decoration:none}
+.portada h2{font-size:clamp(28px,4.4vw,44px);font-weight:600;letter-spacing:-.022em;margin-bottom:16px}
+.portada .sumario{font-size:20px;color:var(--tinta-suave);margin:0 0 24px;max-width:44ch}
+.cuerpo p{margin:0 0 17px;max-width:68ch}
+.cuerpo p:last-child{margin-bottom:0}
+.cuerpo em{font-style:italic}
+.aparte{background:var(--realce);border-top:3px solid var(--verde);padding:24px 22px;align-self:start;
+  box-shadow:0 1px 0 var(--sombra)}
+.aparte h3{font-size:18px;font-weight:600;margin-bottom:12px;letter-spacing:-.01em}
+.aparte ul{margin:0;padding-left:19px}
+.aparte li{margin-bottom:11px;font-size:16px;line-height:1.5}
+.aparte li:last-child{margin-bottom:0}
+
+/* ── Rejilla de notas ─────────────────────────────────── */
+.notas{padding:0 0 54px}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:0;
+  border-top:1px solid var(--regla)}
+.nota{padding:26px 26px 26px 0;border-bottom:1px solid var(--regla);border-right:1px solid var(--regla)}
+.nota:nth-child(3n){border-right:none;padding-right:0}
+@media (max-width:1000px){.nota,.nota:nth-child(3n){border-right:none;padding-right:0}}
+.nota[hidden]{display:none}
+@media (min-width:1001px){.nota{padding-left:26px}.nota:nth-child(3n+1){padding-left:0}}
+.nota .lugar{font-size:13.5px;color:var(--tinta-suave);font-style:italic;margin-bottom:9px}
+.nota h3{font-size:22px;font-weight:600;letter-spacing:-.015em;margin-bottom:10px}
+.nota .sum{margin:0 0 13px;font-size:16.5px;color:var(--tinta-suave);line-height:1.55}
+.nota .txt p{margin:0 0 13px;font-size:16.5px}
+.fuentes{margin-top:14px;font-size:14px;line-height:1.6;color:var(--tinta-suave)}
+.fuentes a{color:var(--verde-hondo);text-decoration:none;border-bottom:1px solid var(--regla)}
+.fuentes a:hover{border-bottom-color:var(--verde)}
+.vacio{padding:40px 0;color:var(--tinta-suave);font-style:italic}
+
+/* ── Contrapunto ──────────────────────────────────────── */
+.contrapunto{padding:12px 0 56px}
+.cp-intro{max-width:66ch;color:var(--tinta-suave);font-size:17.5px;margin:0 0 28px}
+.cp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--regla)}
+@media (max-width:800px){.cp-grid{grid-template-columns:1fr}}
+.cp-lado{padding:28px 26px}
+.cp-lado:first-child{border-right:1px solid var(--regla)}
+@media (max-width:800px){.cp-lado:first-child{border-right:none;border-bottom:1px solid var(--regla)}}
+.cp-lado h3{font-size:20px;font-weight:600;margin-bottom:14px;line-height:1.25}
+.cp-a h3{color:var(--verde-hondo)}
+.cp-b h3{color:var(--ciruela)}
+.cp-lado p{font-size:16.5px;margin:0 0 13px}
+.cp-cierre{margin:24px 0 0;font-style:italic;color:var(--tinta-suave);max-width:66ch}
+
+/* ── Ensayo ───────────────────────────────────────────── */
+.ensayo{background:var(--papel-alt);padding:58px 0;margin-bottom:56px}
+.ensayo .env{max-width:760px}
+.ensayo .rot{font-style:italic;color:var(--tinta-suave);font-size:15.5px;margin-bottom:16px}
+.ensayo h2{font-size:clamp(28px,4.6vw,42px);font-weight:600;letter-spacing:-.022em;margin-bottom:18px}
+.ensayo .bajada{font-size:19.5px;color:var(--tinta-suave);margin:0 0 30px}
+.ensayo .cuerpo p{font-size:18.5px;line-height:1.72}
+.ensayo .cuerpo p:first-child::first-letter{
+  font-family:"Fraunces",Georgia,serif;font-size:3.5em;line-height:.82;float:left;
+  padding:6px 10px 0 0;color:var(--verde-hondo);font-weight:600}
+.ensayo .firma{margin-top:26px;padding-top:16px;border-top:1px solid var(--regla);
+  font-size:15px;font-style:italic;color:var(--tinta-suave)}
+
+/* ── Concepto + radar + lecturas ──────────────────────── */
+.cierre-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;padding-bottom:58px}
+@media (max-width:860px){.cierre-grid{grid-template-columns:1fr;gap:42px}}
+.concepto{background:var(--realce);border-left:4px solid var(--ciruela);padding:26px 24px;margin-bottom:40px}
+.concepto .rot{font-size:14px;font-style:italic;color:var(--tinta-suave);margin-bottom:8px}
+.concepto h3{font-size:25px;font-weight:600;margin-bottom:12px;letter-spacing:-.015em}
+.concepto p{margin:0 0 12px;font-size:16.5px}
+.concepto p:last-child{margin-bottom:0;color:var(--tinta-suave)}
+.radar{list-style:none;margin:0;padding:0}
+.radar li{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--regla)}
+.radar li:first-child{border-top:1px solid var(--regla)}
+.radar .cuando{font-size:14.5px;color:var(--verde-hondo);font-style:italic;line-height:1.4;padding-top:2px}
+.radar b{font-weight:600;font-family:"Fraunces",Georgia,serif;font-size:17px;display:block;margin-bottom:4px;line-height:1.25}
+.radar span{font-size:15.5px;color:var(--tinta-suave);line-height:1.5}
+.lecturas{list-style:none;margin:0;padding:0}
+.lecturas li{padding:15px 0;border-bottom:1px solid var(--regla)}
+.lecturas li:first-child{border-top:1px solid var(--regla)}
+.lecturas a{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:17.5px;text-decoration:none;
+  line-height:1.25;display:block;margin-bottom:5px}
+.lecturas a:hover{color:var(--verde-hondo)}
+.lecturas .meta{font-size:14.5px;color:var(--tinta-suave);font-style:italic}
+.lecturas .nota-l{font-size:15.5px;color:var(--tinta-suave);margin-top:6px;line-height:1.5}
+
+/* ── Pie ──────────────────────────────────────────────── */
+footer{background:var(--tinta);color:var(--papel);padding:52px 0 40px}
+[data-tema="noche"] footer{background:#08110D}
+.pie-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:38px}
+@media (max-width:760px){.pie-grid{grid-template-columns:1fr;gap:30px}}
+footer h4{font-size:16px;font-weight:600;margin-bottom:12px}
+footer p,footer li{font-size:15.5px;line-height:1.6;opacity:.78}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer a:hover{border-bottom-color:var(--verde)}
+.pie-logo{display:flex;gap:13px;align-items:center;margin-bottom:16px}
+.pie-logo .logo{width:42px;height:42px}
+.pie-logo .nombre{font-size:24px;color:var(--papel)}
+.pie-logo .nombre em{color:var(--verde)}
+.colofon{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);
+  font-size:14px;opacity:.6;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+@media print{
+  .filtros,.btn-tema,.cinta,.arco-fondo{display:none}
+  body{background:#fff;font-size:11pt}
+  .nota[hidden]{display:block}
+}
 </style>
 </head>
 <body>
-<header>
+
+<div class="cinta">
   <div class="env">
-    <a class="marca" href="/">
-      <svg class="logo" viewBox="1 7 98 88" aria-hidden="true">
+    <span id="cinta-fecha"></span>
+    <span class="cinta-soc">
+      <a href="https://x.com/TVbioetica" target="_blank" rel="noopener">X · @TVbioetica</a>
+      <a href="https://instagram.com/TVbioetica" target="_blank" rel="noopener">Instagram · @TVbioetica</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="env">
+    <a class="marca" href="#">
+      <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
         <path class="techo" d="M11 48 L46.5 15 Q50 12 53.5 15 L89 48"/>
         <path class="muro" d="M22 52 L22 79"/>
         <path class="muro" d="M78 52 L78 79"/>
-        <path class="hoja" d="M33 76 C29 62 36 51 51 49 C51 63 45 74 33 76 Z"/>
-        <path class="hoja" d="M36 72 L47 57"/>
+        <g class="hoja">
+          <path d="M33 76 C29 62 36 51 51 49 C51 63 45 74 33 76 Z"/>
+          <path d="M36 72 L47 57"/>
+        </g>
         <path class="latido" d="M5 79 H51 L55 79 L59 69 L64 89 L69 73 L72 79 H95"/>
       </svg>
       <span>
-        <span class="nombre">Tv<em>Bioética</em></span>
-        <span class="sub">Tertulia Virtual de Bioética</span>
+        <span class="nombre display">Tv<em>Bioética</em></span>
+        <span class="subnombre">Tertulia Virtual de Bioética · edición semanal</span>
       </span>
     </a>
+    <div class="datos-ed">
+      <b id="ed-num"></b>
+      <span id="ed-fecha"></span><br>
+      <span id="ed-prox"></span>
+      <br><button class="btn-tema" id="btn-tema" type="button">Modo noche</button>
+    </div>
   </div>
 </header>
 
-<main class="env">
-  <h1>Archivo de ediciones</h1>
-  <p class="intro">Cada edición conserva su enlace permanente. Las noticias envejecen; las preguntas que abren, no siempre.</p>
+<nav class="filtros" aria-label="Secciones">
+  <div class="env" id="chips"></div>
+</nav>
 
-  <ul>
-    <li>
-      <p class="num">Edición 1 · 13 de septiembre de 2026</p>
-      <h2><a href="/ediciones/2026-09-13-edicion-01.html">Los que construyen la IA piden que alguien los frene. Nadie ha dicho quién</a></h2>
-      <p>Con el desfinanciamiento global de la salud, la edición de base en embriones humanos y los debates de final de vida en Ecuador, Argentina y México.</p>
-    </li>
-  </ul>
+<main>
+  <section class="pregunta">
+    <svg class="arco-fondo" viewBox="0 0 400 300" aria-hidden="true">
+      <path d="M20 300 L20 120 Q20 106 30 97 L190 -10 Q200 -17 210 -10 L370 97 Q380 106 380 120 L380 300"/>
+      <path d="M60 300 L60 140 Q60 128 69 120 L193 36 Q200 31 207 36 L331 120 Q340 128 340 140 L340 300"/>
+      <path d="M100 300 L100 160 Q100 150 108 143 L196 82 Q200 79 204 82 L292 143 Q300 150 300 160 L300 300"/>
+    </svg>
+    <div class="env">
+      <p class="rotulo-pregunta">La pregunta de la semana</p>
+      <h1 id="pregunta-txt"></h1>
+      <p class="bajada" id="pregunta-baj"></p>
+      <p class="firma-preg" id="pregunta-firma"></p>
+    </div>
+  </section>
+
+  <section class="esencial">
+    <div class="env">
+      <div class="marcador">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+        <h2>Lo esencial de la semana</h2>
+      </div>
+      <ol id="esencial-lista"></ol>
+    </div>
+  </section>
+
+  <section class="portada">
+    <div class="env">
+      <div class="marcador">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+        <h2>Apertura</h2>
+      </div>
+      <div class="portada-grid">
+        <article>
+          <span class="etiqueta" id="portada-etq"></span>
+          <h2 id="portada-tit"></h2>
+          <p class="sumario" id="portada-sum"></p>
+          <div class="cuerpo" id="portada-cuerpo"></div>
+          <p class="fuentes" id="portada-fuentes"></p>
+        </article>
+        <aside class="aparte">
+          <h3 id="aparte-tit"></h3>
+          <ul id="aparte-lista"></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="notas">
+    <div class="env">
+      <div class="marcador">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+        <h2>La semana, sección por sección</h2>
+        <span class="cuenta" id="cuenta-notas"></span>
+      </div>
+      <div class="rejilla" id="rejilla"></div>
+      <p class="vacio" id="sin-notas" hidden>No hay notas de esa sección en esta edición.</p>
+    </div>
+  </section>
+
+  <section class="contrapunto">
+    <div class="env">
+      <div class="marcador">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+        <h2 id="cp-tema"></h2>
+      </div>
+      <p class="cp-intro" id="cp-intro"></p>
+      <div class="cp-grid">
+        <div class="cp-lado cp-a"><h3 id="cp-a-tit"></h3><div id="cp-a-cuerpo"></div></div>
+        <div class="cp-lado cp-b"><h3 id="cp-b-tit"></h3><div id="cp-b-cuerpo"></div></div>
+      </div>
+      <p class="cp-cierre" id="cp-cierre"></p>
+    </div>
+  </section>
+
+  <section class="ensayo">
+    <div class="env">
+      <p class="rot">Artículo de reflexión</p>
+      <h2 id="ens-tit"></h2>
+      <p class="bajada" id="ens-baj"></p>
+      <div class="cuerpo" id="ens-cuerpo"></div>
+      <p class="firma" id="ens-firma"></p>
+    </div>
+  </section>
+
+  <div class="env">
+    <div class="cierre-grid">
+      <div>
+        <div class="concepto">
+          <p class="rot">Concepto de la semana</p>
+          <h3 id="con-term"></h3>
+          <p id="con-def"></p>
+          <p id="con-por"></p>
+        </div>
+        <div class="marcador">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+          <h2>En el radar</h2>
+        </div>
+        <ul class="radar" id="radar"></ul>
+      </div>
+      <div>
+        <div class="marcador">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M12 92 L12 46 Q12 42 15 39 L46 12 Q50 9 54 12 L85 39 Q88 42 88 46 L88 64"/></svg>
+          <h2>Para leer con calma</h2>
+        </div>
+        <ul class="lecturas" id="lecturas"></ul>
+      </div>
+    </div>
+  </div>
 </main>
 
-<footer class="env">
-  <span>Volver a la <a href="/">edición actual</a></span>
-  <span><a href="https://x.com/TVbioetica">X</a> · <a href="https://instagram.com/TVbioetica">Instagram</a> · @TVbioetica</span>
+<footer>
+  <div class="env">
+    <div class="pie-grid">
+      <div>
+        <div class="pie-logo">
+          <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+            <path class="techo" d="M11 48 L46.5 15 Q50 12 53.5 15 L89 48"/>
+            <path class="muro" d="M22 52 L22 79"/>
+            <path class="muro" d="M78 52 L78 79"/>
+            <g class="hoja">
+              <path d="M33 76 C29 62 36 51 51 49 C51 63 45 74 33 76 Z"/>
+              <path d="M36 72 L47 57"/>
+            </g>
+            <path class="latido" d="M5 79 H51 L55 79 L59 69 L64 89 L69 73 L72 79 H95"/>
+          </svg>
+          <span class="nombre display">Tv<em>Bioética</em></span>
+        </div>
+        <p>Una casa abierta para conversar sobre la vida, la salud y la dignidad. Dirigida a profesionales de la salud, tomadores de decisiones, académicos, filósofos, economistas y a quien quiera pensar en voz alta.</p>
+      </div>
+      <div>
+        <h4>La conversación sigue</h4>
+        <ul>
+          <li><a href="https://x.com/TVbioetica" target="_blank" rel="noopener">X · @TVbioetica</a></li>
+          <li><a href="https://instagram.com/TVbioetica" target="_blank" rel="noopener">Instagram · @TVbioetica</a></li>
+          <li id="pie-correo"></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cómo trabajamos</h4>
+        <ul>
+          <li>Cierre de edición: domingo por la noche.</li>
+          <li>Cada nota enlaza su fuente primaria. Cuando un hecho está en disputa, lo decimos.</li>
+          <li>Las opiniones firmadas no comprometen a las instituciones de sus autores.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="colofon">
+      <span id="colofon-ed"></span>
+      <span>Tertulia Virtual de Bioética · TvBioética</span>
+    </div>
+  </div>
 </footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   EDICIÓN DE LA SEMANA
+   Para publicar una edición nueva: reemplace este objeto completo.
+   Nada más en el archivo necesita cambiar.
+   ══════════════════════════════════════════════════════════════════ */
+const EDICION = {
+  numero: 2,
+  fecha: "Miércoles 23 de septiembre de 2026",
+  proxima: "Domingo 27 de septiembre de 2026",
+  correo: "tertulia@tvbioetica.org",
+
+  pregunta: "¿De qué sirve nombrar hoy los riesgos que amenazan a la humanidad, si quienes controlan el poder no tienen ningún interés en escucharlos?",
+  preguntaBajada: "António Guterres dedicó su último discurso ante la Asamblea General a nombrar con precisión cuatro pruebas del poder: la guerra, la desigualdad, el colapso climático y la inteligencia artificial. Una hora después, desde el mismo estrado, el jefe de Estado más poderoso del planeta ofreció la visión contraria. El diagnóstico está completo; lo que falta es la voluntad de quien podría actuar sobre él.",
+  preguntaFirma: "Abrimos la tertulia. Responda en X o Instagram: @TVbioetica",
+
+  esencial: [
+    { titulo: "Guterres se despidió con cuatro pruebas del poder",
+      texto: "Guerra y paz, riqueza y desigualdad, caos climático e inteligencia artificial. Pidió un marco multilateral de gestión de riesgos de la IA con supervisión independiente." },
+    { titulo: "Describió una transferencia de poder en tres direcciones",
+      texto: "Entre Estados, de los gobiernos hacia empresas privadas y particulares, y de los seres humanos hacia las máquinas. Las tres ocurren a la vez." },
+    { titulo: "Gates apuesta mil millones a que la IA no amplíe la brecha",
+      texto: "El décimo informe Goalkeepers, publicado el 15 de septiembre, sostiene que librada al mercado la IA llega primero a quienes menos la necesitan." },
+    { titulo: "La salud entra a la Asamblea por la puerta de las pandemias",
+      texto: "El 25 de septiembre se celebra la segunda reunión de alto nivel sobre prevención y respuesta ante pandemias, la primera desde 2023." }
+  ],
+
+  portada: {
+    seccion: "Gobernanza global",
+    titulo: "El poder cambió de manos; las instituciones que debían vigilarlo, no",
+    sumario: "En su último discurso ante la Asamblea General, el Secretario General describió con precisión inusual hacia dónde se está desplazando la capacidad de decidir sobre la vida de las personas. Y dejó constancia de que la institución que preside no puede detenerlo.",
+    cuerpo: [
+      "El martes 22 de septiembre, ante los representantes de 193 países reunidos en el 81.º período de sesiones, António Guterres abrió el debate general con el balance de una década. Enumeró guerras prolongadas con crueldad, población civil tomada como blanco, hambre utilizada como arma, trabajadores humanitarios asesinados y derecho internacional apartado. Describió divisiones geopolíticas más hondas, desigualdades acentuadas y confianza resquebrajada. Y señaló que la inteligencia artificial avanzó a una velocidad que sorprendió incluso a quienes la crearon.",
+      "Lo más útil del discurso, para quien trabaja en políticas públicas, no fue el diagnóstico sino su estructura. Guterres describió la redefinición del poder en tres movimientos simultáneos. Primero, entre Estados, con nuevos polos de influencia económica, política y tecnológica. Segundo, una transferencia extraordinaria desde los gobiernos hacia un puñado de empresas privadas y particulares, cuya influencia alcanza ya la política, la economía, los flujos de información, el desarrollo tecnológico y el espacio cívico del que dependen las sociedades. Tercero, de los seres humanos hacia las máquinas: agentes de inteligencia artificial que se tornan incontrolables y armas autónomas letales que dejaron de ser ciencia ficción.",
+      "Sobre esa base planteó cuatro pruebas del poder que definirán el futuro: el poder sobre la guerra y la paz, el que concentra la riqueza e impulsa la desigualdad, el que alimenta el caos climático, y el que desata la inteligencia artificial. Frente a la fractura del mundo en bloques rivales propuso lo que llamó multipolaridad interconectada, «un mundo construido sobre la interdependencia» sostenido por una red densa de conexiones dentro de un marco común de derecho internacional. Reiteró su reclamo de reformar el Consejo de Seguridad y calificó de «injusto e indefendible» que África siga sin asientos permanentes.",
+      "En materia de inteligencia artificial fue concreto. Recordó que en 2017 la tecnología pasaba casi desapercibida y reconoció su potencial para hacer avanzar la medicina y acelerar los descubrimientos científicos. Pidió a los países que lideran la revolución tecnológica compartir información sobre riesgos emergentes para la seguridad, cooperar en las pruebas y la evaluación, y trabajar hacia salvaguardas comunes. Y reclamó un marco multilateral de gestión de riesgos respaldado por supervisión creíble e independiente. La formulación central fue esta: «el peligro no es la tecnología, sino la tecnología sin rendición de cuentas». Añadió que los propios desarrolladores de estos sistemas están dando la voz de alarma.",
+      "Esa última frase merece atención de los lectores de esta tertulia, porque cierra el círculo abierto hace diez días. En nuestra edición anterior la portada fue el ensayo del director ejecutivo de Anthropic pidiendo ralentizar el desarrollo de la IA y las renuncias de tres investigadores de seguridad. Lo que entonces era una señal desde dentro de la industria es ahora, once días después, el argumento del funcionario internacional de mayor rango del planeta. La alarma ya no proviene solo del gremio. Pero llega acompañada de su propio límite.",
+      "El límite es de mandato. El segundo período de Guterres termina el 31 de diciembre y la carrera por sucederlo transcurre a puerta cerrada, sin candidato claro. Un llamado a construir instituciones de supervisión, formulado por quien está a semanas de dejar el cargo, tiene el valor de un diagnóstico y no el de un compromiso. Una hora después de su intervención, el presidente de Estados Unidos ofreció desde el mismo estrado una visión abiertamente distinta del poder, reprochó a la organización lo que describió como la imposición de una agenda ideológica y criticó a órganos como la Corte Penal Internacional. El contraste entre ambas intervenciones, ocurrido en la misma mañana y en la misma sala, ilustra mejor que cualquier análisis por qué el marco multilateral que Guterres reclama no existe todavía.",
+      "Para quien dirige un sistema de salud, la segunda transferencia de poder es la que ya lo toca. Las herramientas que diagnostican, priorizan, autorizan y niegan dentro de nuestros servicios las construyen actores privados sobre los que ninguna autoridad sanitaria ejerce supervisión efectiva. No hace falta esperar a las armas autónomas para encontrar el problema: está en el contrato de la próxima licitación.",
+      "Nota de transparencia: esta edición se prepara con asistencia de un sistema de inteligencia artificial. Mientras la gobernanza de la IA siga siendo la portada, seguiremos declarándolo. Las fuentes están enlazadas para que el lector contraste por su cuenta."
+    ],
+    fuentes: [
+      { nombre: "Discurso íntegro, Naciones Unidas (PDF)", url: "https://gadebate.un.org/sites/default/files/gastatements/81/unsg_es.pdf" },
+      { nombre: "Noticias ONU", url: "https://news.un.org/es/story/2026/09/1541943" },
+      { nombre: "Vanguardia", url: "https://vanguardia.com.mx/noticias/en-su-ultimo-discurso-en-la-onu-guterres-resalta-cuatro-desafios-para-el-futuro-la-guerra-la-desigualdad-la-crisis-climatica-y-la-ia-HC23657891" },
+      { nombre: "AP", url: "https://losangelespress.org/la-red-en-lucha/2026/sep/23/guterres-llama-a-la-cooperacion-global-en-su-ultimo-discurso-ante-onu-16293.html" },
+      { nombre: "Reuters", url: "https://es-us.noticias.yahoo.com/guterres-pide-regular-ia-finalizar-142424522.html" },
+      { nombre: "BioBioChile", url: "https://www.biobiochile.cl/noticias/internacional/mundo/2026/09/22/en-vivo-antonio-guterres-pronuncia-su-ultimo-discurso-como-secretario-general-de-las-naciones-unidas.shtml" }
+    ]
+  },
+
+  aparte: {
+    titulo: "Tres preguntas para quien compra inteligencia artificial con fondos públicos",
+    puntos: [
+      "¿Puede auditar el sistema, o solo sus resultados? Si el contrato no le da acceso a la lógica de decisión, su institución responde por decisiones que no puede explicar a quien las sufre.",
+      "¿Quién asume el riesgo del error? En la mayoría de los contratos de software el proveedor limita su responsabilidad al monto pagado. El daño clínico no tiene ese techo.",
+      "¿Qué pasa si el proveedor se va? Una herramienta que reorganiza el flujo de trabajo crea dependencia. Convendría saber, antes de firmar, cuánto costaría salir."
+    ]
+  },
+
+  articulos: [
+    {
+      seccion: "Equidad y determinantes sociales",
+      lugar: "Seattle · 15 de septiembre de 2026",
+      titulo: "Goalkeepers 2026: mil millones de dólares contra la hipótesis de que la IA amplíe la brecha",
+      sumario: "El décimo informe anual de la Fundación Gates se titula «Hacer que esto importe: IA, equidad y la decisión que no podemos posponer», y viene acompañado de un compromiso de gasto a dos años.",
+      texto: [
+        "El informe parte de una constatación incómoda para la filantropía sanitaria: las vacunas y medicamentos que salvan vidas llegan a las comunidades más pobres años después que a las más ricas, cuando llegan. La tesis es que la inteligencia artificial reproduce esa dinámica, pero mucho más rápido, porque librada al mercado las herramientas más capaces se construyen primero para quienes pueden pagarlas y no para quienes más las necesitan.",
+        "La fundación anunció el mismo día que destinará al menos mil millones de dólares en dos años a ampliar el acceso a la IA y a las soluciones que la incorporan. El informe rastrea dieciocho indicadores de los Objetivos de Desarrollo Sostenible e incluye ensayos de trabajadores de primera línea, entre ellos una oficial clínica de Penda Health, en Nairobi, y una docente que describe el uso de una herramienta de aprendizaje guiado.",
+        "El argumento operativo es el que interesa a los ministerios: priorizar conjuntos de datos en lenguas locales, infraestructura pública digital, formación tanto de usuarios como de quienes adaptan las herramientas, marcos regulatorios que protejan la privacidad y permitan que el personal de primera línea pruebe y adapte, y medir el éxito por los resultados en las poblaciones más remotas y no por métricas comerciales. La ventana que el informe identifica para influir en todo esto es de doce a dieciocho meses."
+      ],
+      fuentes: [
+        { nombre: "Informe Goalkeepers 2026", url: "https://goalkeepers.gatesfoundation.org/report/2026-report/" },
+        { nombre: "Fundación Gates, comunicado", url: "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai" }
+      ]
+    },
+    {
+      seccion: "Gobernanza global",
+      lugar: "Nueva York · semana del 19 al 28 de septiembre",
+      titulo: "La salud llega a la Asamblea por la puerta de las pandemias y sale por la de la cobertura universal",
+      sumario: "El 25 de septiembre se celebra la segunda reunión de alto nivel sobre prevención, preparación y respuesta ante pandemias. La cobertura universal se prepara para 2027.",
+      texto: [
+        "La reunión del 25 permite a los gobiernos revisar lo hecho desde la primera, en 2023, período en el que se adoptó el Acuerdo sobre Pandemias de la OMS, se reforzaron los Reglamentos Sanitarios Internacionales y se estableció el Fondo Pandémico. El lema del período de sesiones, restaurar la confianza y gestionar la transformación, admite lectura literal: la agenda llega en un momento de emergencias sanitarias acumuladas, presión económica y descenso de la asistencia al desarrollo.",
+        "El 23 se reúne por séptima vez el grupo ministerial de amigos de la cobertura universal de salud, que abre informalmente la preparación de la reunión de alto nivel de 2027. El 21 se celebró el quinto encuentro multiactor sobre enfermedades no transmisibles y salud mental. La OMS declaró como prioridades para la semana el financiamiento sostenible de la salud, el clima, la innovación digital y la inteligencia artificial, y el fortalecimiento de sistemas anclados en atención primaria.",
+        "Conviene leer este calendario junto con la portada. La reunión sobre pandemias examina un sistema de gobernanza que existe, con tratado, reglamento y fondo. La gobernanza de la IA en salud, que la OMS también puso entre sus prioridades, no tiene ninguna de las tres cosas."
+      ],
+      fuentes: [
+        { nombre: "OMS en la Asamblea General 2026", url: "https://www.who.int/news-room/events/detail/2026/09/18/default-calendar/who-at-the-united-nations-general-assembly-2026" },
+        { nombre: "UHC2030", url: "https://www.uhc2030.org/news-and-events/events/event/2026-unga-high-level-week/" }
+      ]
+    },
+    {
+      seccion: "Ética de la gestión y el aseguramiento",
+      lugar: "Estados Unidos · desde el 1 de octubre",
+      titulo: "La mayor aseguradora estadounidense elimina el 30% de sus requisitos de autorización previa",
+      sumario: "UnitedHealthcare retira el requisito a cerca de 1.700 tratamientos. La medida reabre una pregunta que los sistemas de aseguramiento rara vez formulan en voz alta: para qué sirve realmente autorizar.",
+      texto: [
+        "La reducción entra en vigor el 1 de octubre y aplica a los planes comerciales, Medicare Advantage, comunitarios, de intercambio individual y Oxford. Alcanza especialidades como cardiología y pruebas genéticas y de laboratorio. La aseguradora informa que hoy solo el 2% de sus servicios médicos requiere autorización previa, que alrededor del 92% de las solicitudes se aprueba y que el promedio de respuesta es inferior a veinticuatro horas. Espera además que más del 70% del volumen pase a envío electrónico estandarizado antes de fin de año, y amplía a unos 1.500 hospitales rurales un programa que los exime de la mayoría de los requisitos.",
+        "Su director ejecutivo definió la autorización previa como una salvaguarda esencial que debería usarse solo cuando protege efectivamente al paciente. La formulación es correcta y, precisamente por eso, incómoda: si el 92% se aprueba, el instrumento está filtrando poco y costando mucho en tiempo clínico y administrativo. Si filtrara más, filtraría a alguien.",
+        "El contexto importa para no leer la medida como un gesto altruista. La autorización previa se convirtió en Estados Unidos en un asunto políticamente caliente, con reguladores proponiendo límites de tiempo de respuesta y el Congreso examinando la transparencia de las denegaciones en Medicare Advantage. Otras aseguradoras han anunciado reducciones equivalentes. Lo que está ocurriendo es una retirada ordenada de un instrumento que perdió legitimidad social antes de perder justificación técnica."
+      ],
+      fuentes: [
+        { nombre: "UnitedHealth Group", url: "https://www.unitedhealthgroup.com/newsroom/2026/2026-05-05-uhc-cuts-prior-authorization-requirements-by-30-percent.html" },
+        { nombre: "Healthcare Finance News", url: "https://www.healthcarefinancenews.com/news/unitedhealthcare-eliminates-30-prior-authorization-requirements" },
+        { nombre: "Aviso a prestadores", url: "https://www.uhcprovider.com/en/resource-library/news/2026/october-prior-auth-reductions.html" }
+      ]
+    },
+    {
+      seccion: "América Latina y el Caribe",
+      lugar: "Washington · 28 de septiembre al 2 de octubre",
+      titulo: "Los ministros de Salud de las Américas llegan con cuatro estrategias sobre la mesa",
+      sumario: "El 63.º Consejo Directivo de la OPS considerará políticas sobre emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad de los alimentos.",
+      texto: [
+        "Las autoridades sanitarias de la región se reúnen durante cinco días en la sede de la organización. La sesión inaugural es el lunes 28, con la participación de la ministra de Salud de Barbados y presidenta saliente del Consejo, Lisa Cummins, y del director de la OPS, Jarbas Barbosa.",
+        "Entre los documentos a considerar figuran la estrategia de gestión del riesgo y de emergencias de salud 2026-2031, el plan de acción sobre resistencia a los antimicrobianos 2027-2031 con enfoque de Una Salud, la estrategia integrada de prevención y control de enfermedades arbovirales 2026-2035 —dengue, chikunguña y Oropouche— y la estrategia de inocuidad de los alimentos 2026-2031.",
+        "Es la instancia donde la región traduce en mandatos lo que en Nueva York queda en declaraciones. Vale seguir qué se aprueba y, sobre todo, con qué financiamiento."
+      ],
+      fuentes: [
+        { nombre: "OPS", url: "https://www.paho.org/es/noticias/21-9-2026-ministros-salud-americas-se-reuniran-washington-para-abordar-principales" }
+      ]
+    },
+    {
+      seccion: "Equidad y determinantes sociales",
+      lugar: "Washington · 14 de septiembre de 2026",
+      titulo: "Cuarenta años de la Carta de Ottawa, y la promoción de la salud sigue peleando por su lugar",
+      sumario: "El lanzamiento de la Semana del Bienestar de las Américas 2026 reunió a expertos que coincidieron en la vigencia de los principios de 1986.",
+      texto: [
+        "Jarbas Barbosa abrió el acto con un llamado a «fortalecer la gobernanza, la participación social y el trabajo intersectorial» ante los desafíos de la región, y enumeró la persistencia de las brechas de salud, el cambio climático, la transición demográfica acelerada, la transformación de las ciudades y la creciente carga de enfermedades no transmisibles. La directora de Salud Pública de Canadá, Joss Reimer, sostuvo que los principios de la Carta siguen orientando la respuesta a esos desafíos.",
+        "Cuatro décadas después, la promoción de la salud continúa siendo el componente peor financiado de los sistemas y el primero en recortarse. La paradoja es conocida: se declara que la salud se produce fuera del sector salud y se sigue asignando el presupuesto dentro de él."
+      ],
+      fuentes: [
+        { nombre: "Recopilación de noticias OPS, CIME-UNC", url: "https://cime.fcq.unc.edu.ar/noticias-de-la-ops-02-16-de-septiembre-2026/" },
+        { nombre: "OPS, noticias", url: "https://www.paho.org/es/noticias" }
+      ]
+    },
+    {
+      seccion: "Derechos humanos y dignidad",
+      lugar: "Roma · vigente",
+      titulo: "«Magnifica humanitas»: el texto que esta semana volvió a la conversación",
+      sumario: "La primera encíclica de León XIV, dedicada a la custodia de la persona humana en la era de la inteligencia artificial, ofrece el marco moral que el discurso de la Asamblea dejó implícito.",
+      texto: [
+        "Publicada el 25 de mayo y firmada el 15 de ese mes, en el 135.º aniversario de la Rerum novarum, la encíclica plantea la disyuntiva entre levantar una nueva torre de Babel y edificar la ciudad donde Dios y la humanidad habiten juntos. Su tesis central es que ante la IA la alternativa real no está entre entusiasmo y miedo, sino entre poner el progreso al servicio de las personas y los pueblos o al servicio de las lógicas de poder.",
+        "El texto advierte sobre el paradigma tecnocrático y sobre nuevas formas de dominio, desigualdad y control, en particular cuando la inteligencia artificial entra en procesos de decisión que afectan la vida, la reputación y el acceso a oportunidades. Es una descripción exacta de lo que hace un algoritmo de autorización en un sistema de aseguramiento. Pide regulación gubernamental, recualificación de trabajadores, protección de menores y garantías de que sean humanos y no modelos quienes decidan sobre el uso de armamento.",
+        "La lectura conjunta con la portada de esta edición es instructiva. Dos autoridades morales de tradiciones distintas, en el mismo año, llegan a la misma conclusión sobre la necesidad de supervisión. Ninguna de las dos tiene la capacidad de imponerla."
+      ],
+      fuentes: [
+        { nombre: "Vatican News", url: "https://www.vaticannews.va/es/papa/news/2026-05/la-enciclica-papa-leon-xiv-magnifica-humanitasla-inteligencia-ia.html" },
+        { nombre: "Texto completo en español", url: "https://www.aciprensa.com/noticias/125381/texto-completo-de-la-enciclica-magnifica-humanitas-del-papa-leon-xiv-sobre-la-persona-y-la-inteligencia-artificial" }
+      ]
+    },
+    {
+      seccion: "Gobernanza global",
+      lugar: "Nueva York · en curso",
+      titulo: "Quién sucede a Guterres se decide a puerta cerrada",
+      sumario: "El proceso de selección del próximo Secretario General avanza sin candidato claro, a poco más de tres meses de que termine el mandato.",
+      texto: [
+        "El segundo período de António Guterres concluye el 31 de diciembre de 2026. El procedimiento se rige por el artículo 97 de la Carta, que atribuye el nombramiento a la Asamblea General por recomendación del Consejo de Seguridad, lo que en la práctica entrega la decisión a los cinco miembros permanentes.",
+        "Para una publicación de bioética el asunto no es de cocina diplomática. Todo lo que Guterres pidió esta semana —un marco multilateral de gestión de riesgos de la IA, supervisión independiente, reforma del Consejo— depende de que su sucesor lo sostenga. Y el mecanismo que elige a ese sucesor es exactamente el que él pasó diez años pidiendo que se reformara."
+      ],
+      fuentes: [
+        { nombre: "France 24", url: "https://www.france24.com/en/americas/20260922-un-secretary-general-guterres-calls-for-interdependence-in-final-general-assembly-address" },
+        { nombre: "Proceso de selección 2026", url: "https://en.wikipedia.org/wiki/2026_United_Nations_Secretary-General_selection" }
+      ]
+    },
+    {
+      seccion: "Salud y clima",
+      lugar: "Washington · 18 de septiembre de 2026",
+      titulo: "La OPS advierte que el fortalecimiento de El Niño eleva los riesgos sanitarios en las Américas",
+      sumario: "El aviso llega días antes de que la región discuta su estrategia de emergencias y su plan sobre arbovirosis.",
+      texto: [
+        "La organización informó el 18 de septiembre que el fenómeno se está fortaleciendo y plantea riesgos crecientes para la salud en la región. La coincidencia con la agenda del Consejo Directivo, que considera la estrategia integrada de arbovirosis 2026-2035, no es casual: los patrones de lluvia y temperatura asociados a El Niño alteran la distribución de dengue, chikunguña y otras enfermedades transmitidas por vectores.",
+        "Para el Caribe insular, el asunto se suma a la temporada ciclónica y a la presión sobre servicios de agua y saneamiento. La respuesta útil no es sanitaria en sentido estricto, y ahí vuelve a aparecer el argumento de los determinantes sociales."
+      ],
+      fuentes: [
+        { nombre: "OPS, noticias", url: "https://www.paho.org/es/noticias" }
+      ]
+    }
+  ],
+
+  contrapunto: {
+    tema: "Contrapunto: ¿para qué sirve realmente la autorización previa?",
+    intro: "La retirada parcial del instrumento en el mercado estadounidense obliga a preguntarse qué se pierde cuando se elimina y qué se perdía cuando estaba. La discusión es técnica solo en apariencia: decide quién carga con la incertidumbre.",
+    a: {
+      titulo: "Es el único filtro entre el gasto y el abuso",
+      cuerpo: [
+        "Un fondo colectivo que no revisa lo que paga no es solidario: es una transferencia hacia quien factura más rápido. La autorización previa es el punto donde el asegurador verifica pertinencia antes de que el gasto sea irreversible, y donde detecta patrones de sobreindicación que ninguna auditoría posterior recupera.",
+        "Eliminarla no hace desaparecer el control: lo desplaza a la auditoría retrospectiva, que llega cuando el dinero ya salió y cuyo resultado suele ser el conflicto con el prestador o el ajuste de tarifas para todos.",
+        "Un 92% de aprobación no prueba que el filtro sea inútil. Puede probar que funciona como disuasión: el porcentaje mide lo que se solicitó, no lo que se dejó de solicitar porque existía el requisito."
+      ]
+    },
+    b: {
+      titulo: "Es un costo que paga el enfermo y lo cobra el sistema",
+      cuerpo: [
+        "El instrumento traslada trabajo administrativo al equipo clínico y tiempo de espera al paciente. Ese costo no aparece en ninguna contabilidad del asegurador, porque lo absorben terceros. Un ahorro que se financia con tiempo ajeno no es un ahorro: es una externalización.",
+        "La carga tampoco se distribuye de manera neutral. La soporta mejor el prestador con personal administrativo dedicado y el paciente con capacidad de insistir, llamar y reclamar. Quien no tiene ninguna de las dos cosas simplemente no recibe el servicio, y esa renuncia se registra en los datos como demanda inexistente.",
+        "Si el 92% se aprueba, el sistema está haciendo esperar a nueve de cada diez personas para detener a una. Habría que demostrar que lo detenido justifica la espera de los demás, y esa demostración casi nunca se presenta."
+      ]
+    },
+    cierre: "Las dos posiciones aceptan que los recursos son finitos y que alguien debe decidir. Difieren en dónde colocar la carga de la prueba: si el paciente debe demostrar que merece el servicio, o si el asegurador debe demostrar que negarlo produce un beneficio mayor que el daño de hacer esperar a todos los demás. La tertulia queda abierta."
+  },
+
+  ensayo: {
+    titulo: "Comprar inteligencia: lo que un sistema de salud acepta cuando contrata un algoritmo",
+    bajada: "La transferencia de poder que Guterres describió esta semana no ocurre solo en las cumbres. Ocurre, y con firma, en el expediente de una licitación.",
+    cuerpo: [
+      "Cuando un asegurador público o un ministerio incorpora una herramienta de inteligencia artificial —para priorizar listas de espera, detectar fraude, sugerir codificación, apoyar la decisión clínica, calificar solicitudes de autorización— está haciendo algo distinto de comprar un equipo. Un tomógrafo hace lo que hace y su funcionamiento no cambia mientras dure el contrato. Un modelo cambia. Se reentrena, se actualiza, se ajusta a datos nuevos, y esos cambios ocurren del lado del proveedor. La institución evaluó una versión y opera otra.",
+      "Esa diferencia tiene consecuencias que el derecho administrativo todavía no procesa bien. La responsabilidad por una decisión que perjudica a un afiliado sigue siendo de la institución, porque es ella quien tiene la relación jurídica con esa persona. Pero la capacidad técnica de explicar por qué se decidió así está del otro lado del contrato, a veces protegida como secreto comercial. Se produce una asimetría peculiar: la entidad pública responde por una lógica que no puede exhibir.",
+      "Aquí es donde el vocabulario de la bioética resulta más útil que el de la gestión. El consentimiento informado no se sostiene sobre la voluntad del paciente únicamente; se sostiene sobre el deber correlativo de quien tiene la información de entregarla en términos comprensibles. Una institución que no puede explicar una denegación no ha satisfecho ese deber, aunque haya cumplido cada paso del procedimiento. Y el principio de justicia no se agota en repartir bien: exige que quien queda peor pueda pedir cuentas a alguien identificable.",
+      "Hay una segunda capa, menos discutida. Los modelos aprenden de los datos que existen, y los datos que existen registran el sistema tal como es, con sus exclusiones ya incorporadas. Si una población consultó menos porque el servicio le quedaba a tres horas de camino, el modelo aprenderá que esa población demanda menos, y asignará en consecuencia. La desigualdad de acceso entra como dato y sale como criterio. No hay mala fe en ningún punto de la cadena; hay una inferencia estadísticamente correcta y moralmente desastrosa.",
+      "Nada de esto es argumento para no incorporar estas herramientas. Los sistemas de salud de la región tienen escasez de especialistas, listas de espera reales y capacidad limitada de auditar el gasto. El informe Goalkeepers de esta semana tiene razón en que la pregunta no es si la tecnología llega, sino para quién se construye y quién la evalúa. Lo que sí se sigue es que las cláusulas del contrato hacen aquí un trabajo que en otros ámbitos hacen los comités de ética.",
+      "Cuatro exigencias parecen mínimas. Acceso a la lógica de decisión, no solo a los resultados, con derecho de auditoría independiente. Notificación obligatoria de cada actualización del modelo, con revalidación local antes de que entre en producción. Registro de incidentes, es decir, de los casos en que el sistema se apartó del comportamiento esperado, con obligación de reportarlos a la autoridad sanitaria. Y una cláusula de reversibilidad que permita retirar la herramienta sin que el servicio colapse, porque una dependencia irreversible es una transferencia de poder disfrazada de eficiencia.",
+      "Ninguna de las cuatro es exótica. Son, traducidas al lenguaje de las compras públicas, las mismas garantías que la investigación con seres humanos tardó medio siglo en institucionalizar: revisión previa por un tercero, consentimiento sobre lo que efectivamente se hará, notificación de eventos adversos y derecho a retirarse. La bioética no tiene que inventar un marco para la inteligencia artificial en salud. Tiene que insistir en que el que ya existe se aplique donde ahora se decide: no en la cama del paciente, sino en el pliego de condiciones."
+    ],
+    firma: "Redacción TvBioética · Los artículos de reflexión buscan abrir discusión, no cerrarla. Las respuestas se publican en la edición siguiente."
+  },
+
+  concepto: {
+    termino: "Captura regulatoria",
+    definicion: "Situación en la que el organismo encargado de regular una actividad termina orientado por los intereses del sector que debe supervisar. No requiere corrupción: basta con que el regulador dependa del regulado para obtener la información, el personal calificado o la definición misma de qué constituye un riesgo.",
+    porque: "Aparece esta semana porque Guterres pidió salvaguardas para la inteligencia artificial señalando que son los propios desarrolladores quienes dan la voz de alarma. Esa frase describe un problema y, sin quererlo, también su trampa: cuando el conocimiento técnico necesario para regular solo existe dentro de la empresa regulada, el marco de supervisión nace ya inclinado. La respuesta clásica no es desconfiar de los expertos, sino financiar capacidad técnica pública e independiente."
+  },
+
+  radar: [
+    { cuando: "25 de septiembre", titulo: "Reunión de alto nivel sobre pandemias", detalle: "Segunda desde 2023. Interesa qué se dice sobre financiamiento del Acuerdo sobre Pandemias y del Fondo Pandémico, no sobre la retórica de solidaridad." },
+    { cuando: "28 sep – 2 oct", titulo: "63.º Consejo Directivo de la OPS", detalle: "Cuatro estrategias regionales a votación: emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad de los alimentos." },
+    { cuando: "1 de octubre", titulo: "Entra en vigor la reducción de autorizaciones previas", detalle: "Unos 1.700 tratamientos dejan de requerir aprobación en los planes de UnitedHealthcare. Conviene observar qué ocurre con el gasto y con las denegaciones retrospectivas." },
+    { cuando: "31 de diciembre", titulo: "Fin del mandato de Guterres", detalle: "Sin sucesor definido. De quién ocupe el cargo depende la continuidad de la agenda de gobernanza de la IA planteada esta semana." },
+    { cuando: "2027", titulo: "Reunión de alto nivel sobre cobertura universal", detalle: "La preparación comenzó informalmente el 23 de septiembre en el grupo ministerial de amigos de la CUS." },
+    { cuando: "Doce a dieciocho meses", titulo: "La ventana que señala Goalkeepers", detalle: "El informe sostiene que las decisiones sobre cómo se construye, financia y regula la IA en ese plazo determinan si reduce o amplía las brechas." }
+  ],
+
+  lecturas: [
+    { titulo: "Discurso ante el debate general del 81.º período de sesiones", autor: "António Guterres, Naciones Unidas", donde: "22 de septiembre de 2026", url: "https://gadebate.un.org/sites/default/files/gastatements/81/unsg_es.pdf", nota: "El texto íntegro en español. Vale leerlo entero: los pasajes sobre la transferencia de poder son más precisos que cualquier resumen de prensa." },
+    { titulo: "Make This Matter: AI, Equity, and the Choice We Can't Delay", autor: "Informe Goalkeepers 2026, Fundación Gates", donde: "15 de septiembre de 2026", url: "https://goalkeepers.gatesfoundation.org/wp-content/uploads/2026/09/2026_Goalkeepers_Report_EN.pdf", nota: "Los dieciocho indicadores de los ODS y el apartado de llamado a la acción. Material de trabajo para quien planifica." },
+    { titulo: "Magnifica humanitas. Sobre la custodia de la persona humana en el tiempo de la inteligencia artificial", autor: "León XIV", donde: "mayo de 2026", url: "https://www.aciprensa.com/noticias/125381/texto-completo-de-la-enciclica-magnifica-humanitas-del-papa-leon-xiv-sobre-la-persona-y-la-inteligencia-artificial", nota: "Extensa. El cuarto capítulo, sobre verdad, trabajo y libertad, es el más citable en discusiones de política pública." },
+    { titulo: "La urgencia de invertir en los sistemas de salud en América Latina y el Caribe para reducir la desigualdad", autor: "CEPAL y OPS", donde: "33 páginas", url: "https://www.cepal.org/es/publicaciones/80763-la-urgencia-invertir-sistemas-salud-america-latina-caribe-reducir-la-desigualdad", nota: "Breve y con cifras regionales. Útil para argumentar ante ministerios de Hacienda." },
+    { titulo: "La OMS en la Asamblea General de las Naciones Unidas 2026", autor: "Organización Mundial de la Salud", donde: "septiembre de 2026", url: "https://www.who.int/news-room/events/detail/2026/09/18/default-calendar/who-at-the-united-nations-general-assembly-2026", nota: "El calendario completo de reuniones sanitarias de la semana de alto nivel, con enlaces a cada sesión." },
+    { titulo: "Informe mundial sobre determinantes sociales de la equidad en salud", autor: "Organización Mundial de la Salud", donde: "2025", url: "https://www.who.int/teams/social-determinants-of-health/equity-and-health/world-report-on-social-determinants-of-health-equity", nota: "Sigue siendo el marco de referencia obligado, y esta semana vuelve a ser pertinente a propósito de los cuarenta años de la Carta de Ottawa." }
+  ]
+};
+
+/* ══════════════════════════════════════════════════════════════════
+   MOTOR DE RENDERIZADO — no requiere modificación semanal
+   ══════════════════════════════════════════════════════════════════ */
+(function(){
+  const $ = s => document.querySelector(s);
+  const el = (t,c,x) => { const n=document.createElement(t); if(c)n.className=c; if(x!==undefined)n.textContent=x; return n; };
+  const parrafos = (cont, arr) => { cont.innerHTML=''; (arr||[]).forEach(p=>cont.appendChild(el('p',null,p))); };
+  const fuentes = (cont, arr) => {
+    cont.innerHTML='';
+    if(!arr||!arr.length) return;
+    cont.appendChild(document.createTextNode('Fuentes: '));
+    arr.forEach((f,i)=>{
+      const a=el('a',null,f.nombre); a.href=f.url; a.target='_blank'; a.rel='noopener';
+      cont.appendChild(a);
+      if(i<arr.length-1) cont.appendChild(document.createTextNode(' · '));
+    });
+  };
+
+  const E = EDICION;
+
+  // Cabecera
+  $('#cinta-fecha').textContent = E.fecha;
+  $('#ed-num').textContent = 'Edición número ' + E.numero;
+  $('#ed-fecha').textContent = E.fecha;
+  $('#ed-prox').textContent = 'Próxima edición: ' + E.proxima;
+  $('#colofon-ed').textContent = 'Edición ' + E.numero + ' · ' + E.fecha;
+  if(E.correo){
+    const a=el('a',null,E.correo); a.href='mailto:'+E.correo; $('#pie-correo').appendChild(a);
+  }
+
+  // Pregunta
+  $('#pregunta-txt').textContent = E.pregunta;
+  $('#pregunta-baj').textContent = E.preguntaBajada;
+  $('#pregunta-firma').textContent = E.preguntaFirma;
+
+  // Lo esencial
+  const ul = $('#esencial-lista');
+  E.esencial.forEach(item=>{
+    const li=el('li'); li.appendChild(el('b',null,item.titulo)); li.appendChild(el('p',null,item.texto)); ul.appendChild(li);
+  });
+
+  // Portada
+  $('#portada-etq').textContent = E.portada.seccion;
+  $('#portada-tit').textContent = E.portada.titulo;
+  $('#portada-sum').textContent = E.portada.sumario;
+  parrafos($('#portada-cuerpo'), E.portada.cuerpo);
+  fuentes($('#portada-fuentes'), E.portada.fuentes);
+  $('#aparte-tit').textContent = E.aparte.titulo;
+  E.aparte.puntos.forEach(p=>$('#aparte-lista').appendChild(el('li',null,p)));
+
+  // Notas
+  const rejilla = $('#rejilla');
+  E.articulos.forEach(a=>{
+    const art=el('article','nota'); art.dataset.seccion=a.seccion;
+    art.appendChild(el('p','lugar',a.lugar));
+    art.appendChild(el('h3',null,a.titulo));
+    art.appendChild(el('p','sum',a.sumario));
+    const txt=el('div','txt'); parrafos(txt,a.texto); art.appendChild(txt);
+    const f=el('p','fuentes'); fuentes(f,a.fuentes); art.appendChild(f);
+    rejilla.appendChild(art);
+  });
+  $('#cuenta-notas').textContent = E.articulos.length + ' notas';
+
+  // Filtros
+  const secciones = ['Todas', ...Array.from(new Set(E.articulos.map(a=>a.seccion)))];
+  const chips = $('#chips');
+  secciones.forEach((s,i)=>{
+    const b=el('button','chip',s); b.type='button'; b.setAttribute('aria-pressed', i===0);
+    b.addEventListener('click',()=>{
+      chips.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      let visibles=0;
+      rejilla.querySelectorAll('.nota').forEach(n=>{
+        const ok = (s==='Todas') || n.dataset.seccion===s;
+        n.hidden = !ok; if(ok) visibles++;
+      });
+      $('#sin-notas').hidden = visibles>0;
+      $('#cuenta-notas').textContent = visibles + (visibles===1?' nota':' notas');
+      document.querySelector('.notas').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    chips.appendChild(b);
+  });
+
+  // Contrapunto
+  $('#cp-tema').textContent = E.contrapunto.tema;
+  $('#cp-intro').textContent = E.contrapunto.intro;
+  $('#cp-a-tit').textContent = E.contrapunto.a.titulo;
+  parrafos($('#cp-a-cuerpo'), E.contrapunto.a.cuerpo);
+  $('#cp-b-tit').textContent = E.contrapunto.b.titulo;
+  parrafos($('#cp-b-cuerpo'), E.contrapunto.b.cuerpo);
+  $('#cp-cierre').textContent = E.contrapunto.cierre;
+
+  // Ensayo
+  $('#ens-tit').textContent = E.ensayo.titulo;
+  $('#ens-baj').textContent = E.ensayo.bajada;
+  parrafos($('#ens-cuerpo'), E.ensayo.cuerpo);
+  $('#ens-firma').textContent = E.ensayo.firma;
+
+  // Concepto
+  $('#con-term').textContent = E.concepto.termino;
+  $('#con-def').textContent = E.concepto.definicion;
+  $('#con-por').textContent = E.concepto.porque;
+
+  // Radar
+  E.radar.forEach(r=>{
+    const li=el('li');
+    li.appendChild(el('span','cuando',r.cuando));
+    const d=el('div'); d.appendChild(el('b',null,r.titulo)); d.appendChild(el('span',null,r.detalle));
+    li.appendChild(d); $('#radar').appendChild(li);
+  });
+
+  // Lecturas
+  E.lecturas.forEach(l=>{
+    const li=el('li');
+    const a=el('a',null,l.titulo); a.href=l.url; a.target='_blank'; a.rel='noopener';
+    li.appendChild(a);
+    li.appendChild(el('p','meta', l.autor + ' · ' + l.donde));
+    if(l.nota) li.appendChild(el('p','nota-l',l.nota));
+    $('#lecturas').appendChild(li);
+  });
+
+  // Tema día/noche
+  const btn = $('#btn-tema');
+  const aplicar = t => {
+    document.documentElement.dataset.tema = t;
+    btn.textContent = t==='noche' ? 'Modo día' : 'Modo noche';
+  };
+  aplicar(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'noche' : 'dia');
+  btn.addEventListener('click',()=>aplicar(document.documentElement.dataset.tema==='noche'?'dia':'noche'));
+
+  document.title = 'TvBioética · Edición ' + E.numero + ' · ' + E.fecha;
+})();
+</script>
 </body>
 </html>
