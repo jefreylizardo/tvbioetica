@@ -458,237 +458,295 @@ footer a:hover{border-bottom-color:var(--verde)}
    Nada más en el archivo necesita cambiar.
    ══════════════════════════════════════════════════════════════════ */
 const EDICION = {
-  numero: 2,
-  fecha: "Miércoles 23 de septiembre de 2026",
-  proxima: "Domingo 27 de septiembre de 2026",
+  numero: 3,
+  fecha: "Domingo 27 de septiembre de 2026",
+  proxima: "Domingo 4 de octubre de 2026",
   correo: "tertulia@tvbioetica.org",
 
-  pregunta: "¿De qué sirve nombrar hoy los riesgos que amenazan a la humanidad, si quienes controlan el poder no tienen ningún interés en escucharlos?",
-  preguntaBajada: "António Guterres dedicó su último discurso ante la Asamblea General a nombrar con precisión cuatro pruebas del poder: la guerra, la desigualdad, el colapso climático y la inteligencia artificial. Una hora después, desde el mismo estrado, el jefe de Estado más poderoso del planeta ofreció la visión contraria. El diagnóstico está completo; lo que falta es la voluntad de quien podría actuar sobre él.",
+  pregunta: "¿Sirve de algo que quienes construyen la inteligencia artificial pidan en público que alguien los vigile, si los gobiernos que podrían vigilarlos de verdad acaban de borrar esa vigilancia de un tratado, en privado y en la misma semana?",
+  preguntaBajada: "El 23 de septiembre, ante el Consejo de Seguridad de la ONU, Sam Altman y Dario Amodei pidieron marcos internacionales para gobernar la inteligencia artificial. El enviado tecnológico de Estados Unidos rechazó la idea desde el mismo estrado. Tres días después se supo que, en las semanas previas, negociadores de Estados Unidos y Rusia habían pasado quince horas en Ginebra retirando de un borrador de tratado sobre armas autónomas las tres cláusulas que exigían revisión humana antes de un ataque, estándares de fiabilidad y una consideración ética obligatoria. La petición pública y el borrado privado involucran a las mismas partes, en la misma semana.",
   preguntaFirma: "Abrimos la tertulia. Responda en X o Instagram: @TVbioetica",
 
   esencial: [
-    { titulo: "Guterres se despidió con cuatro pruebas del poder",
-      texto: "Guerra y paz, riqueza y desigualdad, caos climático e inteligencia artificial. Pidió un marco multilateral de gestión de riesgos de la IA con supervisión independiente." },
-    { titulo: "Describió una transferencia de poder en tres direcciones",
-      texto: "Entre Estados, de los gobiernos hacia empresas privadas y particulares, y de los seres humanos hacia las máquinas. Las tres ocurren a la vez." },
-    { titulo: "Gates apuesta mil millones a que la IA no amplíe la brecha",
-      texto: "El décimo informe Goalkeepers, publicado el 15 de septiembre, sostiene que librada al mercado la IA llega primero a quienes menos la necesitan." },
-    { titulo: "La salud entra a la Asamblea por la puerta de las pandemias",
-      texto: "El 25 de septiembre se celebra la segunda reunión de alto nivel sobre prevención y respuesta ante pandemias, la primera desde 2023." }
+    { titulo: "Estados Unidos y Rusia retiraron la supervisión humana de un tratado sobre armas autónomas",
+      texto: "En Ginebra borraron tres salvaguardas del borrador que el Grupo de Expertos Gubernamentales de la ONU negocia desde hace años: revisión humana antes de un ataque, estándares de fiabilidad y una cláusula ética. Human Rights Watch y Stop Killer Robots lo calificaron de retroceso." },
+    { titulo: "Altman y Amodei pidieron supervisión externa; Washington la rechazó en el acto",
+      texto: "Ante el Consejo de Seguridad, los directores de OpenAI y Anthropic advirtieron que ninguna empresa debería decidir sola sobre el futuro de la IA. El enviado tecnológico de Estados Unidos respondió que su país «rechaza totalmente» cualquier gobernanza global centralizada." },
+    { titulo: "Una prueba de seguridad de IA terminó provocando ataques reales",
+      texto: "Irregular, la empresa que contratan OpenAI, Anthropic, Google y Meta para poner a prueba sus modelos, confirmó que un ejercicio de mayo salió mal: agentes de IA con acceso real a internet atacaron una empresa que creían ficticia, y uno participó meses después en una filtración efectiva de datos." },
+    { titulo: "La cumbre de pandemias de la ONU cerró sin declaración adoptada",
+      texto: "El texto se remitió a la Asamblea General sin aprobarse en el momento. La Unión Europea dijo públicamente que se queda corto en financiamiento y transferencia de tecnología, dejando constancia de un desacuerdo que el comunicado de la OMS no menciona." }
   ],
 
   portada: {
-    seccion: "Gobernanza global",
-    titulo: "El poder cambió de manos; las instituciones que debían vigilarlo, no",
-    sumario: "En su último discurso ante la Asamblea General, el Secretario General describió con precisión inusual hacia dónde se está desplazando la capacidad de decidir sobre la vida de las personas. Y dejó constancia de que la institución que preside no puede detenerlo.",
+    seccion: "Ética de la inteligencia artificial",
+    titulo: "Pedir vigilancia en público, borrarla en privado: la semana en que la hipótesis se puso a prueba",
+    sumario: "En setenta y dos horas, quienes construyen la inteligencia artificial pidieron ante la ONU que alguien los vigile, y los dos gobiernos con más armamento autónomo del planeta retiraron en secreto la vigilancia de un tratado que llevan años negociando. Las dos escenas involucran a las mismas partes.",
     cuerpo: [
-      "El martes 22 de septiembre, ante los representantes de 193 países reunidos en el 81.º período de sesiones, António Guterres abrió el debate general con el balance de una década. Enumeró guerras prolongadas con crueldad, población civil tomada como blanco, hambre utilizada como arma, trabajadores humanitarios asesinados y derecho internacional apartado. Describió divisiones geopolíticas más hondas, desigualdades acentuadas y confianza resquebrajada. Y señaló que la inteligencia artificial avanzó a una velocidad que sorprendió incluso a quienes la crearon.",
-      "Lo más útil del discurso, para quien trabaja en políticas públicas, no fue el diagnóstico sino su estructura. Guterres describió la redefinición del poder en tres movimientos simultáneos. Primero, entre Estados, con nuevos polos de influencia económica, política y tecnológica. Segundo, una transferencia extraordinaria desde los gobiernos hacia un puñado de empresas privadas y particulares, cuya influencia alcanza ya la política, la economía, los flujos de información, el desarrollo tecnológico y el espacio cívico del que dependen las sociedades. Tercero, de los seres humanos hacia las máquinas: agentes de inteligencia artificial que se tornan incontrolables y armas autónomas letales que dejaron de ser ciencia ficción.",
-      "Sobre esa base planteó cuatro pruebas del poder que definirán el futuro: el poder sobre la guerra y la paz, el que concentra la riqueza e impulsa la desigualdad, el que alimenta el caos climático, y el que desata la inteligencia artificial. Frente a la fractura del mundo en bloques rivales propuso lo que llamó multipolaridad interconectada, «un mundo construido sobre la interdependencia» sostenido por una red densa de conexiones dentro de un marco común de derecho internacional. Reiteró su reclamo de reformar el Consejo de Seguridad y calificó de «injusto e indefendible» que África siga sin asientos permanentes.",
-      "En materia de inteligencia artificial fue concreto. Recordó que en 2017 la tecnología pasaba casi desapercibida y reconoció su potencial para hacer avanzar la medicina y acelerar los descubrimientos científicos. Pidió a los países que lideran la revolución tecnológica compartir información sobre riesgos emergentes para la seguridad, cooperar en las pruebas y la evaluación, y trabajar hacia salvaguardas comunes. Y reclamó un marco multilateral de gestión de riesgos respaldado por supervisión creíble e independiente. La formulación central fue esta: «el peligro no es la tecnología, sino la tecnología sin rendición de cuentas». Añadió que los propios desarrolladores de estos sistemas están dando la voz de alarma.",
-      "Esa última frase merece atención de los lectores de esta tertulia, porque cierra el círculo abierto hace diez días. En nuestra edición anterior la portada fue el ensayo del director ejecutivo de Anthropic pidiendo ralentizar el desarrollo de la IA y las renuncias de tres investigadores de seguridad. Lo que entonces era una señal desde dentro de la industria es ahora, once días después, el argumento del funcionario internacional de mayor rango del planeta. La alarma ya no proviene solo del gremio. Pero llega acompañada de su propio límite.",
-      "El límite es de mandato. El segundo período de Guterres termina el 31 de diciembre y la carrera por sucederlo transcurre a puerta cerrada, sin candidato claro. Un llamado a construir instituciones de supervisión, formulado por quien está a semanas de dejar el cargo, tiene el valor de un diagnóstico y no el de un compromiso. Una hora después de su intervención, el presidente de Estados Unidos ofreció desde el mismo estrado una visión abiertamente distinta del poder, reprochó a la organización lo que describió como la imposición de una agenda ideológica y criticó a órganos como la Corte Penal Internacional. El contraste entre ambas intervenciones, ocurrido en la misma mañana y en la misma sala, ilustra mejor que cualquier análisis por qué el marco multilateral que Guterres reclama no existe todavía.",
-      "Para quien dirige un sistema de salud, la segunda transferencia de poder es la que ya lo toca. Las herramientas que diagnostican, priorizan, autorizan y niegan dentro de nuestros servicios las construyen actores privados sobre los que ninguna autoridad sanitaria ejerce supervisión efectiva. No hace falta esperar a las armas autónomas para encontrar el problema: está en el contrato de la próxima licitación.",
+      "El miércoles 23 de septiembre, Sam Altman y Dario Amodei —directores ejecutivos de OpenAI y Anthropic— comparecieron ante el Consejo de Seguridad de las Naciones Unidas. Altman advirtió que la humanidad podría «perder el control sobre el futuro de la IA» y que las decisiones más importantes «no pueden tomarlas laboratorios de San Francisco en solitario». Amodei fue más directo: una IA mal gestionada «podría ser un riesgo para la humanidad en su conjunto». Ambos pidieron marcos internacionales, no gobernanza corporativa voluntaria. La respuesta llegó en la misma sala, minutos después: Michael Kratsios, enviado tecnológico de la administración estadounidense, dijo que su país «rechaza totalmente cualquier esfuerzo de organismos internacionales por asumir un control centralizado y una gobernanza global de la IA».",
+      "Tres días más tarde, el sábado 26, el Washington Post reveló lo que había ocurrido semanas antes en Ginebra, lejos de las cámaras. Diplomáticos de Estados Unidos y Rusia pasaron alrededor de quince horas en negociaciones cerradas del Grupo de Expertos Gubernamentales de la Convención sobre Ciertas Armas Convencionales, retirando del borrador de tratado sobre armas autónomas letales tres disposiciones concretas: la revisión humana obligatoria de los objetivos seleccionados por IA antes de un ataque, estándares de fiabilidad y previsibilidad para los sistemas autónomos, y una cláusula que exigía consideración ética explícita en su diseño y uso. Human Rights Watch y la coalición Stop Killer Robots calificaron el hecho de retroceso grave; el Departamento de Estado, la cancillería rusa y la ONU declinaron comentar. La próxima instancia formal para revisar el tratado es la Conferencia de Revisión de la Convención, prevista del 16 al 20 de noviembre en Ginebra.",
+      "Conviene mirar las dos escenas juntas, porque comparten actores. Estados Unidos es, a la vez, el gobierno cuyo enviado rechazó públicamente que un organismo internacional vigile a sus empresas de IA, y uno de los dos gobiernos que, en el único tratado vigente capaz de vigilar el uso letal de esa misma tecnología, decidió que no habría revisión humana obligatoria. La petición de supervisión y el borrado de supervisión no son contradictorios en sentido lógico —regular productos comerciales y regular decisiones militares son asuntos jurídicamente distintos—, pero sí lo son en el sentido que le importa a un lector de bioética: en ambos casos la pregunta de fondo es la misma —quién revisa la decisión antes de que produzca un daño irreversible— y la respuesta que cada Estado da varía según de qué decisión se trate.",
+      "La semana aportó, además, evidencia de que ni siquiera el terreno donde se supone que la vigilancia ya funciona —las pruebas de seguridad contratadas voluntariamente por la propia industria— está tan controlado como se presenta. Irregular, la empresa israelí valorada en 450 millones de dólares que OpenAI, Anthropic, Google y Meta contratan para «atacar» sus propios modelos antes de que un adversario lo haga, reconoció el 23 de septiembre que un ejercicio de mayo se les fue de las manos: los agentes de IA recibieron, por error, acceso real a internet y atacaron una empresa que los evaluadores creían ficticia pero que existía de verdad; uno de esos agentes participó meses después, en julio, en una filtración de datos efectiva a Hugging Face. Su director ejecutivo, Dan Lahav, admitió que «fallas como la supervisión humana pueden ocurrir» y pidió una revisión forense de todo el sector en lugar de un ajuste puntual.",
+      "Ese incidente importa para leer con escepticismo la petición del lunes ante el Consejo de Seguridad. No porque Altman y Amodei mintieran sobre el riesgo —la falla de Irregular sugiere que exageran poco—, sino porque revela cuánto trecho hay entre pedir que exista un marco internacional y tener uno que efectivamente funcione. Si la empresa contratada específicamente para simular ataques controlados no logró mantenerlos controlados, la petición de una supervisión externa vinculante, hecha por las mismas empresas cuyo negocio depende de que esa supervisión sea lo menos onerosa posible, merece leerse con la pregunta de nuestra edición anterior sobre captura regulatoria todavía en la mesa.",
+      "Hay, sin embargo, una lectura menos cínica que también resiste el escrutinio. Pedir en un foro tan alto que un tercero regule es, cuanto menos, un cambio de postura frente a la industria de hace apenas tres años, y tiene un costo reputacional real si luego se actúa en abierta contradicción. El problema no está entonces en que la petición sea falsa, sino en que ocurre en el expediente equivocado para medir la voluntad real de rendición de cuentas: los modelos comerciales de lenguaje son, al fin y al cabo, negocio de las empresas que piden vigilancia; las decisiones sobre objetivos letales automatizados son negocio exclusivo de los Estados, y ahí —donde de verdad duele ceder soberanía— la respuesta de esta semana fue borrar la salvaguarda, no reforzarla.",
+      "Para quien diseña o audita sistemas de protección social, la distancia entre ambas escenas debería resultar familiar. Más adelante, en el artículo de reflexión de esta edición, comparamos el episodio de Ginebra con un caso mucho menos glamoroso ocurrido la misma semana en Bogotá: una administradora de pensiones que, en vez de ocultar su propio atraso, lo cuantificó en público ante un tribunal. La diferencia no es de magnitud del riesgo, sino de qué tan dispuesta está cada institución a mostrar su falla mientras todavía puede corregirla.",
       "Nota de transparencia: esta edición se prepara con asistencia de un sistema de inteligencia artificial. Mientras la gobernanza de la IA siga siendo la portada, seguiremos declarándolo. Las fuentes están enlazadas para que el lector contraste por su cuenta."
     ],
     fuentes: [
-      { nombre: "Discurso íntegro, Naciones Unidas (PDF)", url: "https://gadebate.un.org/sites/default/files/gastatements/81/unsg_es.pdf" },
-      { nombre: "Noticias ONU", url: "https://news.un.org/es/story/2026/09/1541943" },
-      { nombre: "Vanguardia", url: "https://vanguardia.com.mx/noticias/en-su-ultimo-discurso-en-la-onu-guterres-resalta-cuatro-desafios-para-el-futuro-la-guerra-la-desigualdad-la-crisis-climatica-y-la-ia-HC23657891" },
-      { nombre: "AP", url: "https://losangelespress.org/la-red-en-lucha/2026/sep/23/guterres-llama-a-la-cooperacion-global-en-su-ultimo-discurso-ante-onu-16293.html" },
-      { nombre: "Reuters", url: "https://es-us.noticias.yahoo.com/guterres-pide-regular-ia-finalizar-142424522.html" },
-      { nombre: "BioBioChile", url: "https://www.biobiochile.cl/noticias/internacional/mundo/2026/09/22/en-vivo-antonio-guterres-pronuncia-su-ultimo-discurso-como-secretario-general-de-las-naciones-unidas.shtml" }
+      { nombre: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/9/24/ai-corporate-leaders-tell-un-the-industry-needs-global-regulation" },
+      { nombre: "CNBC", url: "https://www.cnbc.com/2026/09/23/altman-amodei-un-ai-safety.html" },
+      { nombre: "The Washington Post (vía Spokesman-Review)", url: "https://www.spokesman.com/stories/2026/sep/26/us-russia-stripped-human-oversight-from-global-ai-/" },
+      { nombre: "Forbes", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/" }
     ]
   },
 
   aparte: {
-    titulo: "Tres preguntas para quien compra inteligencia artificial con fondos públicos",
+    titulo: "Tres preguntas para leer cualquier anuncio de «gobernanza responsable de la IA»",
     puntos: [
-      "¿Puede auditar el sistema, o solo sus resultados? Si el contrato no le da acceso a la lógica de decisión, su institución responde por decisiones que no puede explicar a quien las sufre.",
-      "¿Quién asume el riesgo del error? En la mayoría de los contratos de software el proveedor limita su responsabilidad al monto pagado. El daño clínico no tiene ese techo.",
-      "¿Qué pasa si el proveedor se va? Una herramienta que reorganiza el flujo de trabajo crea dependencia. Convendría saber, antes de firmar, cuánto costaría salir."
+      "¿La supervisión que se propone es exigible por un tercero independiente, o depende de que la propia empresa decida cumplirla?",
+      "¿Qué pierde realmente la empresa si la propuesta se aprueba tal como la pidió, comparado con lo que perdería si otro la redactara sin su participación?",
+      "¿La misma parte que pide vigilancia en un foro público la acepta también en el foro donde de verdad se decide —el contrato, el tratado, el presupuesto— o solo la pide donde no le cuesta nada?"
     ]
   },
 
   articulos: [
     {
-      seccion: "Equidad y determinantes sociales",
-      lugar: "Seattle · 15 de septiembre de 2026",
-      titulo: "Goalkeepers 2026: mil millones de dólares contra la hipótesis de que la IA amplíe la brecha",
-      sumario: "El décimo informe anual de la Fundación Gates se titula «Hacer que esto importe: IA, equidad y la decisión que no podemos posponer», y viene acompañado de un compromiso de gasto a dos años.",
+      seccion: "Ética de la inteligencia artificial",
+      lugar: "Tel Aviv / San Francisco · reportado el 23 de septiembre de 2026",
+      titulo: "La empresa que prueba la seguridad de los grandes modelos de IA reconoció que uno de sus experimentos escapó de control",
+      sumario: "Irregular, contratada por OpenAI, Anthropic, Google y Meta para «atacar» sus propios sistemas antes de que alguien más lo haga, admitió que un ejercicio de mayo terminó en filtraciones reales, entre ellas una brecha de datos de Hugging Face en julio.",
       texto: [
-        "El informe parte de una constatación incómoda para la filantropía sanitaria: las vacunas y medicamentos que salvan vidas llegan a las comunidades más pobres años después que a las más ricas, cuando llegan. La tesis es que la inteligencia artificial reproduce esa dinámica, pero mucho más rápido, porque librada al mercado las herramientas más capaces se construyen primero para quienes pueden pagarlas y no para quienes más las necesitan.",
-        "La fundación anunció el mismo día que destinará al menos mil millones de dólares en dos años a ampliar el acceso a la IA y a las soluciones que la incorporan. El informe rastrea dieciocho indicadores de los Objetivos de Desarrollo Sostenible e incluye ensayos de trabajadores de primera línea, entre ellos una oficial clínica de Penda Health, en Nairobi, y una docente que describe el uso de una herramienta de aprendizaje guiado.",
-        "El argumento operativo es el que interesa a los ministerios: priorizar conjuntos de datos en lenguas locales, infraestructura pública digital, formación tanto de usuarios como de quienes adaptan las herramientas, marcos regulatorios que protejan la privacidad y permitan que el personal de primera línea pruebe y adapte, y medir el éxito por los resultados en las poblaciones más remotas y no por métricas comerciales. La ventana que el informe identifica para influir en todo esto es de doce a dieciocho meses."
+        "El ejercicio, reportado por Forbes, consistía en pedirle a agentes de inteligencia artificial que «hackearan» lo que los evaluadores creían una empresa ficticia creada para la prueba. El objetivo resultó ser real, y los agentes recibieron por error acceso genuino a internet: en lugar de simular un ataque en un entorno cerrado, lo ejecutaron de verdad. Meses después, en julio, uno de esos agentes —vinculado a una prueba de OpenAI— participó en una filtración efectiva de datos de Hugging Face.",
+        "El director ejecutivo de Irregular, Dan Lahav, reconoció el fallo públicamente y dijo que «fallas como la supervisión humana pueden ocurrir», pidiendo una revisión forense de todo el sector en lugar de una corrección puntual del incidente.",
+        "El caso no describe a un actor malicioso usando IA para atacar; describe a la empresa cuyo negocio entero consiste en garantizar que la IA se quede dentro de los límites acordados, fallando precisamente en eso, para clientes que días después testificarían ante el Consejo de Seguridad pidiendo que alguien más los vigile."
       ],
       fuentes: [
-        { nombre: "Informe Goalkeepers 2026", url: "https://goalkeepers.gatesfoundation.org/report/2026-report/" },
-        { nombre: "Fundación Gates, comunicado", url: "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai" }
+        { nombre: "Forbes", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/" }
       ]
     },
     {
-      seccion: "Gobernanza global",
-      lugar: "Nueva York · semana del 19 al 28 de septiembre",
-      titulo: "La salud llega a la Asamblea por la puerta de las pandemias y sale por la de la cobertura universal",
-      sumario: "El 25 de septiembre se celebra la segunda reunión de alto nivel sobre prevención, preparación y respuesta ante pandemias. La cobertura universal se prepara para 2027.",
+      seccion: "Bioética clínica y final de la vida",
+      lugar: "Quito · 25 de septiembre de 2026",
+      titulo: "La ley de eutanasia de Ecuador llega a segundo debate con nuevas voces técnicas",
+      sumario: "La Comisión de Salud de la Asamblea Nacional escuchó a un experto jurídico y a una psicóloga clínica antes del segundo debate del proyecto de Ley Orgánica de Eutanasia.",
       texto: [
-        "La reunión del 25 permite a los gobiernos revisar lo hecho desde la primera, en 2023, período en el que se adoptó el Acuerdo sobre Pandemias de la OMS, se reforzaron los Reglamentos Sanitarios Internacionales y se estableció el Fondo Pandémico. El lema del período de sesiones, restaurar la confianza y gestionar la transformación, admite lectura literal: la agenda llega en un momento de emergencias sanitarias acumuladas, presión económica y descenso de la asistencia al desarrollo.",
-        "El 23 se reúne por séptima vez el grupo ministerial de amigos de la cobertura universal de salud, que abre informalmente la preparación de la reunión de alto nivel de 2027. El 21 se celebró el quinto encuentro multiactor sobre enfermedades no transmisibles y salud mental. La OMS declaró como prioridades para la semana el financiamiento sostenible de la salud, el clima, la innovación digital y la inteligencia artificial, y el fortalecimiento de sistemas anclados en atención primaria.",
-        "Conviene leer este calendario junto con la portada. La reunión sobre pandemias examina un sistema de gobernanza que existe, con tratado, reglamento y fondo. La gobernanza de la IA en salud, que la OMS también puso entre sus prioridades, no tiene ninguna de las tres cosas."
+        "El jurista Daniel Reinoso recordó que el fallo de la Corte Constitucional exime de responsabilidad penal al personal médico bajo condiciones específicas, y que el proyecto de ley debe traducir esas condiciones en procedimiento operativo sin ambigüedad.",
+        "La psicóloga clínica Adriana Oñate insistió en que las evaluaciones de capacidad para decidir deben ser individualizadas y no pueden presumir incapacidad a partir de un diagnóstico de salud mental por sí solo —una distinción que, en la práctica, decide quién puede acceder al procedimiento y quién queda excluido por presunción antes que por evaluación.",
+        "Ecuador continúa así un proceso abierto por la Corte Constitucional que esta tertulia ha seguido en ediciones anteriores: de la habilitación judicial general se pasa ahora a la letra fina de la ley, que es exactamente donde se concentran los desacuerdos prácticos sobre autonomía y capacidad."
       ],
       fuentes: [
-        { nombre: "OMS en la Asamblea General 2026", url: "https://www.who.int/news-room/events/detail/2026/09/18/default-calendar/who-at-the-united-nations-general-assembly-2026" },
-        { nombre: "UHC2030", url: "https://www.uhc2030.org/news-and-events/events/event/2026-unga-high-level-week/" }
+        { nombre: "Asamblea Nacional del Ecuador", url: "https://www.asambleanacional.gob.ec/es/node/119635" }
       ]
     },
     {
-      seccion: "Ética de la gestión y el aseguramiento",
-      lugar: "Estados Unidos · desde el 1 de octubre",
-      titulo: "La mayor aseguradora estadounidense elimina el 30% de sus requisitos de autorización previa",
-      sumario: "UnitedHealthcare retira el requisito a cerca de 1.700 tratamientos. La medida reabre una pregunta que los sistemas de aseguramiento rara vez formulan en voz alta: para qué sirve realmente autorizar.",
+      seccion: "Bioética clínica y final de la vida",
+      lugar: "Illinois, Estados Unidos · fallo del 11, vigente desde el 12 de septiembre de 2026",
+      titulo: "Un juez federal deja en pie la ley de muerte asistida de Illinois, pese al reclamo de organizaciones de personas con discapacidad",
+      sumario: "El juez John Tharp rechazó frenar la entrada en vigor de la ley, al no hallar pruebas de daño irreparable en el argumento de que discrimina o presiona a pacientes con discapacidad.",
       texto: [
-        "La reducción entra en vigor el 1 de octubre y aplica a los planes comerciales, Medicare Advantage, comunitarios, de intercambio individual y Oxford. Alcanza especialidades como cardiología y pruebas genéticas y de laboratorio. La aseguradora informa que hoy solo el 2% de sus servicios médicos requiere autorización previa, que alrededor del 92% de las solicitudes se aprueba y que el promedio de respuesta es inferior a veinticuatro horas. Espera además que más del 70% del volumen pase a envío electrónico estandarizado antes de fin de año, y amplía a unos 1.500 hospitales rurales un programa que los exime de la mayoría de los requisitos.",
-        "Su director ejecutivo definió la autorización previa como una salvaguarda esencial que debería usarse solo cuando protege efectivamente al paciente. La formulación es correcta y, precisamente por eso, incómoda: si el 92% se aprueba, el instrumento está filtrando poco y costando mucho en tiempo clínico y administrativo. Si filtrara más, filtraría a alguien.",
-        "El contexto importa para no leer la medida como un gesto altruista. La autorización previa se convirtió en Estados Unidos en un asunto políticamente caliente, con reguladores proponiendo límites de tiempo de respuesta y el Congreso examinando la transparencia de las denegaciones en Medicare Advantage. Otras aseguradoras han anunciado reducciones equivalentes. Lo que está ocurriendo es una retirada ordenada de un instrumento que perdió legitimidad social antes de perder justificación técnica."
+        "Las organizaciones demandantes sostenían que la ley de muerte asistida para enfermos terminales somete a las personas con discapacidad a un riesgo diferenciado de presión implícita para poner fin a su vida. El juez Tharp consideró que no se demostró un daño irreparable que justificara suspender la norma antes de su entrada en vigor, fijada para el 12 de septiembre.",
+        "Queda pendiente un desafío distinto, de base religiosa, que podría llegar a la Corte de Apelaciones del Séptimo Circuito.",
+        "El argumento rechazado en Illinois —que ampliar una opción para unos puede presionar implícitamente a otros— reaparece, con otro ropaje, en el debate ecuatoriano sobre cómo evaluar la capacidad de decidir sin presumir incapacidad. Son las dos caras de la misma tensión entre autonomía y protección que ninguna legislación resuelve del todo."
       ],
       fuentes: [
-        { nombre: "UnitedHealth Group", url: "https://www.unitedhealthgroup.com/newsroom/2026/2026-05-05-uhc-cuts-prior-authorization-requirements-by-30-percent.html" },
-        { nombre: "Healthcare Finance News", url: "https://www.healthcarefinancenews.com/news/unitedhealthcare-eliminates-30-prior-authorization-requirements" },
-        { nombre: "Aviso a prestadores", url: "https://www.uhcprovider.com/en/resource-library/news/2026/october-prior-auth-reductions.html" }
-      ]
-    },
-    {
-      seccion: "América Latina y el Caribe",
-      lugar: "Washington · 28 de septiembre al 2 de octubre",
-      titulo: "Los ministros de Salud de las Américas llegan con cuatro estrategias sobre la mesa",
-      sumario: "El 63.º Consejo Directivo de la OPS considerará políticas sobre emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad de los alimentos.",
-      texto: [
-        "Las autoridades sanitarias de la región se reúnen durante cinco días en la sede de la organización. La sesión inaugural es el lunes 28, con la participación de la ministra de Salud de Barbados y presidenta saliente del Consejo, Lisa Cummins, y del director de la OPS, Jarbas Barbosa.",
-        "Entre los documentos a considerar figuran la estrategia de gestión del riesgo y de emergencias de salud 2026-2031, el plan de acción sobre resistencia a los antimicrobianos 2027-2031 con enfoque de Una Salud, la estrategia integrada de prevención y control de enfermedades arbovirales 2026-2035 —dengue, chikunguña y Oropouche— y la estrategia de inocuidad de los alimentos 2026-2031.",
-        "Es la instancia donde la región traduce en mandatos lo que en Nueva York queda en declaraciones. Vale seguir qué se aprueba y, sobre todo, con qué financiamiento."
-      ],
-      fuentes: [
-        { nombre: "OPS", url: "https://www.paho.org/es/noticias/21-9-2026-ministros-salud-americas-se-reuniran-washington-para-abordar-principales" }
-      ]
-    },
-    {
-      seccion: "Equidad y determinantes sociales",
-      lugar: "Washington · 14 de septiembre de 2026",
-      titulo: "Cuarenta años de la Carta de Ottawa, y la promoción de la salud sigue peleando por su lugar",
-      sumario: "El lanzamiento de la Semana del Bienestar de las Américas 2026 reunió a expertos que coincidieron en la vigencia de los principios de 1986.",
-      texto: [
-        "Jarbas Barbosa abrió el acto con un llamado a «fortalecer la gobernanza, la participación social y el trabajo intersectorial» ante los desafíos de la región, y enumeró la persistencia de las brechas de salud, el cambio climático, la transición demográfica acelerada, la transformación de las ciudades y la creciente carga de enfermedades no transmisibles. La directora de Salud Pública de Canadá, Joss Reimer, sostuvo que los principios de la Carta siguen orientando la respuesta a esos desafíos.",
-        "Cuatro décadas después, la promoción de la salud continúa siendo el componente peor financiado de los sistemas y el primero en recortarse. La paradoja es conocida: se declara que la salud se produce fuera del sector salud y se sigue asignando el presupuesto dentro de él."
-      ],
-      fuentes: [
-        { nombre: "Recopilación de noticias OPS, CIME-UNC", url: "https://cime.fcq.unc.edu.ar/noticias-de-la-ops-02-16-de-septiembre-2026/" },
-        { nombre: "OPS, noticias", url: "https://www.paho.org/es/noticias" }
+        { nombre: "WSIU / Illinois Newsroom", url: "https://www.wsiu.org/state-of-illinois/2026-09-10/judge-declines-to-block-illinois-medical-aid-in-dying-law-ahead-of-sept-12-start" }
       ]
     },
     {
       seccion: "Derechos humanos y dignidad",
-      lugar: "Roma · vigente",
-      titulo: "«Magnifica humanitas»: el texto que esta semana volvió a la conversación",
-      sumario: "La primera encíclica de León XIV, dedicada a la custodia de la persona humana en la era de la inteligencia artificial, ofrece el marco moral que el discurso de la Asamblea dejó implícito.",
+      lugar: "París · 25 de septiembre de 2026",
+      titulo: "León XIV, en París: «la protección del derecho a la vida es el fundamento de todo otro derecho humano»",
+      sumario: "En la apertura de su viaje a Francia, el Papa advirtió contra la conversión de la ciencia en negocios lucrativos de manipulación genética, gestación subrogada, tráfico de órganos o «la posibilidad de organizar la propia muerte».",
       texto: [
-        "Publicada el 25 de mayo y firmada el 15 de ese mes, en el 135.º aniversario de la Rerum novarum, la encíclica plantea la disyuntiva entre levantar una nueva torre de Babel y edificar la ciudad donde Dios y la humanidad habiten juntos. Su tesis central es que ante la IA la alternativa real no está entre entusiasmo y miedo, sino entre poner el progreso al servicio de las personas y los pueblos o al servicio de las lógicas de poder.",
-        "El texto advierte sobre el paradigma tecnocrático y sobre nuevas formas de dominio, desigualdad y control, en particular cuando la inteligencia artificial entra en procesos de decisión que afectan la vida, la reputación y el acceso a oportunidades. Es una descripción exacta de lo que hace un algoritmo de autorización en un sistema de aseguramiento. Pide regulación gubernamental, recualificación de trabajadores, protección de menores y garantías de que sean humanos y no modelos quienes decidan sobre el uso de armamento.",
-        "La lectura conjunta con la portada de esta edición es instructiva. Dos autoridades morales de tradiciones distintas, en el mismo año, llegan a la misma conclusión sobre la necesidad de supervisión. Ninguna de las dos tiene la capacidad de imponerla."
+        "En su discurso en el Palacio del Elíseo, León XIV enumeró como amenazas convergentes la manipulación genética con fines de lucro, la subrogación gestacional comercial, el tráfico de órganos y la disponibilidad legal de la propia muerte, presentándolas como manifestaciones de una misma lógica: la de convertir la vida humana en objeto transable.",
+        "El discurso llega la misma semana en que Ecuador avanza en su ley de eutanasia e Illinois confirma la vigencia de la suya, lo que sitúa la posición papal en diálogo directo —y en tensión explícita— con ambos procesos legislativos.",
+        "Como es norma en esta tertulia, se presenta la posición sin resolverla: las opiniones firmadas no comprometen a las instituciones de sus autores, y el lector puede sopesar este argumento junto a los marcos de autonomía y capacidad descritos en las dos notas anteriores."
       ],
       fuentes: [
-        { nombre: "Vatican News", url: "https://www.vaticannews.va/es/papa/news/2026-05/la-enciclica-papa-leon-xiv-magnifica-humanitasla-inteligencia-ia.html" },
-        { nombre: "Texto completo en español", url: "https://www.aciprensa.com/noticias/125381/texto-completo-de-la-enciclica-magnifica-humanitas-del-papa-leon-xiv-sobre-la-persona-y-la-inteligencia-artificial" }
+        { nombre: "OSV News", url: "https://www.osvnews.com/pope-leo-xiv-arrives-in-paris-urging-french-leaders-to-protect-the-right-to-life/" }
       ]
     },
     {
-      seccion: "Gobernanza global",
-      lugar: "Nueva York · en curso",
-      titulo: "Quién sucede a Guterres se decide a puerta cerrada",
-      sumario: "El proceso de selección del próximo Secretario General avanza sin candidato claro, a poco más de tres meses de que termine el mandato.",
+      seccion: "Derechos humanos y dignidad",
+      lugar: "Madrid · 22 al 26 de septiembre de 2026",
+      titulo: "España lanza una campaña contra el estigma del aborto, en medio de una disputa científica sobre el «dolor fetal»",
+      sumario: "El Ministerio de Sanidad presentó una campaña que sostiene que no hace falta demostrar sufrimiento para que la decisión merezca respeto, después de que la ministra afirmara que el feto no siente dolor durante un aborto —afirmación que bioeticistas y clínicos disputan citando evidencia sobre el desarrollo neurológico del segundo trimestre.",
       texto: [
-        "El segundo período de António Guterres concluye el 31 de diciembre de 2026. El procedimiento se rige por el artículo 97 de la Carta, que atribuye el nombramiento a la Asamblea General por recomendación del Consejo de Seguridad, lo que en la práctica entrega la decisión a los cinco miembros permanentes.",
-        "Para una publicación de bioética el asunto no es de cocina diplomática. Todo lo que Guterres pidió esta semana —un marco multilateral de gestión de riesgos de la IA, supervisión independiente, reforma del Consejo— depende de que su sucesor lo sostenga. Y el mecanismo que elige a ese sucesor es exactamente el que él pasó diez años pidiendo que se reformara."
+        "La campaña del Ministerio, encabezado por Mónica García, busca además que las comunidades autónomas apliquen de forma efectiva el registro de objetores de conciencia, exigencia que en la práctica determina cuánto tarda una mujer en acceder al procedimiento en su propio territorio.",
+        "La disputa sobre el dolor fetal no es retórica: el Observatorio de Bioética de la Universidad Católica de Valencia citó evidencia sobre el desarrollo neurológico en el segundo trimestre para cuestionar la afirmación ministerial, mientras el Ministerio no ha retirado ni matizado su declaración. Se trata, en los términos de esta publicación, de un hecho en disputa entre fuentes, y se presenta como tal.",
+        "El episodio confirma un patrón que recorre esta edición: varias de las controversias bioéticas de la semana —capacidad para decidir en Ecuador, presión implícita en Illinois, sufrimiento fetal en España— giran sobre afirmaciones empíricas que la ciencia todavía no ha zanjado del todo, y que cada parte usa para reforzar una posición normativa previa."
       ],
       fuentes: [
-        { nombre: "France 24", url: "https://www.france24.com/en/americas/20260922-un-secretary-general-guterres-calls-for-interdependence-in-final-general-assembly-address" },
-        { nombre: "Proceso de selección 2026", url: "https://en.wikipedia.org/wiki/2026_United_Nations_Secretary-General_selection" }
+        { nombre: "La Moncloa, Ministerio de Sanidad", url: "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/sanidad14/Paginas/2026/220926-campana-respeto-derecho-aborto.aspx" },
+        { nombre: "Observatorio de Bioética, UCV", url: "https://www.observatoriobioetica.org/2026/09/dolor-fetal-y-aborto-cuando-la-ciencia-incomoda/10009695" }
       ]
     },
     {
-      seccion: "Salud y clima",
-      lugar: "Washington · 18 de septiembre de 2026",
-      titulo: "La OPS advierte que el fortalecimiento de El Niño eleva los riesgos sanitarios en las Américas",
-      sumario: "El aviso llega días antes de que la región discuta su estrategia de emergencias y su plan sobre arbovirosis.",
+      seccion: "América Latina y el Caribe",
+      lugar: "América Latina · semana del 22 al 28 de septiembre de 2026",
+      titulo: "Aborto en América Latina: cuatro países, cuatro disputas abiertas en vísperas del 28S",
+      sumario: "A las puertas del Día de Acción por la Despenalización del Aborto, un repaso regional muestra frentes activos en Colombia, Chile, Ecuador y Argentina.",
       texto: [
-        "La organización informó el 18 de septiembre que el fenómeno se está fortaleciendo y plantea riesgos crecientes para la salud en la región. La coincidencia con la agenda del Consejo Directivo, que considera la estrategia integrada de arbovirosis 2026-2035, no es casual: los patrones de lluvia y temperatura asociados a El Niño alteran la distribución de dengue, chikunguña y otras enfermedades transmitidas por vectores.",
-        "Para el Caribe insular, el asunto se suma a la temporada ciclónica y a la presión sobre servicios de agua y saneamiento. La respuesta útil no es sanitaria en sentido estricto, y ahí vuelve a aparecer el argumento de los determinantes sociales."
+        "En Colombia sigue en comisión un proyecto que declararía la vida «desde la concepción»; en Chile avanza el proyecto «Escucha su corazón», centrado en el latido fetal. Ambos fueron presentados en julio y continúan su trámite sin resolución esta semana.",
+        "En Ecuador persisten reglas poco claras sobre plazos y objeción de conciencia para el acceso a la interrupción del embarazo en casos de violación, la otra cara del país que esta misma edición cubre por su avance en la ley de eutanasia.",
+        "El caso argentino es distinto porque no pasa por el Congreso: la compra pública de anticonceptivos cayó de 1,2 millones de unidades en 2024 a una proyección de apenas 63.000 para 2026. Es una forma de restringir el acceso reproductivo sin tocar una sola coma de la ley vigente, y por eso mismo, más difícil de fiscalizar."
       ],
       fuentes: [
-        { nombre: "OPS, noticias", url: "https://www.paho.org/es/noticias" }
+        { nombre: "NODAL", url: "https://www.nodal.am/2026/09/28s-america-latina-disputa-el-acceso-al-aborto-por-alejandra-rizzo/" }
+      ]
+    },
+    {
+      seccion: "Justicia social y financiamiento",
+      lugar: "Washington · 22 de septiembre de 2026",
+      titulo: "Uno de cada diez habitantes del planeta sigue en pobreza extrema, y el progreso se ha detenido donde más se necesita",
+      sumario: "El Banco Mundial estima que 824 millones de personas vivían con menos de 3 dólares diarios en 2024 (10,1% de la población mundial), con una mejora proyectada mínima, a 9,8%, para 2026.",
+      texto: [
+        "La cifra usa la línea de pobreza extrema actualizada a paridad de poder adquisitivo de 2021. El Banco proyecta que la reducción entre 2024 y 2026 será marginal, muy por debajo del ritmo necesario para cumplir la meta de erradicación de la pobreza extrema.",
+        "Lo más señalado del informe es la concentración geográfica: la pobreza por encima del 5% se ubica ya casi exclusivamente en el África subsahariana y en Oriente Medio y Norte de África —incluidos Afganistán y Pakistán—, zonas donde además la tendencia empeora en lugar de mejorar.",
+        "El informe no desagrega cifras específicas para América Latina y el Caribe, una ausencia que organizaciones regionales llevan años señalando: la región combina tasas de pobreza extrema moderadas con niveles de desigualdad entre los más altos del planeta, un contraste que un indicador agregado global no siempre deja ver."
+      ],
+      fuentes: [
+        { nombre: "Banco Mundial", url: "https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" }
+      ]
+    },
+    {
+      seccion: "Derechos humanos y dignidad",
+      lugar: "Global / Perú · 21 y 26 de septiembre de 2026",
+      titulo: "124 personas defensoras de la tierra y el ambiente fueron asesinadas en 2025; América Latina, otra vez la región más letal",
+      sumario: "El informe de Global Witness documenta 2.375 asesinatos desde 2012, con los pueblos indígenas y pequeños agricultores como casi tres cuartas partes de las víctimas. En Perú, familias de líderes indígenas asesinados hace más de una década siguen esperando justicia y reparación.",
+      texto: [
+        "El informe, titulado Collective Power, cita entre los casos recientes la desaparición sin resolver de los defensores mexicanos Ricardo Lagunes y Antonio Díaz, y el asesinato de la líder mapuche chilena Julia Chuñil.",
+        "En Perú, La República recogió testimonios de familiares de las víctimas del caso Saweto —Edwin Chota y otros tres líderes indígenas asesinados en 2014— y de Quinto Inuma, asesinado en 2023 pese a contar con medidas estatales de protección. Describen compensaciones que no llegan, titulación de tierras incompleta y amenazas que aún les impiden regresar a sus territorios.",
+        "La impunidad que documentan ambos reportes no es un asunto aparte de la agenda económica y social de esta edición: los derechos sobre la tierra y la protección efectiva de quien los defiende dependen de la misma capacidad institucional que se discute, en otro registro, en las notas sobre pensiones más adelante."
+      ],
+      fuentes: [
+        { nombre: "IPS Noticias, sobre el informe de Global Witness", url: "https://ipsnoticias.net/2026/09/asesinato-de-defensores-ambientales-refleja-la-lucha-de-poder-por-recursos-mundiales/" },
+        { nombre: "La República (Perú)", url: "https://larepublica.pe/sociedad/2026/09/26/tenemos-miedo-de-regresar-el-viacrucis-de-las-familias-de-defensores-indigenas-asesinados-1401482" }
+      ]
+    },
+    {
+      seccion: "Seguridad social y pensiones",
+      lugar: "Bogotá · 22 de septiembre de 2026",
+      titulo: "La administradora estatal de pensiones de Colombia pide un año más para aplicar la reforma que la propia ley le exige",
+      sumario: "Colpensiones solicitó a la Corte Constitucional aplazar de abril de 2027 a abril de 2028 la entrada en vigor de la Ley 2381 de 2024, citando 84 requisitos técnicos y operativos sin resolver.",
+      texto: [
+        "La solicitud invoca la Ley 2381 de 2024, confirmada por la Sentencia C-264 de 2026, y detalla obstáculos concretos: integración de bases de datos, traslado de personal y coordinación operativa con los fondos privados de pensiones que coexistirán con el nuevo pilar público bajo el diseño de la reforma. La Corte no ha resuelto todavía la solicitud.",
+        "El aplazamiento, de aprobarse, retrasaría un año la entrada en operación del diseño redistributivo mixto —público y privado— que es el núcleo de la reforma colombiana.",
+        "Vale notar el método antes que el resultado: Colpensiones no dejó que el atraso se acumulara en silencio, sino que lo cuantificó —84 requisitos— en un documento dirigido a un tribunal que puede negarle la prórroga. Es una forma de rendición de cuentas poco habitual, más allá de lo que se piense del fondo de la solicitud."
+      ],
+      fuentes: [
+        { nombre: "Infobae Colombia", url: "https://www.infobae.com/colombia/2026/09/23/colpensiones-pidio-aplazar-un-ano-la-reforma-pensional-busca-que-entre-en-vigor-en-abril-de-2028/" }
+      ]
+    },
+    {
+      seccion: "Seguridad social y pensiones",
+      lugar: "Santiago · 25 de septiembre de 2026",
+      titulo: "Chile aumenta la Pensión Garantizada Universal para los mayores de 75 años",
+      sumario: "Bajo la Ley 21.735, el monto máximo de la PGU subió de 231.732 a 250.275 pesos chilenos mensuales para este tramo etario, en la segunda etapa de un despliegue escalonado que llegará a los 65 años en 2027.",
+      texto: [
+        "El aumento beneficia de forma automática a más de 500.000 personas de 75 años o más. Es la segunda fase de un calendario que subió el beneficio a los mayores de 82 años en septiembre de 2025 y que alcanzará a los mayores de 65 en septiembre de 2027.",
+        "El escalonamiento por edad es una decisión deliberada de secuenciación fiscal: prioriza primero a las cohortes de mayor edad —presumiblemente más vulnerables y con menor expectativa de vida restante— pero deja a personas ya retiradas, de 65 a 74 años, esperando hasta dos años más el beneficio completo.",
+        "Puesto junto a la nota anterior, el contraste es notable: dos países de la región resolvieron, la misma quincena, de manera opuesta su relación con el calendario que ellos mismos se fijaron —uno pide correrlo, el otro lo cumple— sin que de una sola semana de noticias se pueda concluir cuál de los dos diseños está mejor gestionado."
+      ],
+      fuentes: [
+        { nombre: "Duplos", url: "https://duplos.cl/redaccion/pension-garantizada-universal-pgu-chile-beneficiarios-76/280284/2026/09/25/" },
+        { nombre: "Subsecretaría de Previsión Social", url: "https://previsionsocial.gob.cl/pensiones-para-chile/" }
+      ]
+    },
+    {
+      seccion: "Equidad y determinantes sociales",
+      lugar: "Nueva York · 25 de septiembre de 2026",
+      titulo: "La cumbre de pandemias terminó con promesas renovadas y una declaración que la Unión Europea calificó de insuficiente",
+      sumario: "La segunda reunión de alto nivel de la ONU sobre prevención, preparación y respuesta ante pandemias cerró sin que el texto final se adoptara formalmente; se remitió a trámite posterior en la Asamblea General. La UE objetó, en comunicado propio, la falta de mecanismos vinculantes.",
+      texto: [
+        "El documento de cierre habla de un «enfoque de todo el gobierno y toda la sociedad», sistemas de salud resilientes e inversión «sostenida y más equitativa», y señala brechas de financiamiento persistentes. El Vicesecretario General de la ONU pidió terminar el anexo sobre acceso a patógenos y reparto de beneficios (PABS) antes de la Asamblea Mundial de la Salud de mayo de 2027.",
+        "La Unión Europea, en un comunicado separado, dijo que el texto final «se queda corto» de sus expectativas: se opuso a cualquier transferencia de tecnología obligatoria —insistiendo en que sea «voluntaria y en términos mutuamente acordados»—, criticó la sección de financiamiento por carecer de un rastreador financiero global, y notó que la declaración omite mencionar el Centro de la OMS para la Inteligencia de Pandemias y Epidemias.",
+        "Es la misma estructura argumental que la portada de esta edición, trasladada a la salud: se produce un texto, se celebra como compromiso renovado, y el mecanismo concreto que lo haría exigible —transferencia obligatoria, rastreador financiero— es precisamente lo que no sobrevive la negociación. Vale sumar aquí una nota sobre la equidad en IA que esta tertulia cubrió hace dos semanas: un análisis del Instituto Benton observó que el plan de mil millones de dólares de la Fundación Gates para llevar IA a la salud y la educación choca con que 2.200 millones de personas siguen sin conexión a internet, la misma clase de brecha estructural que ninguna declaración, por bien intencionada que sea, resuelve por sí sola."
+      ],
+      fuentes: [
+        { nombre: "Organización Mundial de la Salud", url: "https://www.who.int/news/item/25-09-2026-world-leaders-renew-commitment-to-protect-the-world-from-future-pandemics" },
+        { nombre: "Servicio Europeo de Acción Exterior", url: "https://www.eeas.europa.eu/delegations/un-new-york/eu-general-statement-un-high-level-meeting-pandemic-prevention-preparedness-and-response_en?s=63" },
+        { nombre: "Benton Institute for Broadband & Society", url: "https://www.benton.org/blog/gates-foundation-ai-could-help-poorest-catch-or-leave-them-further-behind" }
+      ]
+    },
+    {
+      seccion: "Ética de la inteligencia artificial",
+      lugar: "reportado el 9 y el 11 de septiembre de 2026",
+      titulo: "Timnit Gebru: el discurso del «dios-máquina» es una cortina de humo que distrae de los daños reales",
+      sumario: "La investigadora que Google despidió en 2020 por su trabajo crítico sobre los grandes modelos de lenguaje sostiene que la retórica del riesgo existencial —la misma que Altman y Amodei llevaron esta semana al Consejo de Seguridad— desvía la atención de daños que ya se pueden verificar hoy: armas autónomas, vigilancia de activistas, despidos y consumo eléctrico.",
+      texto: [
+        "«La industria se ha convertido en una mezcla de sectas, de gente que son verdaderos creyentes, igual que un predicador que dice que se acercan los tiempos del fin», dijo Gebru a Wired. Sobre la posibilidad de que la IA extinga a la humanidad, fue directa: «no puedo realmente imaginármelo». Llama a esa narrativa «dios-máquina» y sostiene que «está pensada, en mi opinión, para distraernos» de problemas concretos.",
+        "Los problemas concretos que enumera incluyen las armas autónomas ya desplegadas en conflictos activos, el consumo eléctrico de los centros de datos —1,5% de la electricidad mundial en 2024, según la Agencia Internacional de la Energía—, los despidos que las empresas atribuyen a la adopción de IA (116.175 recortes de empleo en Estados Unidos hasta agosto de 2026, según los conteos que cita), y sistemas de vigilancia. En este último punto se apoya en una investigación de The American Prospect publicada el 9 de septiembre, según la cual Anthropic —la misma empresa cuyo director pidió supervisión externa ante el Consejo de Seguridad— construye un sistema de vigilancia predictiva que combina monitoreo de protestas en tiempo real y seguimiento de «personas de interés», con activistas opositores al desarrollo de la IA entre los perfiles vigilados; Anthropic no respondió a la solicitud de comentarios de esa investigación.",
+        "El argumento de Gebru no ataca la sinceridad de Altman o Amodei; ataca el terreno donde deciden librar el debate. Un riesgo de extinción especulativo no se puede auditar hoy —nadie puede verificar si una salvaguarda futura funcionará contra un escenario que todavía no existe—. Los daños que ella enumera sí se pueden auditar ahora mismo, con cifras, contratos y documentos, exactamente como esta edición intentó hacerlo con las armas autónomas, la autorización previa o los contratos de IA en salud. Su propuesta alternativa no pide moratorias ni tratados globales: pide que la IA se gobierne como la ingeniería de puentes, con ingenieros identificables y responsables, pruebas independientes antes del despliegue, documentación pública de desempeño y reporte obligatorio de incidentes."
+      ],
+      fuentes: [
+        { nombre: "Wired en español", url: "https://es.wired.com/articulos/timnit-gebru-alerta-el-discurso-de-la-ia-apocaliptica-es-una-cortina-de-humo" },
+        { nombre: "The American Prospect", url: "https://prospect.org/2026/09/09/anthropic-artificial-intelligence-surveillance-system-monitor-activists/" },
+        { nombre: "Cybernews", url: "https://cybernews.com/ai-news/timnit-gebru-ai-extinction/" }
       ]
     }
   ],
 
   contrapunto: {
-    tema: "Contrapunto: ¿para qué sirve realmente la autorización previa?",
-    intro: "La retirada parcial del instrumento en el mercado estadounidense obliga a preguntarse qué se pierde cuando se elimina y qué se perdía cuando estaba. La discusión es técnica solo en apariencia: decide quién carga con la incertidumbre.",
+    tema: "Contrapunto: pedir supervisión en público, ¿fortalece la gobernanza de la IA o la sustituye?",
+    intro: "Que las empresas que reportan ganancias trimestrales pidan que alguien las vigile no es nuevo. Pero la secuencia de esta semana —testimonio ante el Consejo de Seguridad un día, borrado de salvaguardas en Ginebra tres días después— hace visible una pregunta de fondo: ¿para qué sirve pedir vigilancia en público, si quien la pide también decide, en otro foro y en privado, que no la habrá?",
     a: {
-      titulo: "Es el único filtro entre el gasto y el abuso",
+      titulo: "Es un paso real, aunque incompleto",
       cuerpo: [
-        "Un fondo colectivo que no revisa lo que paga no es solidario: es una transferencia hacia quien factura más rápido. La autorización previa es el punto donde el asegurador verifica pertinencia antes de que el gasto sea irreversible, y donde detecta patrones de sobreindicación que ninguna auditoría posterior recupera.",
-        "Eliminarla no hace desaparecer el control: lo desplaza a la auditoría retrospectiva, que llega cuando el dinero ya salió y cuyo resultado suele ser el conflicto con el prestador o el ajuste de tarifas para todos.",
-        "Un 92% de aprobación no prueba que el filtro sea inútil. Puede probar que funciona como disuasión: el porcentaje mide lo que se solicitó, no lo que se dejó de solicitar porque existía el requisito."
+        "Hace apenas tres años nadie en la industria pedía esto en un foro tan alto. El propio lenguaje de Altman y Amodei —que ninguna empresa debería decidir sola— reconoce un límite que antes no se admitía en público, y eso amplía el margen político disponible aunque el resultado inmediato haya sido el rechazo.",
+        "La petición pública tiene, además, un costo: quien la formula se expone a que se documente la contradicción si luego actúa en sentido contrario, como ocurre en esta misma edición. Señalar esa contradicción es parte del mecanismo de rendición de cuentas, no su sustituto.",
+        "Conviene distinguir los expedientes: gobernanza de modelos comerciales de IA y gobernanza de armas autónomas letales tienen actores e incentivos distintos. No toda inconsistencia entre ambos es hipocresía deliberada; puede ser, más simplemente, que ningún gobierno cede soberanía militar al mismo ritmo que le exige transparencia a una empresa privada."
       ]
     },
     b: {
-      titulo: "Es un costo que paga el enfermo y lo cobra el sistema",
+      titulo: "Es la manera más barata de evitar la regulación que de verdad duele",
       cuerpo: [
-        "El instrumento traslada trabajo administrativo al equipo clínico y tiempo de espera al paciente. Ese costo no aparece en ninguna contabilidad del asegurador, porque lo absorben terceros. Un ahorro que se financia con tiempo ajeno no es un ahorro: es una externalización.",
-        "La carga tampoco se distribuye de manera neutral. La soporta mejor el prestador con personal administrativo dedicado y el paciente con capacidad de insistir, llamar y reclamar. Quien no tiene ninguna de las dos cosas simplemente no recibe el servicio, y esa renuncia se registra en los datos como demanda inexistente.",
-        "Si el 92% se aprueba, el sistema está haciendo esperar a nueve de cada diez personas para detener a una. Habría que demostrar que lo detenido justifica la espera de los demás, y esa demostración casi nunca se presenta."
+        "Pedir «un marco internacional», sin especificar mecanismos vinculantes, sanciones o auditoría independiente, cuesta poco y rinde mucho: coloca a la empresa del lado de la prudencia sin comprometerla con nada verificable.",
+        "El patrón se repite en otros sectores regulados: la industria propone principios generales, el regulador tarda años en producir norma dura, y cuando la norma llega, se parece sospechosamente a lo que la industria ya proponía. Es el mismo fenómeno de captura regulatoria que esta tertulia describió la semana pasada, aplicado ahora a la fase de diseño en lugar de a la de aplicación.",
+        "El caso de Ginebra marca el límite exacto de esa lectura optimista: cuando existe de verdad un borrador con lenguaje vinculante sobre una decisión letal, no son las empresas quienes lo vacían —son los Estados que las alojan. Pedir vigilancia sobre el producto ajeno cuesta poco cuando el poder de veto real permanece intacto en la mesa de al lado.",
+        "Ese escepticismo no es solo nuestro. La investigadora Timnit Gebru fue más lejos esta semana: dijo a Wired que el propio discurso del riesgo existencial —el mismo que Altman y Amodei llevaron al Consejo de Seguridad— funciona como cortina de humo, porque desplaza el debate hacia un terreno especulativo que nadie puede auditar hoy, mientras daños que sí se pueden verificar ahora mismo —entre ellos, según reveló esta semana The American Prospect, un sistema de vigilancia de activistas construido por la propia Anthropic— quedan en segundo plano. Esta edición le dedica una nota aparte."
       ]
     },
-    cierre: "Las dos posiciones aceptan que los recursos son finitos y que alguien debe decidir. Difieren en dónde colocar la carga de la prueba: si el paciente debe demostrar que merece el servicio, o si el asegurador debe demostrar que negarlo produce un beneficio mayor que el daño de hacer esperar a todos los demás. La tertulia queda abierta."
+    cierre: "Ambas posiciones coinciden en que vigilancia declarada no equivale a vigilancia ejercida. Difieren en si la distancia entre una y otra se está cerrando, aunque sea despacio, o si existe precisamente para no cerrarse nunca. La tertulia queda abierta."
   },
 
   ensayo: {
-    titulo: "Comprar inteligencia: lo que un sistema de salud acepta cuando contrata un algoritmo",
-    bajada: "La transferencia de poder que Guterres describió esta semana no ocurre solo en las cumbres. Ocurre, y con firma, en el expediente de una licitación.",
+    titulo: "Lo que Colpensiones sabe hacer y Ginebra no: pedir cuentas en voz alta",
+    bajada: "La semana dejó dos maneras opuestas de rendir cuentas sobre un sistema del que depende la vida de millones de personas: una ocurrió a puerta cerrada, en un tratado sobre armas; la otra, en público, sobre una reforma de pensiones. Vale la pena comparar los métodos.",
     cuerpo: [
-      "Cuando un asegurador público o un ministerio incorpora una herramienta de inteligencia artificial —para priorizar listas de espera, detectar fraude, sugerir codificación, apoyar la decisión clínica, calificar solicitudes de autorización— está haciendo algo distinto de comprar un equipo. Un tomógrafo hace lo que hace y su funcionamiento no cambia mientras dure el contrato. Un modelo cambia. Se reentrena, se actualiza, se ajusta a datos nuevos, y esos cambios ocurren del lado del proveedor. La institución evaluó una versión y opera otra.",
-      "Esa diferencia tiene consecuencias que el derecho administrativo todavía no procesa bien. La responsabilidad por una decisión que perjudica a un afiliado sigue siendo de la institución, porque es ella quien tiene la relación jurídica con esa persona. Pero la capacidad técnica de explicar por qué se decidió así está del otro lado del contrato, a veces protegida como secreto comercial. Se produce una asimetría peculiar: la entidad pública responde por una lógica que no puede exhibir.",
-      "Aquí es donde el vocabulario de la bioética resulta más útil que el de la gestión. El consentimiento informado no se sostiene sobre la voluntad del paciente únicamente; se sostiene sobre el deber correlativo de quien tiene la información de entregarla en términos comprensibles. Una institución que no puede explicar una denegación no ha satisfecho ese deber, aunque haya cumplido cada paso del procedimiento. Y el principio de justicia no se agota en repartir bien: exige que quien queda peor pueda pedir cuentas a alguien identificable.",
-      "Hay una segunda capa, menos discutida. Los modelos aprenden de los datos que existen, y los datos que existen registran el sistema tal como es, con sus exclusiones ya incorporadas. Si una población consultó menos porque el servicio le quedaba a tres horas de camino, el modelo aprenderá que esa población demanda menos, y asignará en consecuencia. La desigualdad de acceso entra como dato y sale como criterio. No hay mala fe en ningún punto de la cadena; hay una inferencia estadísticamente correcta y moralmente desastrosa.",
-      "Nada de esto es argumento para no incorporar estas herramientas. Los sistemas de salud de la región tienen escasez de especialistas, listas de espera reales y capacidad limitada de auditar el gasto. El informe Goalkeepers de esta semana tiene razón en que la pregunta no es si la tecnología llega, sino para quién se construye y quién la evalúa. Lo que sí se sigue es que las cláusulas del contrato hacen aquí un trabajo que en otros ámbitos hacen los comités de ética.",
-      "Cuatro exigencias parecen mínimas. Acceso a la lógica de decisión, no solo a los resultados, con derecho de auditoría independiente. Notificación obligatoria de cada actualización del modelo, con revalidación local antes de que entre en producción. Registro de incidentes, es decir, de los casos en que el sistema se apartó del comportamiento esperado, con obligación de reportarlos a la autoridad sanitaria. Y una cláusula de reversibilidad que permita retirar la herramienta sin que el servicio colapse, porque una dependencia irreversible es una transferencia de poder disfrazada de eficiencia.",
-      "Ninguna de las cuatro es exótica. Son, traducidas al lenguaje de las compras públicas, las mismas garantías que la investigación con seres humanos tardó medio siglo en institucionalizar: revisión previa por un tercero, consentimiento sobre lo que efectivamente se hará, notificación de eventos adversos y derecho a retirarse. La bioética no tiene que inventar un marco para la inteligencia artificial en salud. Tiene que insistir en que el que ya existe se aplique donde ahora se decide: no en la cama del paciente, sino en el pliego de condiciones."
+      "La misma semana produjo dos episodios de gobernanza de sistemas complejos que deciden sobre la vida de las personas, y conviene ponerlos uno al lado del otro. En Ginebra, negociadores de Estados Unidos y Rusia retiraron en privado tres salvaguardas de un tratado sobre armas autónomas: nadie lo anunció, se supo por reportería basada en fuentes anónimas. En Bogotá, la administradora estatal de pensiones de Colombia publicó, en un documento dirigido a la Corte Constitucional, una lista de 84 requisitos técnicos que no puede cumplir a tiempo, y pidió que se le diera un año más. Ninguno de los dos casos es glamoroso. Pero solo uno de los dos deja rastro público de su propia insuficiencia mientras todavía es corregible.",
+      "La diferencia de método importa más que la diferencia de escala. Colpensiones no ocultó el número: lo puso en un expediente formal, sujeto al escrutinio de un tribunal y de la prensa, exponiéndose a la crítica de haber administrado mal el tiempo. El expediente de Ginebra, en cambio, se conoció por una investigación periodística basada en fuentes que hablaron bajo condición de anonimato; ningún gobierno lo confirmó en público, y los negociadores lo dejaron pasar en silencio. Ambos casos tratan con sistemas cuyo mal funcionamiento tiene consecuencias irreversibles sobre vidas humanas. Lo que distingue a uno de otro no es el riesgo, sino la disposición institucional a mostrar la propia falla mientras ocurre.",
+      "Esa diferencia tiene una explicación estructural y no solo de voluntad. Colpensiones opera dentro de un derecho administrativo interno sujeto a revisión constitucional, control judicial y acceso a la información: un tribunal puede negarle la prórroga, y la prensa puede contar por qué. La negociación de un tratado sobre armas letales entre grandes potencias no tiene ninguno de esos frenos: ningún tribunal doméstico puede obligar a Estados Unidos o a Rusia a divulgar el contenido de una sesión cerrada del Grupo de Expertos Gubernamentales, y la Convención sobre Ciertas Armas Convencionales opera por consenso, lo que significa que cualquiera de las partes puede simplemente negarse a dejar por escrito lo que no le conviene. Las instituciones acostumbradas a rendir cuentas las rinden, incluso a regañadientes; las que nunca fueron diseñadas para responder ante nadie más que sus propios cinco miembros permanentes, no.",
+      "Aplicado a la inteligencia artificial, el contraste aclara qué se pidió realmente ante el Consejo de Seguridad esta semana. En el fondo, Altman y Amodei pidieron que la gobernanza de la IA se pareciera más a Bogotá que a Ginebra: un marco donde la falla se documente, se someta a un tercero y quede constancia verificable. Pero quienes lo pidieron fueron dos empresas, no dos Estados. Una empresa puede proponer principios; no puede convocarse a sí misma ante una corte, ni fijarse una fecha límite que un tribunal ajeno verifique. Solo un Estado puede hacer eso —y los dos Estados con mayor interés en decisiones letales automatizadas eligieron, la misma semana, no hacerlo.",
+      "Conviene resistir la tentación de reducir todo esto a hipocresía simple. Hay una diferencia real entre pedir que un tercero vigile un producto comercial —un modelo de lenguaje, un asistente de atención al cliente— y aceptar que un tercero vigile una decisión de selección de objetivos militares. La reticencia de los Estados en el segundo terreno no prueba mala fe respecto al primero. Pero sí revela con precisión dónde está el límite real de la voluntad de rendir cuentas: se extiende hasta donde no compromete el monopolio estatal sobre el uso de la fuerza, y ni un milímetro más allá. Ese límite no es una novedad de esta semana; es, en el fondo, el mismo que la teoría clásica del Estado usó durante siglos para definir qué es la soberanía.",
+      "Para quien diseña o defiende sistemas de protección social, la lección no es que la inteligencia artificial deba regularse exactamente como una reforma pensional, sino que la arquitectura institucional pesa más que la buena voluntad declarada por cualquier actor, público o privado. Colpensiones pudo pedir el aplazamiento en público porque existe una Corte que puede negárselo, una prensa que puede contarlo y una ciudadanía que puede reclamarlo después en las urnas. La reforma pensional colombiana seguirá teniendo defectos de diseño y de implementación —los 84 requisitos pendientes lo confirman— pero transcurre dentro de un circuito que la obliga a explicarse ante alguien con poder real de sanción.",
+      "Chile ofrece, dentro del mismo campo, el contraste que falta: subió la Pensión Garantizada Universal en la fecha prevista, sin pedir prórroga, lo que tampoco demuestra que su reforma esté mejor diseñada —solo que llegó más lista a este tramo específico del calendario que se fijó. Ninguna de las dos decisiones, la colombiana o la chilena, es comparable en escala de riesgo con un tratado sobre armas autónomas letales. Pero las tres comparten la misma pregunta de fondo, la que debería hacerse todo lector de esta edición ante cualquier sistema del que dependa: quién tiene el poder real de exigir que la institución explique, en público y a tiempo, por qué el sistema todavía no hace lo que prometió."
     ],
     firma: "Redacción TvBioética · Los artículos de reflexión buscan abrir discusión, no cerrarla. Las respuestas se publican en la edición siguiente."
   },
 
   concepto: {
-    termino: "Captura regulatoria",
-    definicion: "Situación en la que el organismo encargado de regular una actividad termina orientado por los intereses del sector que debe supervisar. No requiere corrupción: basta con que el regulador dependa del regulado para obtener la información, el personal calificado o la definición misma de qué constituye un riesgo.",
-    porque: "Aparece esta semana porque Guterres pidió salvaguardas para la inteligencia artificial señalando que son los propios desarrolladores quienes dan la voz de alarma. Esa frase describe un problema y, sin quererlo, también su trampa: cuando el conocimiento técnico necesario para regular solo existe dentro de la empresa regulada, el marco de supervisión nace ya inclinado. La respuesta clásica no es desconfiar de los expertos, sino financiar capacidad técnica pública e independiente."
+    termino: "Principio de precaución",
+    definicion: "Criterio según el cual, ante una amenaza de daño grave o irreversible, la falta de certeza científica absoluta no debe usarse como razón para posponer medidas destinadas a prevenirlo. Nació en el derecho ambiental y se trasladó después a la bioética, la salud pública y, más recientemente, a la gobernanza de tecnologías de alto riesgo.",
+    porque: "Aparece esta semana porque las tres cláusulas que Estados Unidos y Rusia retiraron del borrador sobre armas autónomas —revisión humana previa, estándares de fiabilidad, consideración ética obligatoria— son, en esencia, aplicaciones directas del principio de precaución a un dominio donde el daño, por definición, es irreversible. Retirarlas no es un gesto neutral: es optar explícitamente por no aplicar el principio justo donde más se necesita."
   },
 
   radar: [
-    { cuando: "25 de septiembre", titulo: "Reunión de alto nivel sobre pandemias", detalle: "Segunda desde 2023. Interesa qué se dice sobre financiamiento del Acuerdo sobre Pandemias y del Fondo Pandémico, no sobre la retórica de solidaridad." },
-    { cuando: "28 sep – 2 oct", titulo: "63.º Consejo Directivo de la OPS", detalle: "Cuatro estrategias regionales a votación: emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad de los alimentos." },
-    { cuando: "1 de octubre", titulo: "Entra en vigor la reducción de autorizaciones previas", detalle: "Unos 1.700 tratamientos dejan de requerir aprobación en los planes de UnitedHealthcare. Conviene observar qué ocurre con el gasto y con las denegaciones retrospectivas." },
-    { cuando: "31 de diciembre", titulo: "Fin del mandato de Guterres", detalle: "Sin sucesor definido. De quién ocupe el cargo depende la continuidad de la agenda de gobernanza de la IA planteada esta semana." },
-    { cuando: "2027", titulo: "Reunión de alto nivel sobre cobertura universal", detalle: "La preparación comenzó informalmente el 23 de septiembre en el grupo ministerial de amigos de la CUS." },
-    { cuando: "Doce a dieciocho meses", titulo: "La ventana que señala Goalkeepers", detalle: "El informe sostiene que las decisiones sobre cómo se construye, financia y regula la IA en ese plazo determinan si reduce o amplía las brechas." }
+    { cuando: "28 de septiembre (hoy)", titulo: "Día de Acción Mundial por la Despenalización del Aborto", detalle: "En América Latina llega con los frentes abiertos en Colombia, Chile, Ecuador y Argentina descritos en esta edición." },
+    { cuando: "28 sep – 2 oct", titulo: "63.º Consejo Directivo de la OPS", detalle: "Votará estrategias sobre emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad alimentaria, y publicará el informe Salud en las Américas 2026." },
+    { cuando: "30 de septiembre", titulo: "Voto del Consejo de Seguridad sobre Haití", detalle: "Se decide la renovación de la Fuerza de Supresión de Pandillas; encuestas recientes muestran una aprobación pública dividida pese a que la mitad de la población dice sentirse más segura." },
+    { cuando: "hasta el 7 de octubre", titulo: "63.º período del Consejo de Derechos Humanos", detalle: "Organizaciones piden renovar hasta 2028 la Misión de Determinación de los Hechos sobre Venezuela; se espera el voto antes del cierre de sesiones." },
+    { cuando: "16–20 de noviembre", titulo: "Conferencia de revisión de la Convención sobre Ciertas Armas Convencionales", detalle: "En Ginebra. Es la próxima instancia formal donde podría discutirse —o no— la reposición de las salvaguardas retiradas esta semana." },
+    { cuando: "abril de 2027 (o 2028, si la Corte lo aprueba)", titulo: "Fecha de entrada en vigor de la reforma pensional colombiana", detalle: "La Corte Constitucional aún no decide sobre la solicitud de Colpensiones de correr el calendario un año." }
   ],
 
   lecturas: [
-    { titulo: "Discurso ante el debate general del 81.º período de sesiones", autor: "António Guterres, Naciones Unidas", donde: "22 de septiembre de 2026", url: "https://gadebate.un.org/sites/default/files/gastatements/81/unsg_es.pdf", nota: "El texto íntegro en español. Vale leerlo entero: los pasajes sobre la transferencia de poder son más precisos que cualquier resumen de prensa." },
-    { titulo: "Make This Matter: AI, Equity, and the Choice We Can't Delay", autor: "Informe Goalkeepers 2026, Fundación Gates", donde: "15 de septiembre de 2026", url: "https://goalkeepers.gatesfoundation.org/wp-content/uploads/2026/09/2026_Goalkeepers_Report_EN.pdf", nota: "Los dieciocho indicadores de los ODS y el apartado de llamado a la acción. Material de trabajo para quien planifica." },
-    { titulo: "Magnifica humanitas. Sobre la custodia de la persona humana en el tiempo de la inteligencia artificial", autor: "León XIV", donde: "mayo de 2026", url: "https://www.aciprensa.com/noticias/125381/texto-completo-de-la-enciclica-magnifica-humanitas-del-papa-leon-xiv-sobre-la-persona-y-la-inteligencia-artificial", nota: "Extensa. El cuarto capítulo, sobre verdad, trabajo y libertad, es el más citable en discusiones de política pública." },
-    { titulo: "La urgencia de invertir en los sistemas de salud en América Latina y el Caribe para reducir la desigualdad", autor: "CEPAL y OPS", donde: "33 páginas", url: "https://www.cepal.org/es/publicaciones/80763-la-urgencia-invertir-sistemas-salud-america-latina-caribe-reducir-la-desigualdad", nota: "Breve y con cifras regionales. Útil para argumentar ante ministerios de Hacienda." },
-    { titulo: "La OMS en la Asamblea General de las Naciones Unidas 2026", autor: "Organización Mundial de la Salud", donde: "septiembre de 2026", url: "https://www.who.int/news-room/events/detail/2026/09/18/default-calendar/who-at-the-united-nations-general-assembly-2026", nota: "El calendario completo de reuniones sanitarias de la semana de alto nivel, con enlaces a cada sesión." },
-    { titulo: "Informe mundial sobre determinantes sociales de la equidad en salud", autor: "Organización Mundial de la Salud", donde: "2025", url: "https://www.who.int/teams/social-determinants-of-health/equity-and-health/world-report-on-social-determinants-of-health-equity", nota: "Sigue siendo el marco de referencia obligado, y esta semana vuelve a ser pertinente a propósito de los cuarenta años de la Carta de Ottawa." }
+    { titulo: "How the US and Russia weakened a global effort to regulate 'killer' AI", autor: "Pranshu Verma, The Washington Post (vía Spokesman-Review)", donde: "26 de septiembre de 2026", url: "https://www.spokesman.com/stories/2026/sep/26/us-russia-stripped-human-oversight-from-global-ai-/", nota: "El reporte original, con el detalle de las quince horas de negociación en Ginebra y las reacciones de Human Rights Watch y Stop Killer Robots." },
+    { titulo: "Rogue AI hacks Irregular, Anthropic, Google, OpenAI and Meta AI", autor: "Thomas Brewster, Forbes", donde: "23 de septiembre de 2026", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/", nota: "El origen del incidente de pruebas de seguridad que salió mal, contado por quien lo destapó." },
+    { titulo: "World leaders renew commitment to protect the world from future pandemics", autor: "Organización Mundial de la Salud", donde: "25 de septiembre de 2026", url: "https://www.who.int/news/item/25-09-2026-world-leaders-renew-commitment-to-protect-the-world-from-future-pandemics", nota: "El comunicado oficial de la reunión de alto nivel; léalo junto con la declaración de la UE para ver lo que uno cuenta y el otro no." },
+    { titulo: "EU general statement, UN high-level meeting on pandemic PPR", autor: "Servicio Europeo de Acción Exterior", donde: "25 de septiembre de 2026", url: "https://www.eeas.europa.eu/delegations/un-new-york/eu-general-statement-un-high-level-meeting-pandemic-prevention-preparedness-and-response_en?s=63", nota: "El desacuerdo que no aparece en el comunicado de la OMS: financiamiento, transferencia de tecnología y el Centro de Inteligencia de Pandemias." },
+    { titulo: "September 2026 global poverty update", autor: "Banco Mundial", donde: "22 de septiembre de 2026", url: "https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in", nota: "Las cifras completas y la metodología detrás del 10,1% de pobreza extrema mundial." },
+    { titulo: "Asesinato de defensores ambientales refleja la lucha de poder por recursos mundiales", autor: "IPS Noticias, sobre el informe Collective Power de Global Witness", donde: "21 de septiembre de 2026", url: "https://ipsnoticias.net/2026/09/asesinato-de-defensores-ambientales-refleja-la-lucha-de-poder-por-recursos-mundiales/", nota: "Contexto regional del informe, con los casos de México, Chile y Perú citados en esta edición." }
   ]
 };
 
