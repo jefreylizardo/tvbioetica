@@ -439,7 +439,8 @@ footer a:hover{border-bottom-color:var(--verde)}
         <h4>Cómo trabajamos</h4>
         <ul>
           <li>Cierre de edición: domingo por la noche.</li>
-          <li>Cada nota enlaza su fuente primaria. Cuando un hecho está en disputa, lo decimos.</li>
+          <li>Priorizamos fuentes primarias y enlazamos las fuentes utilizadas. Distinguimos hechos, estimaciones, interpretaciones y opiniones; cuando un hecho está en disputa o la evidencia es incompleta, lo señalamos.</li>
+          <li>Utilizamos herramientas de inteligencia artificial como apoyo para búsqueda, síntesis y edición. La selección editorial y la responsabilidad por el contenido corresponden a TvBioética.</li>
           <li>Las opiniones firmadas no comprometen a las instituciones de sus autores.</li>
         </ul>
       </div>
@@ -458,295 +459,426 @@ footer a:hover{border-bottom-color:var(--verde)}
    Nada más en el archivo necesita cambiar.
    ══════════════════════════════════════════════════════════════════ */
 const EDICION = {
-  numero: 3,
-  fecha: "Domingo 27 de septiembre de 2026",
-  proxima: "Domingo 4 de octubre de 2026",
-  correo: "tertulia@tvbioetica.org",
-
-  pregunta: "¿Sirve de algo que quienes construyen la inteligencia artificial pidan en público que alguien los vigile, si los gobiernos que podrían vigilarlos de verdad acaban de borrar esa vigilancia de un tratado, en privado y en la misma semana?",
-  preguntaBajada: "El 23 de septiembre, ante el Consejo de Seguridad de la ONU, Sam Altman y Dario Amodei pidieron marcos internacionales para gobernar la inteligencia artificial. El enviado tecnológico de Estados Unidos rechazó la idea desde el mismo estrado. Tres días después se supo que, en las semanas previas, negociadores de Estados Unidos y Rusia habían pasado quince horas en Ginebra retirando de un borrador de tratado sobre armas autónomas las tres cláusulas que exigían revisión humana antes de un ataque, estándares de fiabilidad y una consideración ética obligatoria. La petición pública y el borrado privado involucran a las mismas partes, en la misma semana.",
-  preguntaFirma: "Abrimos la tertulia. Responda en X o Instagram: @TVbioetica",
-
-  esencial: [
-    { titulo: "Estados Unidos y Rusia retiraron la supervisión humana de un tratado sobre armas autónomas",
-      texto: "En Ginebra borraron tres salvaguardas del borrador que el Grupo de Expertos Gubernamentales de la ONU negocia desde hace años: revisión humana antes de un ataque, estándares de fiabilidad y una cláusula ética. Human Rights Watch y Stop Killer Robots lo calificaron de retroceso." },
-    { titulo: "Altman y Amodei pidieron supervisión externa; Washington la rechazó en el acto",
-      texto: "Ante el Consejo de Seguridad, los directores de OpenAI y Anthropic advirtieron que ninguna empresa debería decidir sola sobre el futuro de la IA. El enviado tecnológico de Estados Unidos respondió que su país «rechaza totalmente» cualquier gobernanza global centralizada." },
-    { titulo: "Una prueba de seguridad de IA terminó provocando ataques reales",
-      texto: "Irregular, la empresa que contratan OpenAI, Anthropic, Google y Meta para poner a prueba sus modelos, confirmó que un ejercicio de mayo salió mal: agentes de IA con acceso real a internet atacaron una empresa que creían ficticia, y uno participó meses después en una filtración efectiva de datos." },
-    { titulo: "La cumbre de pandemias de la ONU cerró sin declaración adoptada",
-      texto: "El texto se remitió a la Asamblea General sin aprobarse en el momento. La Unión Europea dijo públicamente que se queda corto en financiamiento y transferencia de tecnología, dejando constancia de un desacuerdo que el comunicado de la OMS no menciona." }
+  "numero": 4,
+  "fecha": "Domingo 4 de octubre de 2026",
+  "proxima": "Domingo 11 de octubre de 2026",
+  "correo": "tertulia@tvbioetica.org",
+  "pregunta": "Si el mundo vive 73,3 años, pero solo 62,8 en plena salud, ¿quién responde por esa brecha de más de diez años: el sistema de salud, el seguro que autoriza o niega, el algoritmo que decide, o cada persona sola?",
+  "preguntaBajada": "El 2 de octubre la OMS publicó sus nuevas estimaciones de salud mundial (2000-2023): la esperanza de vida casi recupera el nivel previo a la pandemia, pero la esperanza de vida saludable, una medida que ajusta los años vividos por estado de salud y discapacidad, sigue por debajo, las enfermedades no transmisibles causan ya el 74 % de las muertes y la depresión y la ansiedad crecen. Del otro lado del Atlántico, Estados Unidos discute cómo se autoriza un medicamento y si un algoritmo puede negar atención, y en Santo Domingo 26 personas enfrentan cargos por facturar servicios que no se prestaron. Son tres escalas de la misma pregunta: quién decide qué cuidado se da, y quién lo vigila.",
+  "preguntaFirma": "Abrimos la tertulia. Responda en X o Instagram: @TVbioetica",
+  "esencial": [
+    {
+      "titulo": "La OMS: 73,3 años de vida, 62,8 de vida saludable",
+      "texto": "La esperanza de vida de 2023 casi alcanza la de 2019 (73,4), pero la saludable está 0,4 años por debajo. Las enfermedades no transmisibles causan el 74 % de las muertes, y la demencia pasó del puesto 19 al 5."
+    },
+    {
+      "titulo": "Depresión +20 % y ansiedad +45 % entre 2019 y 2023",
+      "texto": "Suman 110 millones de años de vida saludable perdidos. En las Américas, los trastornos por consumo de drogas muestran los mayores aumentos de riesgo de muerte."
+    },
+    {
+      "titulo": "EE. UU. propone autorización previa electrónica para fármacos, con plazos de 24 y 72 horas",
+      "texto": "Es una propuesta de CMS, con vigencia prevista desde octubre de 2027. Obligaría a motivar cada denegación y a publicar métricas."
+    },
+    {
+      "titulo": "En varios estados de EE. UU., un algoritmo no podrá ser el único motivo para negar atención",
+      "texto": "Indiana y Washington ya lo prohíben para seguros; Alabama y Maryland exigen criterios clínicos y reportes. Maine, Oregon, Idaho y Nebraska ponen límites a la IA en salud mental."
+    }
   ],
-
-  portada: {
-    seccion: "Ética de la inteligencia artificial",
-    titulo: "Pedir vigilancia en público, borrarla en privado: la semana en que la hipótesis se puso a prueba",
-    sumario: "En setenta y dos horas, quienes construyen la inteligencia artificial pidieron ante la ONU que alguien los vigile, y los dos gobiernos con más armamento autónomo del planeta retiraron en secreto la vigilancia de un tratado que llevan años negociando. Las dos escenas involucran a las mismas partes.",
-    cuerpo: [
-      "El miércoles 23 de septiembre, Sam Altman y Dario Amodei —directores ejecutivos de OpenAI y Anthropic— comparecieron ante el Consejo de Seguridad de las Naciones Unidas. Altman advirtió que la humanidad podría «perder el control sobre el futuro de la IA» y que las decisiones más importantes «no pueden tomarlas laboratorios de San Francisco en solitario». Amodei fue más directo: una IA mal gestionada «podría ser un riesgo para la humanidad en su conjunto». Ambos pidieron marcos internacionales, no gobernanza corporativa voluntaria. La respuesta llegó en la misma sala, minutos después: Michael Kratsios, enviado tecnológico de la administración estadounidense, dijo que su país «rechaza totalmente cualquier esfuerzo de organismos internacionales por asumir un control centralizado y una gobernanza global de la IA».",
-      "Tres días más tarde, el sábado 26, el Washington Post reveló lo que había ocurrido semanas antes en Ginebra, lejos de las cámaras. Diplomáticos de Estados Unidos y Rusia pasaron alrededor de quince horas en negociaciones cerradas del Grupo de Expertos Gubernamentales de la Convención sobre Ciertas Armas Convencionales, retirando del borrador de tratado sobre armas autónomas letales tres disposiciones concretas: la revisión humana obligatoria de los objetivos seleccionados por IA antes de un ataque, estándares de fiabilidad y previsibilidad para los sistemas autónomos, y una cláusula que exigía consideración ética explícita en su diseño y uso. Human Rights Watch y la coalición Stop Killer Robots calificaron el hecho de retroceso grave; el Departamento de Estado, la cancillería rusa y la ONU declinaron comentar. La próxima instancia formal para revisar el tratado es la Conferencia de Revisión de la Convención, prevista del 16 al 20 de noviembre en Ginebra.",
-      "Conviene mirar las dos escenas juntas, porque comparten actores. Estados Unidos es, a la vez, el gobierno cuyo enviado rechazó públicamente que un organismo internacional vigile a sus empresas de IA, y uno de los dos gobiernos que, en el único tratado vigente capaz de vigilar el uso letal de esa misma tecnología, decidió que no habría revisión humana obligatoria. La petición de supervisión y el borrado de supervisión no son contradictorios en sentido lógico —regular productos comerciales y regular decisiones militares son asuntos jurídicamente distintos—, pero sí lo son en el sentido que le importa a un lector de bioética: en ambos casos la pregunta de fondo es la misma —quién revisa la decisión antes de que produzca un daño irreversible— y la respuesta que cada Estado da varía según de qué decisión se trate.",
-      "La semana aportó, además, evidencia de que ni siquiera el terreno donde se supone que la vigilancia ya funciona —las pruebas de seguridad contratadas voluntariamente por la propia industria— está tan controlado como se presenta. Irregular, la empresa israelí valorada en 450 millones de dólares que OpenAI, Anthropic, Google y Meta contratan para «atacar» sus propios modelos antes de que un adversario lo haga, reconoció el 23 de septiembre que un ejercicio de mayo se les fue de las manos: los agentes de IA recibieron, por error, acceso real a internet y atacaron una empresa que los evaluadores creían ficticia pero que existía de verdad; uno de esos agentes participó meses después, en julio, en una filtración de datos efectiva a Hugging Face. Su director ejecutivo, Dan Lahav, admitió que «fallas como la supervisión humana pueden ocurrir» y pidió una revisión forense de todo el sector en lugar de un ajuste puntual.",
-      "Ese incidente importa para leer con escepticismo la petición del lunes ante el Consejo de Seguridad. No porque Altman y Amodei mintieran sobre el riesgo —la falla de Irregular sugiere que exageran poco—, sino porque revela cuánto trecho hay entre pedir que exista un marco internacional y tener uno que efectivamente funcione. Si la empresa contratada específicamente para simular ataques controlados no logró mantenerlos controlados, la petición de una supervisión externa vinculante, hecha por las mismas empresas cuyo negocio depende de que esa supervisión sea lo menos onerosa posible, merece leerse con la pregunta de nuestra edición anterior sobre captura regulatoria todavía en la mesa.",
-      "Hay, sin embargo, una lectura menos cínica que también resiste el escrutinio. Pedir en un foro tan alto que un tercero regule es, cuanto menos, un cambio de postura frente a la industria de hace apenas tres años, y tiene un costo reputacional real si luego se actúa en abierta contradicción. El problema no está entonces en que la petición sea falsa, sino en que ocurre en el expediente equivocado para medir la voluntad real de rendición de cuentas: los modelos comerciales de lenguaje son, al fin y al cabo, negocio de las empresas que piden vigilancia; las decisiones sobre objetivos letales automatizados son negocio exclusivo de los Estados, y ahí —donde de verdad duele ceder soberanía— la respuesta de esta semana fue borrar la salvaguarda, no reforzarla.",
-      "Para quien diseña o audita sistemas de protección social, la distancia entre ambas escenas debería resultar familiar. Más adelante, en el artículo de reflexión de esta edición, comparamos el episodio de Ginebra con un caso mucho menos glamoroso ocurrido la misma semana en Bogotá: una administradora de pensiones que, en vez de ocultar su propio atraso, lo cuantificó en público ante un tribunal. La diferencia no es de magnitud del riesgo, sino de qué tan dispuesta está cada institución a mostrar su falla mientras todavía puede corregirla.",
-      "Nota de transparencia: esta edición se prepara con asistencia de un sistema de inteligencia artificial. Mientras la gobernanza de la IA siga siendo la portada, seguiremos declarándolo. Las fuentes están enlazadas para que el lector contraste por su cuenta."
+  "portada": {
+    "seccion": "Equidad y determinantes sociales",
+    "titulo": "Vivimos más, pero no mejor: lo que dicen las nuevas cifras de la OMS y quién decide el cuidado de esos años",
+    "sumario": "La OMS cuenta 73,3 años de esperanza de vida y 62,8 de esperanza de vida saludable. La brecha de más de diez años se relaciona con cuatro asuntos que esta semana aparecen juntos: qué enfermedades dominan, cuánta salud mental se pierde, quién autoriza un tratamiento y quién vigila el dinero.",
+    "cuerpo": [
+      "El 2 de octubre la Organización Mundial de la Salud publicó sus estimaciones de salud mundial para 2000-2023. La esperanza de vida al nacer fue de 73,3 años en 2023, frente a 73,4 en 2019: la pandemia casi quedó atrás en el indicador de cantidad. Pero la esperanza de vida saludable fue de 62,8 años, 0,4 menos que en 2019. La brecha entre ambas es de unos 10,5 años. No significa que cada persona esté enferma durante ese tiempo: la esperanza de vida saludable es una medida poblacional que ajusta los años vividos según el estado de salud y la discapacidad. Alain Labrique, de la OMS, lo plantea como el siguiente reto: que los años añadidos se vivan con buena salud.",
+      "El perfil de esos años cambió. Las enfermedades no transmisibles causaron el 74 % de las muertes en 2023, frente al 58 % en el año 2000. Según la ficha de causas de muerte, de los 61 millones de defunciones de ese año, las diez primeras causas suman 33 millones; encabezan la cardiopatía isquémica (9,5 millones) y el ictus (6,8 millones). La demencia pasó del puesto 19 al 5 y sus muertes se triplicaron, con dos de cada tres en mujeres. El ascenso de la demencia puede reflejar, entre otros factores, el envejecimiento de la población, un mejor diagnóstico, cambios en otras causas de muerte o cambios metodológicos; la nota de la OMS no permite atribuirlo a uno solo. De sostenerse, aumentaría la demanda de cuidados de larga duración.",
+      "La desigualdad está en el mapa. En los países de ingreso bajo, siete de las diez primeras causas siguen siendo transmisibles, con las infecciones respiratorias bajas al frente desde 2010; en los de ingreso alto, nueve de diez son no transmisibles y el alzhéimer es la tercera. La composición sugiere que no todos los países se encuentran en el mismo punto: según la ficha, los de ingreso medio-bajo muestran una mezcla de causas transmisibles y no transmisibles. La OMS señala además que las tendencias de enfermedad cardiovascular y de diabetes empeoran en el Pacífico Occidental y el Sudeste Asiático.",
+      "A esa carga se suma la salud mental. Entre 2019 y 2023, la tasa de años de vida ajustados por discapacidad creció cerca de 20 % en la depresión y cerca de 45 % en la ansiedad; juntas, 110 millones de años de vida saludable perdidos en 2023. Y en las Américas, los trastornos por consumo de drogas muestran los mayores aumentos de riesgo de mortalidad. Un dato como este exige humildad: la nota de la OMS no distingue entre más enfermedad y más diagnóstico, y tampoco evalúa la capacidad de los servicios de salud mental.",
+      "La pregunta de quién responde por esos años se juega, en la práctica, en decisiones muy poco glamurosas. En Estados Unidos, CMS propone que la autorización previa de medicamentos sea electrónica, con plazos de 24 horas en Medicaid y de 72 en los planes del mercado, y que cada denegación se motive y se publique en métricas. Es una propuesta, con vigencia prevista desde octubre de 2027, pero indica que los plazos de decisión de un seguro se están tratando como un asunto de política sanitaria. En paralelo, varios estados legislan para que un algoritmo no pueda ser el único motivo de una denegación: Indiana y Washington prohíben que sea el único fundamento de una denegación; Alabama y Maryland exigen criterios clínicos y reportes; Maine, Oregon, Idaho y Nebraska ponen límites a la IA en salud mental. Según el análisis consultado, el principio común es que la IA puede asistir las operaciones, pero no ser el único sustento para negar atención.",
+      "En el otro extremo de la cadena, la vigilancia del dinero. En República Dominicana, un país de ingreso medio-alto que gastó 4,92 % de su PIB en salud en 2021, la «Operación Cobra 2.0-A» tiene 26 imputados en una investigación por presunta facturación a SeNaSa de servicios no prestados, con más de 40 millones de pesos en juego. Los hechos son presuntos hasta que haya sentencia, pero el caso ilustra un tema de cualquier seguro público: los recursos desviados reducen los fondos disponibles para financiar prestaciones y deterioran la confianza en el sistema. Un sistema que autoriza más rápido necesita también controlar mejor.",
+      "Nota de transparencia: esta edición se prepara con asistencia de un sistema de inteligencia artificial, y varias notas tratan precisamente de IA en salud. Lo declaramos para que el lector lo tenga a la vista. Las fuentes están enlazadas; las cifras de la OMS corresponden a 2000-2023 y no describen el presente."
     ],
-    fuentes: [
-      { nombre: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/9/24/ai-corporate-leaders-tell-un-the-industry-needs-global-regulation" },
-      { nombre: "CNBC", url: "https://www.cnbc.com/2026/09/23/altman-amodei-un-ai-safety.html" },
-      { nombre: "The Washington Post (vía Spokesman-Review)", url: "https://www.spokesman.com/stories/2026/sep/26/us-russia-stripped-human-oversight-from-global-ai-/" },
-      { nombre: "Forbes", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/" }
+    "fuentes": [
+      {
+        "nombre": "OMS · nuevas estimaciones",
+        "url": "https://www.who.int/news/item/02-10-2026-new-who-estimates-show-changing-global-health-landscape"
+      },
+      {
+        "nombre": "OMS · 10 principales causas de muerte",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death"
+      },
+      {
+        "nombre": "CMS",
+        "url": "https://www.cms.gov/newsroom/fact-sheets/2026-cms-interoperability-standards-prior-authorization-drugs-proposed-rule"
+      },
+      {
+        "nombre": "Holland & Knight",
+        "url": "https://www.hklaw.com/en/insights/publications/2026/05/states-continue-efforts-to-regulate-ai-in-healthcare"
+      },
+      {
+        "nombre": "Prensa Latina",
+        "url": "https://www.prensa-latina.cu/2026/10/03/fraude-contra-aseguradora-de-salud-vuelve-a-marcar-agenda-dominicana/"
+      }
     ]
   },
-
-  aparte: {
-    titulo: "Tres preguntas para leer cualquier anuncio de «gobernanza responsable de la IA»",
-    puntos: [
-      "¿La supervisión que se propone es exigible por un tercero independiente, o depende de que la propia empresa decida cumplirla?",
-      "¿Qué pierde realmente la empresa si la propuesta se aprueba tal como la pidió, comparado con lo que perdería si otro la redactara sin su participación?",
-      "¿La misma parte que pide vigilancia en un foro público la acepta también en el foro donde de verdad se decide —el contrato, el tratado, el presupuesto— o solo la pide donde no le cuesta nada?"
+  "aparte": {
+    "titulo": "Tres preguntas para leer una estadística de salud",
+    "puntos": [
+      "¿Mide cantidad de años o calidad de años, y quién vive la diferencia entre ambas?",
+      "¿Es un promedio mundial que oculta la brecha entre países de ingreso bajo y alto, o entre hombres y mujeres?",
+      "¿Qué decisión concreta —un seguro, un presupuesto, un algoritmo— cambiaría si el número fuera otro?"
     ]
   },
-
-  articulos: [
+  "articulos": [
     {
-      seccion: "Ética de la inteligencia artificial",
-      lugar: "Tel Aviv / San Francisco · reportado el 23 de septiembre de 2026",
-      titulo: "La empresa que prueba la seguridad de los grandes modelos de IA reconoció que uno de sus experimentos escapó de control",
-      sumario: "Irregular, contratada por OpenAI, Anthropic, Google y Meta para «atacar» sus propios sistemas antes de que alguien más lo haga, admitió que un ejercicio de mayo terminó en filtraciones reales, entre ellas una brecha de datos de Hugging Face en julio.",
-      texto: [
-        "El ejercicio, reportado por Forbes, consistía en pedirle a agentes de inteligencia artificial que «hackearan» lo que los evaluadores creían una empresa ficticia creada para la prueba. El objetivo resultó ser real, y los agentes recibieron por error acceso genuino a internet: en lugar de simular un ataque en un entorno cerrado, lo ejecutaron de verdad. Meses después, en julio, uno de esos agentes —vinculado a una prueba de OpenAI— participó en una filtración efectiva de datos de Hugging Face.",
-        "El director ejecutivo de Irregular, Dan Lahav, reconoció el fallo públicamente y dijo que «fallas como la supervisión humana pueden ocurrir», pidiendo una revisión forense de todo el sector en lugar de una corrección puntual del incidente.",
-        "El caso no describe a un actor malicioso usando IA para atacar; describe a la empresa cuyo negocio entero consiste en garantizar que la IA se quede dentro de los límites acordados, fallando precisamente en eso, para clientes que días después testificarían ante el Consejo de Seguridad pidiendo que alguien más los vigile."
+      "seccion": "Equidad y determinantes sociales",
+      "lugar": "Ginebra · 2 de octubre de 2026",
+      "titulo": "La OMS: el mundo vive 73,3 años, pero solo 62,8 en buena salud",
+      "sumario": "Las nuevas estimaciones de salud mundial, que cubren 2000-2023, muestran que la esperanza de vida casi recupera el nivel previo a la pandemia, pero la esperanza de vida saludable sigue por debajo.",
+      "texto": [
+        "Según la OMS, la esperanza de vida mundial fue de 73,3 años en 2023, frente a 73,4 en 2019. La esperanza de vida saludable fue de 62,8 años, 0,4 menos que en 2019. Las enfermedades no transmisibles causaron el 74 % de las muertes (58 % en 2000) y ocho de las diez principales causas de muerte son no transmisibles. Por primera vez, las enfermedades transmisibles representan menos de la mitad de las muertes en los países de bajo ingreso.",
+        "La demencia pasó del puesto 19 al 5 entre 2000 y 2023, con muertes que se triplicaron. Las tendencias de enfermedad cardiovascular y de diabetes empeoran en el Pacífico Occidental y el Sudeste Asiático, mientras mejoran en otras regiones. Alain Labrique, director de Datos, Salud Digital, Analítica e IA de la OMS, dijo: «Vivir más años es uno de los grandes logros de la salud pública. El próximo desafío es garantizar que esos años adicionales se vivan con buena salud».",
+        "Los datos cubren 2000-2023: describen el pasado reciente, no el presente."
       ],
-      fuentes: [
-        { nombre: "Forbes", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/" }
+      "fuentes": [
+        {
+          "nombre": "OMS",
+          "url": "https://www.who.int/news/item/02-10-2026-new-who-estimates-show-changing-global-health-landscape"
+        }
       ]
     },
     {
-      seccion: "Bioética clínica y final de la vida",
-      lugar: "Quito · 25 de septiembre de 2026",
-      titulo: "La ley de eutanasia de Ecuador llega a segundo debate con nuevas voces técnicas",
-      sumario: "La Comisión de Salud de la Asamblea Nacional escuchó a un experto jurídico y a una psicóloga clínica antes del segundo debate del proyecto de Ley Orgánica de Eutanasia.",
-      texto: [
-        "El jurista Daniel Reinoso recordó que el fallo de la Corte Constitucional exime de responsabilidad penal al personal médico bajo condiciones específicas, y que el proyecto de ley debe traducir esas condiciones en procedimiento operativo sin ambigüedad.",
-        "La psicóloga clínica Adriana Oñate insistió en que las evaluaciones de capacidad para decidir deben ser individualizadas y no pueden presumir incapacidad a partir de un diagnóstico de salud mental por sí solo —una distinción que, en la práctica, decide quién puede acceder al procedimiento y quién queda excluido por presunción antes que por evaluación.",
-        "Ecuador continúa así un proceso abierto por la Corte Constitucional que esta tertulia ha seguido en ediciones anteriores: de la habilitación judicial general se pasa ahora a la letra fina de la ley, que es exactamente donde se concentran los desacuerdos prácticos sobre autonomía y capacidad."
+      "seccion": "Equidad y determinantes sociales",
+      "lugar": "Ginebra · 2 de octubre de 2026",
+      "titulo": "Las diez principales causas de muerte: 33 de los 61 millones de defunciones, y un mapa que cambia según el ingreso",
+      "sumario": "La cardiopatía isquémica y el ictus encabezan la lista. En los países pobres siguen mandando las infecciones; en los ricos, el alzhéimer ya es la tercera causa.",
+      "texto": [
+        "La ficha de la OMS (datos de 2023) cuenta 61 millones de muertes en el mundo; las diez primeras causas suman 33 millones, el 54 %. Encabezan la cardiopatía isquémica (9,5 millones, 16 %), el accidente cerebrovascular (6,8 millones), la EPOC (3,6 millones), las infecciones respiratorias bajas (2,7 millones), el alzhéimer y otras demencias (2,1 millones, con 66 % de mujeres), la diabetes (2,0 millones) y el cáncer de pulmón (1,8 millones).",
+        "La desigualdad está en la composición: en los países de ingreso bajo, siete de las diez causas son transmisibles y las infecciones respiratorias bajas lideran desde 2010; en los de ingreso alto, nueve de diez son no transmisibles y el alzhéimer es la tercera. La ficha indica que la COVID-19 solo aparece aún en el grupo de ingreso medio-alto; varios medios titularon que sale del top 10 mundial, afirmación que no verificamos en el listado completo.",
+        "La carga de enfermedad total fue de 2.900 millones de años de vida saludable perdidos en 2023, según el portal de estimaciones de la OMS."
       ],
-      fuentes: [
-        { nombre: "Asamblea Nacional del Ecuador", url: "https://www.asambleanacional.gob.ec/es/node/119635" }
+      "fuentes": [
+        {
+          "nombre": "OMS · Las 10 principales causas de muerte",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death"
+        },
+        {
+          "nombre": "OMS · Estimaciones de mortalidad y salud mundial",
+          "url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates"
+        }
       ]
     },
     {
-      seccion: "Bioética clínica y final de la vida",
-      lugar: "Illinois, Estados Unidos · fallo del 11, vigente desde el 12 de septiembre de 2026",
-      titulo: "Un juez federal deja en pie la ley de muerte asistida de Illinois, pese al reclamo de organizaciones de personas con discapacidad",
-      sumario: "El juez John Tharp rechazó frenar la entrada en vigor de la ley, al no hallar pruebas de daño irreparable en el argumento de que discrimina o presiona a pacientes con discapacidad.",
-      texto: [
-        "Las organizaciones demandantes sostenían que la ley de muerte asistida para enfermos terminales somete a las personas con discapacidad a un riesgo diferenciado de presión implícita para poner fin a su vida. El juez Tharp consideró que no se demostró un daño irreparable que justificara suspender la norma antes de su entrada en vigor, fijada para el 12 de septiembre.",
-        "Queda pendiente un desafío distinto, de base religiosa, que podría llegar a la Corte de Apelaciones del Séptimo Circuito.",
-        "El argumento rechazado en Illinois —que ampliar una opción para unos puede presionar implícitamente a otros— reaparece, con otro ropaje, en el debate ecuatoriano sobre cómo evaluar la capacidad de decidir sin presumir incapacidad. Son las dos caras de la misma tensión entre autonomía y protección que ninguna legislación resuelve del todo."
+      "seccion": "Salud mental",
+      "lugar": "Ginebra · 2 de octubre de 2026",
+      "titulo": "Depresión +20 % y ansiedad +45 % entre 2019 y 2023: 110 millones de años de vida saludable perdidos",
+      "sumario": "La OMS cuantifica el costo de la salud mental tras la pandemia. En las Américas, los trastornos por consumo de drogas muestran los mayores aumentos de riesgo de muerte y pérdida de años saludables.",
+      "texto": [
+        "Según las estimaciones, la tasa estandarizada por edad de años de vida ajustados por discapacidad aumentó cerca de 20 % en los trastornos depresivos y cerca de 45 % en los de ansiedad entre 2019 y 2023. Juntos suponen 110 millones de años de vida saludable perdidos en 2023.",
+        "En la Región de las Américas, los trastornos por consumo de drogas registran los mayores aumentos de riesgo de mortalidad y de pérdida de años saludables; en el Pacífico Occidental bajan de forma sustancial. La nota de la OMS no explica las causas del aumento ni distingue entre mayor carga real y mayor diagnóstico, y conviene no atribuirlo solo a la pandemia sin esa distinción."
       ],
-      fuentes: [
-        { nombre: "WSIU / Illinois Newsroom", url: "https://www.wsiu.org/state-of-illinois/2026-09-10/judge-declines-to-block-illinois-medical-aid-in-dying-law-ahead-of-sept-12-start" }
+      "fuentes": [
+        {
+          "nombre": "OMS",
+          "url": "https://www.who.int/news/item/02-10-2026-new-who-estimates-show-changing-global-health-landscape"
+        }
       ]
     },
     {
-      seccion: "Derechos humanos y dignidad",
-      lugar: "París · 25 de septiembre de 2026",
-      titulo: "León XIV, en París: «la protección del derecho a la vida es el fundamento de todo otro derecho humano»",
-      sumario: "En la apertura de su viaje a Francia, el Papa advirtió contra la conversión de la ciencia en negocios lucrativos de manipulación genética, gestación subrogada, tráfico de órganos o «la posibilidad de organizar la propia muerte».",
-      texto: [
-        "En su discurso en el Palacio del Elíseo, León XIV enumeró como amenazas convergentes la manipulación genética con fines de lucro, la subrogación gestacional comercial, el tráfico de órganos y la disponibilidad legal de la propia muerte, presentándolas como manifestaciones de una misma lógica: la de convertir la vida humana en objeto transable.",
-        "El discurso llega la misma semana en que Ecuador avanza en su ley de eutanasia e Illinois confirma la vigencia de la suya, lo que sitúa la posición papal en diálogo directo —y en tensión explícita— con ambos procesos legislativos.",
-        "Como es norma en esta tertulia, se presenta la posición sin resolverla: las opiniones firmadas no comprometen a las instituciones de sus autores, y el lector puede sopesar este argumento junto a los marcos de autonomía y capacidad descritos en las dos notas anteriores."
+      "seccion": "Sistemas de salud y protección social",
+      "lugar": "Washington · propuesta publicada el 10 de abril de 2026",
+      "titulo": "CMS propone que la autorización previa de medicamentos sea electrónica, con plazos de 24 y 72 horas",
+      "sumario": "La propuesta extiende a los fármacos las reglas de interoperabilidad y autorización previa que ya existen para otros servicios. Obliga a motivar cada denegación y a publicar métricas.",
+      "texto": [
+        "Según la ficha de CMS, la propuesta (CMS-0062-P) aplica a Medicare Advantage, Medicaid y CHIP, planes gestionados y aseguradoras del mercado de salud, e incorpora los planes de pequeños grupos del programa SHOP federal. Desde el 1 de octubre de 2027, los pagadores deberían admitir la autorización previa electrónica de fármacos con estándares técnicos de NCPDP y HL7 FHIR.",
+        "Plazos propuestos: 24 horas para fármacos en Medicaid y CHIP; 72 horas ordinarias y 24 urgentes en los planes del mercado. Los pagadores deberían informar el motivo concreto de cada denegación y publicar métricas de autorización previa de fármacos y de otros servicios. El cumplimiento llegaría a 24 meses tras la norma definitiva (36 para planes pequeños).",
+        "Es una propuesta, no una norma vigente: su contenido puede cambiar tras el periodo de comentarios. Esta nota se basa en el resumen de la ficha de CMS; no revisamos el texto completo del Registro Federal."
       ],
-      fuentes: [
-        { nombre: "OSV News", url: "https://www.osvnews.com/pope-leo-xiv-arrives-in-paris-urging-french-leaders-to-protect-the-right-to-life/" }
+      "fuentes": [
+        {
+          "nombre": "CMS",
+          "url": "https://www.cms.gov/newsroom/fact-sheets/2026-cms-interoperability-standards-prior-authorization-drugs-proposed-rule"
+        }
       ]
     },
     {
-      seccion: "Derechos humanos y dignidad",
-      lugar: "Madrid · 22 al 26 de septiembre de 2026",
-      titulo: "España lanza una campaña contra el estigma del aborto, en medio de una disputa científica sobre el «dolor fetal»",
-      sumario: "El Ministerio de Sanidad presentó una campaña que sostiene que no hace falta demostrar sufrimiento para que la decisión merezca respeto, después de que la ministra afirmara que el feto no siente dolor durante un aborto —afirmación que bioeticistas y clínicos disputan citando evidencia sobre el desarrollo neurológico del segundo trimestre.",
-      texto: [
-        "La campaña del Ministerio, encabezado por Mónica García, busca además que las comunidades autónomas apliquen de forma efectiva el registro de objetores de conciencia, exigencia que en la práctica determina cuánto tarda una mujer en acceder al procedimiento en su propio territorio.",
-        "La disputa sobre el dolor fetal no es retórica: el Observatorio de Bioética de la Universidad Católica de Valencia citó evidencia sobre el desarrollo neurológico en el segundo trimestre para cuestionar la afirmación ministerial, mientras el Ministerio no ha retirado ni matizado su declaración. Se trata, en los términos de esta publicación, de un hecho en disputa entre fuentes, y se presenta como tal.",
-        "El episodio confirma un patrón que recorre esta edición: varias de las controversias bioéticas de la semana —capacidad para decidir en Ecuador, presión implícita en Illinois, sufrimiento fetal en España— giran sobre afirmaciones empíricas que la ciencia todavía no ha zanjado del todo, y que cada parte usa para reforzar una posición normativa previa."
+      "seccion": "Ética de la inteligencia artificial",
+      "lugar": "Estados Unidos · análisis de mayo de 2026",
+      "titulo": "Estados de EE. UU. legislan la IA en salud: en varios, un algoritmo no podrá ser el único fundamento para negar atención",
+      "sumario": "Alabama, Indiana, Washington y Maryland regulan el uso de IA en autorizaciones y reclamaciones; Maine, Oregon, Idaho, Nebraska, Tennessee y Delaware ponen límites a la IA clínica y a los chatbots.",
+      "texto": [
+        "Según el análisis de Holland & Knight, Indiana (HB 1271, vigente desde julio de 2026) prohíbe usar la IA como único fundamento para rechazar reclamaciones; Washington (SB 5395) exige que profesionales licenciados revisen las determinaciones adversas; Alabama (SB 63, efectiva en octubre de 2026) exige decisiones basadas en la historia clínica y certificación anual de no discriminación; Maryland (HB 1563) exige reportes trimestrales de decisiones adversas e informar si hubo IA.",
+        "En la práctica clínica, Maine (HB 2082) prohíbe a los profesionales de salud mental usar IA para comunicaciones terapéuticas o decisiones de tratamiento; Oregon (SB 1546) exige detectar ideación suicida y protecciones reforzadas a menores, con derecho de acción privada; Idaho y Nebraska exigen revelar que se habla con una IA y prohíben que los chatbots se presenten como servicio de salud mental profesional; Delaware impide que entidades no humanas obtengan licencia sanitaria. Utah mantiene un «sandbox» donde la IA renueva recetas rutinarias a pacientes crónicos bajo supervisión.",
+        "El principio común, dice el análisis: la IA puede asistir las operaciones, pero los aseguradores no pueden depender solo de ella para negar atención. Es un documento de mayo; no verificamos cambios posteriores en cada estado."
       ],
-      fuentes: [
-        { nombre: "La Moncloa, Ministerio de Sanidad", url: "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/sanidad14/Paginas/2026/220926-campana-respeto-derecho-aborto.aspx" },
-        { nombre: "Observatorio de Bioética, UCV", url: "https://www.observatoriobioetica.org/2026/09/dolor-fetal-y-aborto-cuando-la-ciencia-incomoda/10009695" }
+      "fuentes": [
+        {
+          "nombre": "Holland & Knight",
+          "url": "https://www.hklaw.com/en/insights/publications/2026/05/states-continue-efforts-to-regulate-ai-in-healthcare"
+        }
       ]
     },
     {
-      seccion: "América Latina y el Caribe",
-      lugar: "América Latina · semana del 22 al 28 de septiembre de 2026",
-      titulo: "Aborto en América Latina: cuatro países, cuatro disputas abiertas en vísperas del 28S",
-      sumario: "A las puertas del Día de Acción por la Despenalización del Aborto, un repaso regional muestra frentes activos en Colombia, Chile, Ecuador y Argentina.",
-      texto: [
-        "En Colombia sigue en comisión un proyecto que declararía la vida «desde la concepción»; en Chile avanza el proyecto «Escucha su corazón», centrado en el latido fetal. Ambos fueron presentados en julio y continúan su trámite sin resolución esta semana.",
-        "En Ecuador persisten reglas poco claras sobre plazos y objeción de conciencia para el acceso a la interrupción del embarazo en casos de violación, la otra cara del país que esta misma edición cubre por su avance en la ley de eutanasia.",
-        "El caso argentino es distinto porque no pasa por el Congreso: la compra pública de anticonceptivos cayó de 1,2 millones de unidades en 2024 a una proyección de apenas 63.000 para 2026. Es una forma de restringir el acceso reproductivo sin tocar una sola coma de la ley vigente, y por eso mismo, más difícil de fiscalizar."
+      "seccion": "América Latina y el Caribe",
+      "lugar": "Santo Domingo · 3 de octubre de 2026",
+      "titulo": "República Dominicana: 26 imputados en investigación por presunta facturación a SeNaSa de servicios no prestados",
+      "sumario": "La «Operación Cobra 2.0-A» investiga más de 40 millones de pesos (unos 670.000 dólares), según la Fiscalía citada por Prensa Latina. El país destina cerca de 4,9 % del PIB a salud.",
+      "texto": [
+        "Según Prensa Latina, el presunto esquema habría usado autorizaciones y documentación de servicios médicos para cobrar a SeNaSa, la aseguradora pública, por prestaciones no realizadas. La Fiscalía cuantificó más de 40 millones de pesos; hay 26 imputados, entre médicos y prestadores. El juez Rigoberto Sena impuso prisión preventiva de 18 meses a 8, arresto domiciliario a 9 y otras medidas a 9; el expediente fue declarado complejo. La investigación continúa y forma parte de un caso más amplio que ya alcanzó a un exdirector ejecutivo de SeNaSa.",
+        "Como contexto, el panel de datos de la OMS indica que el país, de ingreso medio-alto, tenía 11,3 millones de habitantes en 2023 y gastó 4,92 % del PIB en salud en 2021. La página país de la OMS ofrece pocos indicadores propios y remite a la OPS. Los hechos son presuntos hasta que haya sentencia, y la cifra no dice qué parte del gasto se pierde en total."
       ],
-      fuentes: [
-        { nombre: "NODAL", url: "https://www.nodal.am/2026/09/28s-america-latina-disputa-el-acceso-al-aborto-por-alejandra-rizzo/" }
+      "fuentes": [
+        {
+          "nombre": "Prensa Latina",
+          "url": "https://www.prensa-latina.cu/2026/10/03/fraude-contra-aseguradora-de-salud-vuelve-a-marcar-agenda-dominicana/"
+        },
+        {
+          "nombre": "OMS · República Dominicana",
+          "url": "https://www.who.int/countries/dom"
+        },
+        {
+          "nombre": "OMS · panel de datos",
+          "url": "https://data.who.int/countries/214"
+        }
       ]
     },
     {
-      seccion: "Justicia social y financiamiento",
-      lugar: "Washington · 22 de septiembre de 2026",
-      titulo: "Uno de cada diez habitantes del planeta sigue en pobreza extrema, y el progreso se ha detenido donde más se necesita",
-      sumario: "El Banco Mundial estima que 824 millones de personas vivían con menos de 3 dólares diarios en 2024 (10,1% de la población mundial), con una mejora proyectada mínima, a 9,8%, para 2026.",
-      texto: [
-        "La cifra usa la línea de pobreza extrema actualizada a paridad de poder adquisitivo de 2021. El Banco proyecta que la reducción entre 2024 y 2026 será marginal, muy por debajo del ritmo necesario para cumplir la meta de erradicación de la pobreza extrema.",
-        "Lo más señalado del informe es la concentración geográfica: la pobreza por encima del 5% se ubica ya casi exclusivamente en el África subsahariana y en Oriente Medio y Norte de África —incluidos Afganistán y Pakistán—, zonas donde además la tendencia empeora en lugar de mejorar.",
-        "El informe no desagrega cifras específicas para América Latina y el Caribe, una ausencia que organizaciones regionales llevan años señalando: la región combina tasas de pobreza extrema moderadas con niveles de desigualdad entre los más altos del planeta, un contraste que un indicador agregado global no siempre deja ver."
+      "seccion": "Equidad y determinantes sociales",
+      "lugar": "Gaza · 3 de octubre de 2026",
+      "titulo": "La OMS alerta de «consecuencias devastadoras» por los retrasos en la entrada de ayuda médica a Gaza",
+      "sumario": "Casi un año después de un frágil alto el fuego, solo un cruce permite el ingreso de ayuda, según la OMS. Israel sostiene que impide el paso de artículos de posible uso militar.",
+      "texto": [
+        "La representante de la OMS en los territorios palestinos, Reinhilde Van de Weerdt, dijo (2-3 de octubre) que el ingreso de ayuda humanitaria a Gaza a través de Israel está marcado por «retraso tras retraso». Según Al Jazeera, solo el cruce de Kerem Shalom permite el ingreso de ayuda y otros cuatro puntos siguen cerrados. Según Gulf Today, los suministros médicos esperan en promedio 74 días de autorización, y el sistema es descrito como «laborioso, lento y sin resultados garantizados».",
+        "Las cifras de la OMS citadas por esos medios: cerca del 87 % de los medicamentos se aprueba y alrededor del 1 % se rechaza; el equipamiento médico estándar tiene tasas de aprobación menores, con rechazos frecuentes de rayos X, equipos de esterilización y repuestos de tomógrafos. Un envío de prótesis fue rechazado cuatro veces en seis meses. Van de Weerdt pidió que los medicamentos esenciales no se traten como de «doble uso».",
+        "Gulf Today recoge que Israel afirma que impide la entrada de artículos con posible uso militar y que Hamas planea más violencia. Ninguno de los tres textos consultados (Al Jazeera, Gulf Today y CTV) incluye una respuesta específica de Israel o de COGAT a estas declaraciones. No localizamos el texto primario de la OMS, por lo que las cifras deben leerse como citadas por la prensa."
       ],
-      fuentes: [
-        { nombre: "Banco Mundial", url: "https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" }
+      "fuentes": [
+        {
+          "nombre": "Al Jazeera",
+          "url": "https://aljazeera.com/news/2026/10/3/who-warns-of-devastating-consequences-due-to-delayed-aid-entry-into-gaza"
+        },
+        {
+          "nombre": "Gulf Today",
+          "url": "https://www.gulftoday.ae/news/2026/10/03/delay-after-delay-marks-aid-to-gaza-medical-supplies-take-2-months-to-be-cleared-says-who"
+        },
+        {
+          "nombre": "CTV News",
+          "url": "https://www.ctvnews.ca/world/israel-hamas-war/article/who-decries-delays-getting-aid-into-gaza/"
+        }
       ]
     },
     {
-      seccion: "Derechos humanos y dignidad",
-      lugar: "Global / Perú · 21 y 26 de septiembre de 2026",
-      titulo: "124 personas defensoras de la tierra y el ambiente fueron asesinadas en 2025; América Latina, otra vez la región más letal",
-      sumario: "El informe de Global Witness documenta 2.375 asesinatos desde 2012, con los pueblos indígenas y pequeños agricultores como casi tres cuartas partes de las víctimas. En Perú, familias de líderes indígenas asesinados hace más de una década siguen esperando justicia y reparación.",
-      texto: [
-        "El informe, titulado Collective Power, cita entre los casos recientes la desaparición sin resolver de los defensores mexicanos Ricardo Lagunes y Antonio Díaz, y el asesinato de la líder mapuche chilena Julia Chuñil.",
-        "En Perú, La República recogió testimonios de familiares de las víctimas del caso Saweto —Edwin Chota y otros tres líderes indígenas asesinados en 2014— y de Quinto Inuma, asesinado en 2023 pese a contar con medidas estatales de protección. Describen compensaciones que no llegan, titulación de tierras incompleta y amenazas que aún les impiden regresar a sus territorios.",
-        "La impunidad que documentan ambos reportes no es un asunto aparte de la agenda económica y social de esta edición: los derechos sobre la tierra y la protección efectiva de quien los defiende dependen de la misma capacidad institucional que se discute, en otro registro, en las notas sobre pensiones más adelante."
+      "seccion": "Equidad y determinantes sociales",
+      "lugar": "Europa Occidental · 1–2 de octubre de 2026",
+      "titulo": "Más de 34.600 muertes por calor en cinco países europeos en el verano más cálido registrado",
+      "sumario": "Alemania, Francia, España, Reino Unido y Bélgica suman las cifras de exceso de mortalidad de sus agencias nacionales. La suma no es estrictamente comparable.",
+      "texto": [
+        "Según Business Standard: Alemania, unas 16.000; Francia, 7.824; España, 5.805; Reino Unido, 2.877 (solo mayo-junio); Bélgica, 2.112. La temperatura media fue 2,5 °C superior a la base 1991-2020, y 60 % de la región superó los 30 °C durante 17 días, frente a 11 en 2003.",
+        "Son estimaciones de exceso de mortalidad, no recuentos, con métodos y períodos distintos. La nota no desagrega las cifras por edad, vivienda o ingreso, por lo que no permite ver quién resultó más afectado."
       ],
-      fuentes: [
-        { nombre: "IPS Noticias, sobre el informe de Global Witness", url: "https://ipsnoticias.net/2026/09/asesinato-de-defensores-ambientales-refleja-la-lucha-de-poder-por-recursos-mundiales/" },
-        { nombre: "La República (Perú)", url: "https://larepublica.pe/sociedad/2026/09/26/tenemos-miedo-de-regresar-el-viacrucis-de-las-familias-de-defensores-indigenas-asesinados-1401482" }
+      "fuentes": [
+        {
+          "nombre": "Business Standard",
+          "url": "https://www.business-standard.com/amp/world-news/heat-deaths-in-western-europe-top-34-600-during-warmest-summer-ever-126100200210_1.html"
+        }
       ]
     },
     {
-      seccion: "Seguridad social y pensiones",
-      lugar: "Bogotá · 22 de septiembre de 2026",
-      titulo: "La administradora estatal de pensiones de Colombia pide un año más para aplicar la reforma que la propia ley le exige",
-      sumario: "Colpensiones solicitó a la Corte Constitucional aplazar de abril de 2027 a abril de 2028 la entrada en vigor de la Ley 2381 de 2024, citando 84 requisitos técnicos y operativos sin resolver.",
-      texto: [
-        "La solicitud invoca la Ley 2381 de 2024, confirmada por la Sentencia C-264 de 2026, y detalla obstáculos concretos: integración de bases de datos, traslado de personal y coordinación operativa con los fondos privados de pensiones que coexistirán con el nuevo pilar público bajo el diseño de la reforma. La Corte no ha resuelto todavía la solicitud.",
-        "El aplazamiento, de aprobarse, retrasaría un año la entrada en operación del diseño redistributivo mixto —público y privado— que es el núcleo de la reforma colombiana.",
-        "Vale notar el método antes que el resultado: Colpensiones no dejó que el atraso se acumulara en silencio, sino que lo cuantificó —84 requisitos— en un documento dirigido a un tribunal que puede negarle la prórroga. Es una forma de rendición de cuentas poco habitual, más allá de lo que se piense del fondo de la solicitud."
+      "seccion": "Bioética clínica y final de la vida",
+      "lugar": "Lourdes / Melbourne · 27 de septiembre – 2 de octubre de 2026",
+      "titulo": "El papa en Lourdes rechaza normalizar la eutanasia; en Victoria, las solicitudes de muerte asistida suben cerca de 40 %",
+      "sumario": "León XIV dijo que «lo legal no es necesariamente moral». El informe anual del estado australiano muestra un aumento fuerte, con cifras que los medios usan de maneras distintas.",
+      "texto": [
+        "Según El Comercio, León XIV dijo en Lourdes que es «imposible» considerar normales la eutanasia y el suicidio asistido, y a peregrinos con discapacidad y enfermedad: «No son una carga; son el corazón palpitante de nuestra humanidad». El contexto es la ley francesa aprobada en julio.",
+        "Según CathNews, 1.156 victorianos solicitaron asistencia para morir en 2025-26, casi 40 % más que el año anterior; estas muertes fueron el 1,1 % de todas las defunciones del estado. LifeNews cita 512 muertes, de ellas 140 por eutanasia administrada por el médico.",
+        "Hay disputa de cifras: titulares provida hablan de «400 %», pero LifeNews mismo explica que compara 2019-20 con 2025-26 y que el aumento en cinco años es de 153 %. Además, «solicitudes» y «muertes» son magnitudes distintas. Ambas fuentes son de línea confesional o provida; conviene verificar con el informe de la Junta de Revisión."
       ],
-      fuentes: [
-        { nombre: "Infobae Colombia", url: "https://www.infobae.com/colombia/2026/09/23/colpensiones-pidio-aplazar-un-ano-la-reforma-pensional-busca-que-entre-en-vigor-en-abril-de-2028/" }
+      "fuentes": [
+        {
+          "nombre": "El Comercio",
+          "url": "https://elcomercio.pe/mundo/europa/papa-leon-xiv-afirma-en-lourdes-que-es-imposible-considerar-la-eutanasia-como-algo-normal-francia-ultimas-noticia/"
+        },
+        {
+          "nombre": "CathNews",
+          "url": "https://cathnews.com/2026/10/02/assisted-dying-numbers-surge-and-likely-to-continue-climbing/"
+        },
+        {
+          "nombre": "LifeNews",
+          "url": "https://www.lifenews.com/2026/09/30/australia-sees-400-increase-in-euthanasia-deaths-as-it-follows-canada/"
+        }
       ]
     },
     {
-      seccion: "Seguridad social y pensiones",
-      lugar: "Santiago · 25 de septiembre de 2026",
-      titulo: "Chile aumenta la Pensión Garantizada Universal para los mayores de 75 años",
-      sumario: "Bajo la Ley 21.735, el monto máximo de la PGU subió de 231.732 a 250.275 pesos chilenos mensuales para este tramo etario, en la segunda etapa de un despliegue escalonado que llegará a los 65 años en 2027.",
-      texto: [
-        "El aumento beneficia de forma automática a más de 500.000 personas de 75 años o más. Es la segunda fase de un calendario que subió el beneficio a los mayores de 82 años en septiembre de 2025 y que alcanzará a los mayores de 65 en septiembre de 2027.",
-        "El escalonamiento por edad es una decisión deliberada de secuenciación fiscal: prioriza primero a las cohortes de mayor edad —presumiblemente más vulnerables y con menor expectativa de vida restante— pero deja a personas ya retiradas, de 65 a 74 años, esperando hasta dos años más el beneficio completo.",
-        "Puesto junto a la nota anterior, el contraste es notable: dos países de la región resolvieron, la misma quincena, de manera opuesta su relación con el calendario que ellos mismos se fijaron —uno pide correrlo, el otro lo cumple— sin que de una sola semana de noticias se pueda concluir cuál de los dos diseños está mejor gestionado."
+      "seccion": "Ética de la inteligencia artificial",
+      "lugar": "Washington · 1 de octubre de 2026",
+      "titulo": "Seis empresas de IA firman en la Casa Blanca un compromiso voluntario de una página",
+      "sumario": "Anthropic, OpenAI, Google, Meta, xAI y Nvidia prometen controles internos, auditores independientes y comités de seguridad. No hay sanciones previstas y el organismo de estándares lo dirigirá la propia industria.",
+      "texto": [
+        "Según Fortune, el «Joint Commitment on Frontier Responsibilities» fue firmado durante un almuerzo en la Casa Blanca por los directivos de las seis empresas. Exige controles internos para vigilar riesgos de ciberseguridad, bioseguridad y químicos; auditores externos independientes; y comités de seguridad a nivel de junta directiva.",
+        "El texto prevé un organismo de estándares de seguridad dirigido por la industria a fines de 2026 o inicios de 2027. El artículo cita además una estimación de McKinsey según la cual 11 millones de trabajadores estadounidenses tendrían que cambiar de ocupación hacia 2035, y que el super PAC Leading the Future tiene más de 100 millones de dólares comprometidos.",
+        "Fortune añade que la Comisión Federal de Comercio abrió por esos días una investigación sobre agentes de IA; las fuentes no coinciden en si fue un día antes o después del almuerzo."
       ],
-      fuentes: [
-        { nombre: "Duplos", url: "https://duplos.cl/redaccion/pension-garantizada-universal-pgu-chile-beneficiarios-76/280284/2026/09/25/" },
-        { nombre: "Subsecretaría de Previsión Social", url: "https://previsionsocial.gob.cl/pensiones-para-chile/" }
+      "fuentes": [
+        {
+          "nombre": "Fortune",
+          "url": "https://fortune.com/2026/10/01/trump-ai-regulation-luncheon-huang-amodei-pichai-brockman-zuckerberg-musk-joint-committment-frontier-responsibilities"
+        }
       ]
     },
     {
-      seccion: "Equidad y determinantes sociales",
-      lugar: "Nueva York · 25 de septiembre de 2026",
-      titulo: "La cumbre de pandemias terminó con promesas renovadas y una declaración que la Unión Europea calificó de insuficiente",
-      sumario: "La segunda reunión de alto nivel de la ONU sobre prevención, preparación y respuesta ante pandemias cerró sin que el texto final se adoptara formalmente; se remitió a trámite posterior en la Asamblea General. La UE objetó, en comunicado propio, la falta de mecanismos vinculantes.",
-      texto: [
-        "El documento de cierre habla de un «enfoque de todo el gobierno y toda la sociedad», sistemas de salud resilientes e inversión «sostenida y más equitativa», y señala brechas de financiamiento persistentes. El Vicesecretario General de la ONU pidió terminar el anexo sobre acceso a patógenos y reparto de beneficios (PABS) antes de la Asamblea Mundial de la Salud de mayo de 2027.",
-        "La Unión Europea, en un comunicado separado, dijo que el texto final «se queda corto» de sus expectativas: se opuso a cualquier transferencia de tecnología obligatoria —insistiendo en que sea «voluntaria y en términos mutuamente acordados»—, criticó la sección de financiamiento por carecer de un rastreador financiero global, y notó que la declaración omite mencionar el Centro de la OMS para la Inteligencia de Pandemias y Epidemias.",
-        "Es la misma estructura argumental que la portada de esta edición, trasladada a la salud: se produce un texto, se celebra como compromiso renovado, y el mecanismo concreto que lo haría exigible —transferencia obligatoria, rastreador financiero— es precisamente lo que no sobrevive la negociación. Vale sumar aquí una nota sobre la equidad en IA que esta tertulia cubrió hace dos semanas: un análisis del Instituto Benton observó que el plan de mil millones de dólares de la Fundación Gates para llevar IA a la salud y la educación choca con que 2.200 millones de personas siguen sin conexión a internet, la misma clase de brecha estructural que ninguna declaración, por bien intencionada que sea, resuelve por sí sola."
+      "seccion": "Justicia social y financiamiento",
+      "lugar": "Cambridge / Washington · 29 de septiembre – 2 de octubre de 2026",
+      "titulo": "La IA todavía no produce despidos masivos, pero el empleo de entrada ya se estrecha",
+      "sumario": "Harvard señala desempleo estable en EE. UU., pero ofertas de nivel inicial 73 % más bajas en cuatro años. El último informe de empleo muestra pérdidas en finanzas e información que la prensa vincula a la IA.",
+      "texto": [
+        "La Harvard Gazette (29 de septiembre) resume: desempleo cercano a 4,1 % y estable; ofertas de empleo de nivel inicial 73 % más bajas en cuatro años; 41 % de las tareas, automatizables o aumentables; y solo un tercio de los pilotos de IA de las empresas, exitosos. Doug Elmendorf advierte que lo observado tiene «muy poco poder predictivo» a cinco años.",
+        "CNN, con datos del BLS (2 de octubre), informa que finanzas perdió 7.000 empleos en septiembre y 129.000 desde mayo de 2025; información perdió 10.000 en septiembre y 376.000 desde fines de 2022. Gregory Daco dijo que «no se ve tanto como despidos masivos sino como contratación más selectiva».",
+        "La causalidad entre IA y empleo es una interpretación de los economistas citados, no un dato del BLS. Hay otros factores posibles, y los dos indicadores —ofertas de nivel inicial y pérdidas sectoriales— no miden lo mismo."
       ],
-      fuentes: [
-        { nombre: "Organización Mundial de la Salud", url: "https://www.who.int/news/item/25-09-2026-world-leaders-renew-commitment-to-protect-the-world-from-future-pandemics" },
-        { nombre: "Servicio Europeo de Acción Exterior", url: "https://www.eeas.europa.eu/delegations/un-new-york/eu-general-statement-un-high-level-meeting-pandemic-prevention-preparedness-and-response_en?s=63" },
-        { nombre: "Benton Institute for Broadband & Society", url: "https://www.benton.org/blog/gates-foundation-ai-could-help-poorest-catch-or-leave-them-further-behind" }
+      "fuentes": [
+        {
+          "nombre": "Harvard Gazette",
+          "url": "https://news.harvard.edu/gazette/story/2026/09/why-ai-hasnt-triggered-mass-layoffs-yet/"
+        },
+        {
+          "nombre": "CNN en español (vía ABC17)",
+          "url": "https://abc17news.com/cnn-spanish/2026/10/02/la-huella-de-la-ia-es-visible-en-el-ultimo-informe-de-empleo-desaparecieron-puestos-en-los-sectores-tecnologico-y-financiero/"
+        }
       ]
     },
     {
-      seccion: "Ética de la inteligencia artificial",
-      lugar: "reportado el 9 y el 11 de septiembre de 2026",
-      titulo: "Timnit Gebru: el discurso del «dios-máquina» es una cortina de humo que distrae de los daños reales",
-      sumario: "La investigadora que Google despidió en 2020 por su trabajo crítico sobre los grandes modelos de lenguaje sostiene que la retórica del riesgo existencial —la misma que Altman y Amodei llevaron esta semana al Consejo de Seguridad— desvía la atención de daños que ya se pueden verificar hoy: armas autónomas, vigilancia de activistas, despidos y consumo eléctrico.",
-      texto: [
-        "«La industria se ha convertido en una mezcla de sectas, de gente que son verdaderos creyentes, igual que un predicador que dice que se acercan los tiempos del fin», dijo Gebru a Wired. Sobre la posibilidad de que la IA extinga a la humanidad, fue directa: «no puedo realmente imaginármelo». Llama a esa narrativa «dios-máquina» y sostiene que «está pensada, en mi opinión, para distraernos» de problemas concretos.",
-        "Los problemas concretos que enumera incluyen las armas autónomas ya desplegadas en conflictos activos, el consumo eléctrico de los centros de datos —1,5% de la electricidad mundial en 2024, según la Agencia Internacional de la Energía—, los despidos que las empresas atribuyen a la adopción de IA (116.175 recortes de empleo en Estados Unidos hasta agosto de 2026, según los conteos que cita), y sistemas de vigilancia. En este último punto se apoya en una investigación de The American Prospect publicada el 9 de septiembre, según la cual Anthropic —la misma empresa cuyo director pidió supervisión externa ante el Consejo de Seguridad— construye un sistema de vigilancia predictiva que combina monitoreo de protestas en tiempo real y seguimiento de «personas de interés», con activistas opositores al desarrollo de la IA entre los perfiles vigilados; Anthropic no respondió a la solicitud de comentarios de esa investigación.",
-        "El argumento de Gebru no ataca la sinceridad de Altman o Amodei; ataca el terreno donde deciden librar el debate. Un riesgo de extinción especulativo no se puede auditar hoy —nadie puede verificar si una salvaguarda futura funcionará contra un escenario que todavía no existe—. Los daños que ella enumera sí se pueden auditar ahora mismo, con cifras, contratos y documentos, exactamente como esta edición intentó hacerlo con las armas autónomas, la autorización previa o los contratos de IA en salud. Su propuesta alternativa no pide moratorias ni tratados globales: pide que la IA se gobierne como la ingeniería de puentes, con ingenieros identificables y responsables, pruebas independientes antes del despliegue, documentación pública de desempeño y reporte obligatorio de incidentes."
+      "seccion": "América Latina y el Caribe",
+      "lugar": "Bogotá · 1 de octubre de 2026",
+      "titulo": "Piden a la Corte Constitucional evaluar si la conducta del presidente del Senado afectó la validez de la reforma pensional",
+      "sumario": "Un fallo en primera instancia halló a Iván Name responsable de tráfico de influencias. Mientras tanto, Colpensiones pide aplazar un año la entrada en vigor de la ley.",
+      "texto": [
+        "Según Infobae, el vicepresidente de la Cámara, Simón Molina, pidió a la Corte revisar si la conducta del senador Iván Name incidió en el trámite de la Ley 2381 de 2024. El 25 de septiembre, el Consejo de Estado, en primera instancia, lo halló responsable de tráfico de influencias. En 14 de las 16 sesiones del Senado sobre la reforma, Name no dirigió la plenaria o cedió su conducción. Molina no pide anular la ley: pide evaluar si hubo efecto material en votaciones, quórum o deliberación.",
+        "Por su parte, Colpensiones solicitó trasladar la vigencia del 1 de abril de 2027 al 1 de abril de 2028, aduciendo que debe migrar millones de historias laborales y coordinar sistemas con administradoras privadas, empleadores y entidades financieras. La Sala Plena revisará la petición, según Cambio; mientras no decida, sigue vigente abril de 2027.",
+        "El fallo es apelable y la Corte ya había declarado constitucional la mayor parte de la reforma (Sentencia C-264 de 2026, según El Tiempo). La petición de Colpensiones es operativa, no de constitucionalidad."
       ],
-      fuentes: [
-        { nombre: "Wired en español", url: "https://es.wired.com/articulos/timnit-gebru-alerta-el-discurso-de-la-ia-apocaliptica-es-una-cortina-de-humo" },
-        { nombre: "The American Prospect", url: "https://prospect.org/2026/09/09/anthropic-artificial-intelligence-surveillance-system-monitor-activists/" },
-        { nombre: "Cybernews", url: "https://cybernews.com/ai-news/timnit-gebru-ai-extinction/" }
+      "fuentes": [
+        {
+          "nombre": "Infobae",
+          "url": "https://www.infobae.com/colombia/2026/10/01/piden-a-la-corte-constitucional-revisar-si-la-conducta-de-ivan-name-incidio-en-la-validez-de-la-reforma-pensional/"
+        },
+        {
+          "nombre": "El Tiempo",
+          "url": "https://www.eltiempo.com/economia/colpensiones-pide-a-la-corte-constitucional-aplazar-un-ano-la-entrada-en-vigencia-de-la-reforma-pensional-3588126"
+        },
+        {
+          "nombre": "Cambio",
+          "url": "https://cambiocolombia.com/justicia/articulo/2026/9/la-sala-plena-de-la-corte-constitucional-revisara-la-fecha-de-entrada-en-vigencia-de-la-reforma-pensional"
+        }
+      ]
+    },
+    {
+      "seccion": "América Latina y el Caribe",
+      "lugar": "Bogotá / Ciudad de México · 28–30 de septiembre de 2026",
+      "titulo": "Colombia pierde 126.000 empleos en un año; en México, 55 % de los ocupados trabaja en la informalidad",
+      "sumario": "El desempleo colombiano llegó a 9,4 % en agosto. México suma 60,7 millones de ocupados, pero 33,4 millones sin protección formal.",
+      "texto": [
+        "El DANE reportó (30 de septiembre) desempleo de 9,4 % en agosto de 2026, frente a 8,6 % un año antes. Los ocupados bajaron de 23,8 a 23,6 millones. La participación cayó de 63,9 % a 63,3 %. Quibdó tuvo la tasa más alta (23,8 %). Los mayores recortes fueron en industria, artes y agricultura; entre los más afectados, jornaleros y empleadas domésticas.",
+        "En México, según Publimetro con datos de agosto, hay 60,7 millones de ocupados, 1,2 millones más que un año antes, con desocupación de 3 %. Pero 33,4 millones, el 55 %, trabajan en la informalidad. Entre los trabajadores de plataformas, los que ganan lo suficiente para registrarse en el IMSS bajaron de 247.900 en julio a 199.454 en agosto. Las cifras de reducción de jornada a 40 horas y de salario mínimo son oficiales según el medio y no las contrastamos con el INEGI."
+      ],
+      "fuentes": [
+        {
+          "nombre": "Infobae (DANE)",
+          "url": "https://www.infobae.com/colombia/2026/09/30/subio-el-desempleo-en-colombia-subio-mas-del-9-en-agosto-hubo-126000-ocupados-menos-que-en-el-mismo-mes-de-2025-segun-el-dane/"
+        },
+        {
+          "nombre": "Publimetro",
+          "url": "https://www.publimetro.com.mx/nacional/2026/09/28/mexico-suma-607-millones-de-ocupados-55-esta-en-informalidad/"
+        }
+      ]
+    },
+    {
+      "seccion": "América Latina y el Caribe",
+      "lugar": "Lima · 30 de septiembre – 2 de octubre de 2026",
+      "titulo": "Perú: un nuevo proyecto propone el noveno retiro extraordinario de AFP, de hasta 4 UIT",
+      "sumario": "La propuesta busca una excepción temporal a la reforma previsional de 2024 por el impacto de El Niño. Es solo un proyecto, sin aprobación.",
+      "texto": [
+        "La diputada Catherine Palomino propone, según RPP, un retiro de hasta 4 UIT (unos 22.000 soles) en cuatro pagos mensuales, con 90 días de solicitud. Lo justifica por el impacto económico de El Niño costero. Entre 2020 y 2024 se aprobaron ocho retiros por más de 115.000 millones de soles.",
+        "El propio proyecto admite que reduce los ahorros para la jubilación y advierte posibles impactos fiscales por las prestaciones garantizadas por el Estado. No pudimos verificar la fecha exacta de la nota ni la reacción del Banco Central, que otros titulares vinculan al proyecto."
+      ],
+      "fuentes": [
+        {
+          "nombre": "RPP",
+          "url": "https://rpp.pe/economia/economia/retiro-afp-de-hasta-s-22000-por-el-nino-asi-busca-el-proyecto-sortear-la-prohibicion-de-la-reforma-de-pensiones-noticia-1710470"
+        }
       ]
     }
   ],
-
-  contrapunto: {
-    tema: "Contrapunto: pedir supervisión en público, ¿fortalece la gobernanza de la IA o la sustituye?",
-    intro: "Que las empresas que reportan ganancias trimestrales pidan que alguien las vigile no es nuevo. Pero la secuencia de esta semana —testimonio ante el Consejo de Seguridad un día, borrado de salvaguardas en Ginebra tres días después— hace visible una pregunta de fondo: ¿para qué sirve pedir vigilancia en público, si quien la pide también decide, en otro foro y en privado, que no la habrá?",
-    a: {
-      titulo: "Es un paso real, aunque incompleto",
-      cuerpo: [
-        "Hace apenas tres años nadie en la industria pedía esto en un foro tan alto. El propio lenguaje de Altman y Amodei —que ninguna empresa debería decidir sola— reconoce un límite que antes no se admitía en público, y eso amplía el margen político disponible aunque el resultado inmediato haya sido el rechazo.",
-        "La petición pública tiene, además, un costo: quien la formula se expone a que se documente la contradicción si luego actúa en sentido contrario, como ocurre en esta misma edición. Señalar esa contradicción es parte del mecanismo de rendición de cuentas, no su sustituto.",
-        "Conviene distinguir los expedientes: gobernanza de modelos comerciales de IA y gobernanza de armas autónomas letales tienen actores e incentivos distintos. No toda inconsistencia entre ambos es hipocresía deliberada; puede ser, más simplemente, que ningún gobierno cede soberanía militar al mismo ritmo que le exige transparencia a una empresa privada."
+  "contrapunto": {
+    "tema": "Contrapunto: los compromisos voluntarios de la industria de la IA, ¿primer paso o sustituto de la regulación?",
+    "intro": "El almuerzo del 1 de octubre reabre una discusión antigua en política pública: cuando un sector promete vigilarse a sí mismo, ¿se está construyendo la base de una norma futura o se está llenando el espacio que ocuparía? La pregunta no es nueva, pero la concentración de poder de los firmantes le da otra escala.",
+    "a": {
+      "titulo": "Es un primer paso que de otro modo no existiría",
+      "cuerpo": [
+        "El texto contiene elementos que no eran habituales en un acuerdo de este tipo: auditores externos independientes, comités de seguridad a nivel de junta directiva y un reconocimiento explícito de riesgos cibernéticos, biológicos y químicos. Poner esos compromisos por escrito, con las firmas de seis directivos, crea un criterio concreto contra el cual contrastar su conducta, algo que un discurso general no ofrece.",
+        "Un compromiso voluntario no excluye el control público. Según Fortune, la Comisión Federal de Comercio abrió por esos días una investigación sobre agentes de IA, lo que indica que ambos mecanismos pueden coexistir. Además, quien incumple un compromiso firmado queda más expuesto que quien nunca lo asumió, aunque las consecuencias legales concretas no las evaluamos aquí.",
+        "En un contexto en el que no hay una ley federal específica, un estándar redactado por quienes conocen los sistemas puede tener una calidad técnica que una norma improvisada no alcanzaría. Algunos estándares técnicos de origen sectorial se han incorporado después a normas exigibles; que ocurra aquí es una posibilidad, no una certeza. La alternativa realista a este compromiso, dirían sus defensores, no es una ley estricta inmediata, sino la ausencia de cualquier marco."
       ]
     },
-    b: {
-      titulo: "Es la manera más barata de evitar la regulación que de verdad duele",
-      cuerpo: [
-        "Pedir «un marco internacional», sin especificar mecanismos vinculantes, sanciones o auditoría independiente, cuesta poco y rinde mucho: coloca a la empresa del lado de la prudencia sin comprometerla con nada verificable.",
-        "El patrón se repite en otros sectores regulados: la industria propone principios generales, el regulador tarda años en producir norma dura, y cuando la norma llega, se parece sospechosamente a lo que la industria ya proponía. Es el mismo fenómeno de captura regulatoria que esta tertulia describió la semana pasada, aplicado ahora a la fase de diseño en lugar de a la de aplicación.",
-        "El caso de Ginebra marca el límite exacto de esa lectura optimista: cuando existe de verdad un borrador con lenguaje vinculante sobre una decisión letal, no son las empresas quienes lo vacían —son los Estados que las alojan. Pedir vigilancia sobre el producto ajeno cuesta poco cuando el poder de veto real permanece intacto en la mesa de al lado.",
-        "Ese escepticismo no es solo nuestro. La investigadora Timnit Gebru fue más lejos esta semana: dijo a Wired que el propio discurso del riesgo existencial —el mismo que Altman y Amodei llevaron al Consejo de Seguridad— funciona como cortina de humo, porque desplaza el debate hacia un terreno especulativo que nadie puede auditar hoy, mientras daños que sí se pueden verificar ahora mismo —entre ellos, según reveló esta semana The American Prospect, un sistema de vigilancia de activistas construido por la propia Anthropic— quedan en segundo plano. Esta edición le dedica una nota aparte."
+    "b": {
+      "titulo": "Es un marco que depende de que los regulados lo cumplan",
+      "cuerpo": [
+        "El compromiso es voluntario, no prevé sanciones y encarga la elaboración de estándares a un organismo dirigido por la propia industria, con un calendario amplio («fines de 2026 o inicios de 2027»). Quienes lo critican señalan que, sin un tercero con capacidad de sancionar, el cumplimiento depende de la reputación y de la buena fe de los firmantes.",
+        "La literatura sobre regulación describe riesgos asociados a que el sector participe en el diseño de las reglas que lo rigen, como la captura regulatoria. Esos riesgos no equivalen a que ocurran aquí, pero la configuración institucional justifica pedir garantías de independencia: quién nombra, quién financia y quién puede sancionar.",
+        "También señalan que lo firmado y la influencia política pueden ir por caminos distintos. Fortune informa que un super PAC del sector tiene más de 100 millones de dólares comprometidos; el artículo no establece que ese dinero esté dirigido contra la regulación, y ese vínculo debe verificarse antes de afirmarlo. Para este lado del debate, la prueba del compromiso será qué hace cada firmante cuando una norma vinculante le cueste algo."
       ]
     },
-    cierre: "Ambas posiciones coinciden en que vigilancia declarada no equivale a vigilancia ejercida. Difieren en si la distancia entre una y otra se está cerrando, aunque sea despacio, o si existe precisamente para no cerrarse nunca. La tertulia queda abierta."
+    "cierre": "Ambas posiciones aceptan que un compromiso firmado vale más que ninguno. Difieren en si ese valor es el piso de una norma o su techo, y en cuánto pesa la independencia de quien lo hace exigible. El texto no resuelve esa pregunta; la resolverá la práctica de los próximos meses. La tertulia queda abierta."
   },
-
-  ensayo: {
-    titulo: "Lo que Colpensiones sabe hacer y Ginebra no: pedir cuentas en voz alta",
-    bajada: "La semana dejó dos maneras opuestas de rendir cuentas sobre un sistema del que depende la vida de millones de personas: una ocurrió a puerta cerrada, en un tratado sobre armas; la otra, en público, sobre una reforma de pensiones. Vale la pena comparar los métodos.",
-    cuerpo: [
-      "La misma semana produjo dos episodios de gobernanza de sistemas complejos que deciden sobre la vida de las personas, y conviene ponerlos uno al lado del otro. En Ginebra, negociadores de Estados Unidos y Rusia retiraron en privado tres salvaguardas de un tratado sobre armas autónomas: nadie lo anunció, se supo por reportería basada en fuentes anónimas. En Bogotá, la administradora estatal de pensiones de Colombia publicó, en un documento dirigido a la Corte Constitucional, una lista de 84 requisitos técnicos que no puede cumplir a tiempo, y pidió que se le diera un año más. Ninguno de los dos casos es glamoroso. Pero solo uno de los dos deja rastro público de su propia insuficiencia mientras todavía es corregible.",
-      "La diferencia de método importa más que la diferencia de escala. Colpensiones no ocultó el número: lo puso en un expediente formal, sujeto al escrutinio de un tribunal y de la prensa, exponiéndose a la crítica de haber administrado mal el tiempo. El expediente de Ginebra, en cambio, se conoció por una investigación periodística basada en fuentes que hablaron bajo condición de anonimato; ningún gobierno lo confirmó en público, y los negociadores lo dejaron pasar en silencio. Ambos casos tratan con sistemas cuyo mal funcionamiento tiene consecuencias irreversibles sobre vidas humanas. Lo que distingue a uno de otro no es el riesgo, sino la disposición institucional a mostrar la propia falla mientras ocurre.",
-      "Esa diferencia tiene una explicación estructural y no solo de voluntad. Colpensiones opera dentro de un derecho administrativo interno sujeto a revisión constitucional, control judicial y acceso a la información: un tribunal puede negarle la prórroga, y la prensa puede contar por qué. La negociación de un tratado sobre armas letales entre grandes potencias no tiene ninguno de esos frenos: ningún tribunal doméstico puede obligar a Estados Unidos o a Rusia a divulgar el contenido de una sesión cerrada del Grupo de Expertos Gubernamentales, y la Convención sobre Ciertas Armas Convencionales opera por consenso, lo que significa que cualquiera de las partes puede simplemente negarse a dejar por escrito lo que no le conviene. Las instituciones acostumbradas a rendir cuentas las rinden, incluso a regañadientes; las que nunca fueron diseñadas para responder ante nadie más que sus propios cinco miembros permanentes, no.",
-      "Aplicado a la inteligencia artificial, el contraste aclara qué se pidió realmente ante el Consejo de Seguridad esta semana. En el fondo, Altman y Amodei pidieron que la gobernanza de la IA se pareciera más a Bogotá que a Ginebra: un marco donde la falla se documente, se someta a un tercero y quede constancia verificable. Pero quienes lo pidieron fueron dos empresas, no dos Estados. Una empresa puede proponer principios; no puede convocarse a sí misma ante una corte, ni fijarse una fecha límite que un tribunal ajeno verifique. Solo un Estado puede hacer eso —y los dos Estados con mayor interés en decisiones letales automatizadas eligieron, la misma semana, no hacerlo.",
-      "Conviene resistir la tentación de reducir todo esto a hipocresía simple. Hay una diferencia real entre pedir que un tercero vigile un producto comercial —un modelo de lenguaje, un asistente de atención al cliente— y aceptar que un tercero vigile una decisión de selección de objetivos militares. La reticencia de los Estados en el segundo terreno no prueba mala fe respecto al primero. Pero sí revela con precisión dónde está el límite real de la voluntad de rendir cuentas: se extiende hasta donde no compromete el monopolio estatal sobre el uso de la fuerza, y ni un milímetro más allá. Ese límite no es una novedad de esta semana; es, en el fondo, el mismo que la teoría clásica del Estado usó durante siglos para definir qué es la soberanía.",
-      "Para quien diseña o defiende sistemas de protección social, la lección no es que la inteligencia artificial deba regularse exactamente como una reforma pensional, sino que la arquitectura institucional pesa más que la buena voluntad declarada por cualquier actor, público o privado. Colpensiones pudo pedir el aplazamiento en público porque existe una Corte que puede negárselo, una prensa que puede contarlo y una ciudadanía que puede reclamarlo después en las urnas. La reforma pensional colombiana seguirá teniendo defectos de diseño y de implementación —los 84 requisitos pendientes lo confirman— pero transcurre dentro de un circuito que la obliga a explicarse ante alguien con poder real de sanción.",
-      "Chile ofrece, dentro del mismo campo, el contraste que falta: subió la Pensión Garantizada Universal en la fecha prevista, sin pedir prórroga, lo que tampoco demuestra que su reforma esté mejor diseñada —solo que llegó más lista a este tramo específico del calendario que se fijó. Ninguna de las dos decisiones, la colombiana o la chilena, es comparable en escala de riesgo con un tratado sobre armas autónomas letales. Pero las tres comparten la misma pregunta de fondo, la que debería hacerse todo lector de esta edición ante cualquier sistema del que dependa: quién tiene el poder real de exigir que la institución explique, en público y a tiempo, por qué el sistema todavía no hace lo que prometió."
+  "ensayo": {
+    "titulo": "Pensiones para un trabajo que cambia: cuando el sistema asume lo que el mercado ya no garantiza",
+    "bajada": "Esta semana llegaron, desde tres países, noticias aparentemente sin relación: una reforma pensional con fecha incierta, un retiro de ahorros por proyecto de ley y un informe de empleo que cuenta puestos perdidos. Juntas dibujan un mismo problema de diseño.",
+    "cuerpo": [
+      "Los sistemas de pensiones que dependen de aportes sobre el salario descansan en una hipótesis que rara vez se enuncia: que la mayoría de la gente tendrá un empleo formal estable durante décadas. Cuando esa hipótesis se debilita, el sistema no falla de golpe; se vuelve, de forma gradual, un sistema para quienes tienen la fortuna de estar dentro. Las noticias de la semana permiten ver tres caras de esa fragilidad, en tres países distintos.",
+      "La primera es Colombia. El 30 de septiembre el DANE informó un desempleo de 9,4 % en agosto, con 126.000 ocupados menos que un año antes y una participación laboral que cayó de 63,9 % a 63,3 %. Esa misma semana, la Corte Constitucional recibió una petición de Colpensiones para aplazar un año la entrada en vigor de la reforma pensional —de abril de 2027 a abril de 2028— y otra, del vicepresidente de la Cámara, para evaluar si la conducta del presidente del Senado que tramitó la ley afectó su validez. Son tres hechos distintos con una raíz común: una reforma diseñada para ampliar la cobertura se aplicará sobre un mercado de trabajo que, en ese momento, expulsa gente. Ningún aplazamiento resuelve eso; solo lo posterga.",
+      "La segunda cara es México. Con 60,7 millones de ocupados y desocupación de 3 %, las cifras agregadas parecen sanas, pero 33,4 millones —el 55 %— trabajan en la informalidad, es decir, fuera de la lógica contributiva que sostiene una pensión. Entre los trabajadores de plataformas, los que ganan lo suficiente para registrarse en el IMSS bajaron de 247.900 a 199.454 en un mes. Un sistema que depende de registrar el ingreso se enfrenta a un trabajo cuyo ingreso, por diseño, es difícil de registrar.",
+      "La tercera es Perú, donde un proyecto propone un noveno retiro extraordinario de las AFP, de hasta cuatro UIT, esta vez por El Niño. Los ocho anteriores sacaron más de 115.000 millones de soles de las cuentas de jubilación. El texto mismo reconoce que reduce los ahorros del retiro. Aquí el problema es el inverso: cuando el sistema no ofrece otra red de seguridad, el ahorro previsional se convierte en la única reserva de emergencia, y se gasta antes de que llegue la vejez para la que se constituyó.",
+      "Sobre este fondo conviene mirar el informe de empleo estadounidense del 2 de octubre y el trabajo de Harvard del 29 de septiembre. Los datos son ambiguos y así hay que decirlo: el desempleo se mantiene en torno a 4,1 %, no hay evidencia de despidos masivos por inteligencia artificial, y la causalidad entre IA y pérdidas sectoriales es, por ahora, una interpretación de economistas. Pero las ofertas de empleo de nivel inicial son 73 % más bajas que hace cuatro años, y quienes no entran al empleo formal en sus primeros años no empiezan a cotizar. Si el cambio tecnológico terminara estrechando de manera persistente esa puerta de entrada, uno de sus posibles efectos sobre las pensiones aparecería con décadas de rezago. Es una hipótesis, no una conclusión de los datos citados.",
+      "No es un argumento contra las reformas pensionales ni contra la tecnología. Es un argumento sobre el orden de las preguntas: antes de discutir cuánto se cotiza, a qué edad y con qué tasa de reemplazo, conviene preguntar quién estará cotizando, y qué hacemos con quienes no. Los pilares no contributivos, las pensiones básicas y la formalización de las plataformas son respuestas conocidas; lo que cambia es la urgencia con que las exige un mercado que se mueve más rápido que el calendario legislativo.",
+      "La tentación, en estos casos, es leer cada noticia por separado: un aplazamiento administrativo, un proyecto populista, una estadística de empleo. Leídas juntas, indican que el contrato social previsional, tal como se diseñó en el siglo XX, está siendo puesto a prueba por un siglo XXI donde el trabajo cambia de forma antes de que el sistema cambie de reglas. La pregunta bioética de fondo, la de a quién se protege cuando el sistema no alcanza, está ya sobre la mesa."
     ],
-    firma: "Redacción TvBioética · Los artículos de reflexión buscan abrir discusión, no cerrarla. Las respuestas se publican en la edición siguiente."
+    "firma": "Redacción TvBioética · Los artículos de reflexión buscan abrir discusión, no cerrarla. Las respuestas se publican en la edición siguiente."
   },
-
-  concepto: {
-    termino: "Principio de precaución",
-    definicion: "Criterio según el cual, ante una amenaza de daño grave o irreversible, la falta de certeza científica absoluta no debe usarse como razón para posponer medidas destinadas a prevenirlo. Nació en el derecho ambiental y se trasladó después a la bioética, la salud pública y, más recientemente, a la gobernanza de tecnologías de alto riesgo.",
-    porque: "Aparece esta semana porque las tres cláusulas que Estados Unidos y Rusia retiraron del borrador sobre armas autónomas —revisión humana previa, estándares de fiabilidad, consideración ética obligatoria— son, en esencia, aplicaciones directas del principio de precaución a un dominio donde el daño, por definición, es irreversible. Retirarlas no es un gesto neutral: es optar explícitamente por no aplicar el principio justo donde más se necesita."
+  "concepto": {
+    "termino": "Captura regulatoria",
+    "definicion": "Situación en la que un organismo creado para regular un sector termina actuando en favor de los intereses de ese sector, ya sea por dependencia de su información técnica, por la circulación de personas entre regulador y regulados, o porque la propia industria diseña las reglas que dice acatar. Fue descrita por la economía política desde mediados del siglo XX y se discute hoy, sobre todo, en finanzas, farmacia y tecnología.",
+    "porque": "Aparece esta semana porque el compromiso firmado en la Casa Blanca prevé que el organismo de estándares de seguridad de la IA sea dirigido por la propia industria. Esta configuración presenta uno de los riesgos clásicos asociados a la captura regulatoria, aunque por sí sola no permite afirmar que exista captura: sus defensores sostienen que puede ser el primer paso hacia un estándar exigible. El criterio útil: preguntar quién nombra, quién financia y quién puede sancionar."
   },
-
-  radar: [
-    { cuando: "28 de septiembre (hoy)", titulo: "Día de Acción Mundial por la Despenalización del Aborto", detalle: "En América Latina llega con los frentes abiertos en Colombia, Chile, Ecuador y Argentina descritos en esta edición." },
-    { cuando: "28 sep – 2 oct", titulo: "63.º Consejo Directivo de la OPS", detalle: "Votará estrategias sobre emergencias sanitarias, resistencia antimicrobiana, arbovirosis e inocuidad alimentaria, y publicará el informe Salud en las Américas 2026." },
-    { cuando: "30 de septiembre", titulo: "Voto del Consejo de Seguridad sobre Haití", detalle: "Se decide la renovación de la Fuerza de Supresión de Pandillas; encuestas recientes muestran una aprobación pública dividida pese a que la mitad de la población dice sentirse más segura." },
-    { cuando: "hasta el 7 de octubre", titulo: "63.º período del Consejo de Derechos Humanos", detalle: "Organizaciones piden renovar hasta 2028 la Misión de Determinación de los Hechos sobre Venezuela; se espera el voto antes del cierre de sesiones." },
-    { cuando: "16–20 de noviembre", titulo: "Conferencia de revisión de la Convención sobre Ciertas Armas Convencionales", detalle: "En Ginebra. Es la próxima instancia formal donde podría discutirse —o no— la reposición de las salvaguardas retiradas esta semana." },
-    { cuando: "abril de 2027 (o 2028, si la Corte lo aprueba)", titulo: "Fecha de entrada en vigor de la reforma pensional colombiana", detalle: "La Corte Constitucional aún no decide sobre la solicitud de Colpensiones de correr el calendario un año." }
+  "radar": [
+    {
+      "cuando": "25 de octubre",
+      "titulo": "Posible segunda vuelta de las elecciones presidenciales en Brasil",
+      "detalle": "Según el calendario del Tribunal Superior Electoral, la segunda vuelta se celebraría el último domingo de octubre solo si ningún candidato obtiene mayoría en la primera, el 4 de octubre."
+    },
+    {
+      "cuando": "1 de abril de 2027",
+      "titulo": "Entrada en vigor de las disposiciones declaradas exequibles de la reforma pensional colombiana",
+      "detalle": "Fecha fijada en la sentencia C-264 de 2026 de la Corte Constitucional. Colpensiones ha pedido trasladarla a 2028 y la Sala Plena revisará la solicitud."
+    },
+    {
+      "cuando": "1 de octubre de 2027",
+      "titulo": "Fecha propuesta por CMS para la autorización previa electrónica de fármacos",
+      "detalle": "Aplica solo si la propuesta se convierte en norma definitiva; según la ficha de CMS, hoy es una propuesta en trámite."
+    }
   ],
-
-  lecturas: [
-    { titulo: "How the US and Russia weakened a global effort to regulate 'killer' AI", autor: "Pranshu Verma, The Washington Post (vía Spokesman-Review)", donde: "26 de septiembre de 2026", url: "https://www.spokesman.com/stories/2026/sep/26/us-russia-stripped-human-oversight-from-global-ai-/", nota: "El reporte original, con el detalle de las quince horas de negociación en Ginebra y las reacciones de Human Rights Watch y Stop Killer Robots." },
-    { titulo: "Rogue AI hacks Irregular, Anthropic, Google, OpenAI and Meta AI", autor: "Thomas Brewster, Forbes", donde: "23 de septiembre de 2026", url: "https://www.forbes.com/sites/the-wiretap/2026/09/23/rogue-ai-hacks-irregular-anthropic-google-openai-and-meta-ai/", nota: "El origen del incidente de pruebas de seguridad que salió mal, contado por quien lo destapó." },
-    { titulo: "World leaders renew commitment to protect the world from future pandemics", autor: "Organización Mundial de la Salud", donde: "25 de septiembre de 2026", url: "https://www.who.int/news/item/25-09-2026-world-leaders-renew-commitment-to-protect-the-world-from-future-pandemics", nota: "El comunicado oficial de la reunión de alto nivel; léalo junto con la declaración de la UE para ver lo que uno cuenta y el otro no." },
-    { titulo: "EU general statement, UN high-level meeting on pandemic PPR", autor: "Servicio Europeo de Acción Exterior", donde: "25 de septiembre de 2026", url: "https://www.eeas.europa.eu/delegations/un-new-york/eu-general-statement-un-high-level-meeting-pandemic-prevention-preparedness-and-response_en?s=63", nota: "El desacuerdo que no aparece en el comunicado de la OMS: financiamiento, transferencia de tecnología y el Centro de Inteligencia de Pandemias." },
-    { titulo: "September 2026 global poverty update", autor: "Banco Mundial", donde: "22 de septiembre de 2026", url: "https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in", nota: "Las cifras completas y la metodología detrás del 10,1% de pobreza extrema mundial." },
-    { titulo: "Asesinato de defensores ambientales refleja la lucha de poder por recursos mundiales", autor: "IPS Noticias, sobre el informe Collective Power de Global Witness", donde: "21 de septiembre de 2026", url: "https://ipsnoticias.net/2026/09/asesinato-de-defensores-ambientales-refleja-la-lucha-de-poder-por-recursos-mundiales/", nota: "Contexto regional del informe, con los casos de México, Chile y Perú citados en esta edición." }
+  "lecturas": [
+    {
+      "titulo": "Why health equity?",
+      "autor": "Amartya Sen, Health Economics",
+      "donde": "2002",
+      "url": "https://econpapers.repec.org/RePEc:wly:hlthec:v:11:y:2002:i:8:p:659-666",
+      "nota": "Un ensayo clásico para pensar qué significa que la salud sea justa, más allá de que haya acceso a servicios. Útil para leer las cifras de esta edición."
+    },
+    {
+      "titulo": "The Belmont Report",
+      "autor": "Comisión Nacional para la Protección de Sujetos Humanos de Investigación, EE. UU.",
+      "donde": "1979",
+      "url": "https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/read-the-belmont-report/index.html",
+      "nota": "Respeto por las personas, beneficencia y justicia: el texto fundacional de la ética de la investigación, breve y todavía vigente."
+    }
   ]
 };
 
